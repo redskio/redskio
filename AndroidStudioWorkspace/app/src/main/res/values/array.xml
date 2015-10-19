@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="order">
+        <item>구두 닦이</item>
+        <item>남자 통굽갈이</item>
+        <item>남자 반창덧댐</item>
+        <item>남자 보조굽</item>
+        <item>구두 닦이</item>
+        <item>여자 보조굽</item>
+        <item>여자 보조굽(중)</item>
+        <item>여자 보조굽(대)</item>
+    </string-array>
+    <integer-array name="price">
+        <item>5000</item>
+        <item>15000</item>
+        <item>12000</item>
+        <item>12000</item>
+        <item>5000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+    </integer-array>
+</resources>

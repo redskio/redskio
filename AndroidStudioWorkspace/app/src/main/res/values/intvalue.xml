@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="forman_content_wash_price">5000</integer>
+    <integer name="forman_fix_whole_price">15000</integer>
+    <integer name="forman_fix_half_price">12000</integer>
+    <integer name="forman_fix_sub_price">12000</integer>
+</resources>

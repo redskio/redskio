@@ -1,0 +1,352 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eaeaea"
+    tools:context=".MainActivityFragment">
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="57.5dp"
+        android:background="@color/color_login_default">
+
+        <ImageButton
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18dp"
+            android:background="@null"
+            android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="주문 선택"
+            android:textColor="#ffffff"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/payBtn"
+        android:layout_below="@+id/title_layout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#c9c4c3">
+
+            <RelativeLayout
+                android:id="@+id/under_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:elevation="3dp"
+                android:outlineProvider="bounds"
+                android:visibility="visible"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:id="@+id/subtitle2_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="57.5dp"
+                        android:layout_weight="1"
+                        android:background="@color/color_login_default"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#ffffff"
+                            android:orientation="vertical"
+                            android:layout_marginTop="3.5dp">
+
+                            <TextView
+                                android:id="@+id/textView4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="혼자 왓슈"
+                                android:textColor="@color/color_black"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="10dp" />
+
+                            <TextView
+                                android:id="@+id/textView11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:text="1인 서비스 입니다."
+                                android:textColor="@color/color_login_default"
+                                android:textSize="10sp"
+                                android:layout_marginTop="10dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="57.5dp"
+                        android:layout_weight="1"
+                        android:background="#d9d9d9"
+                        android:orientation="vertical"
+                        android:paddingBottom="3.5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical"
+                                android:text="단체로 왓슈"
+                                android:textColor="#000000"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="10dp" />
+
+                            <TextView
+                                android:id="@+id/textView13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:text="서비스 준비중입니다."
+                                android:textColor="@color/color_red"
+                                android:textSize="10sp"
+                                android:layout_marginTop="10dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/servicepage_button_set1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/subtitle2_layout"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/color_white"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginTop="6dp"
+                        android:elevation="1dp"
+                        android:outlineProvider="bounds"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:id="@+id/womanBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:background="@null"
+                            android:src="@drawable/servicepage_btn1"
+                            android:visibility="visible"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:id="@+id/main_woman_wash_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:background="@null"
+                            android:src="@drawable/servicepage_btn1_push2"
+                            android:visibility="gone"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:id="@+id/main_woman_sub_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:background="@null"
+                            android:src="@drawable/servicepage_btn1_push1"
+                            android:visibility="gone"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:id="@+id/main_woman_submid_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:background="@null"
+                            android:src="@drawable/servicepage_btn1_push3"
+                            android:visibility="gone"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:id="@+id/main_woman_subbig_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:background="@null"
+                            android:src="@drawable/servicepage_btn1_push4"
+                            android:visibility="gone"
+                            android:scaleType="centerCrop" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="6dp"
+                        android:elevation="1dp"
+                        android:outlineProvider="bounds"
+                        android:layout_weight="1">
+
+                        <ImageButton
+                            android:id="@+id/manBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:background="@null"
+                            android:src="@drawable/servicepage_btn2"
+                            android:visibility="visible"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:id="@+id/main_man_wash_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:background="@null"
+                            android:src="@drawable/servicepage_btn2_push1"
+                            android:visibility="gone"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:id="@+id/main_man_whole_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:background="@null"
+                            android:src="@drawable/servicepage_btn2_push2"
+                            android:visibility="gone"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:id="@+id/main_man_half_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:background="@null"
+                            android:src="@drawable/servicepage_btn2_push3"
+                            android:visibility="gone"
+                            android:scaleType="centerCrop" />
+
+                        <ImageView
+                            android:id="@+id/main_man_sub_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:background="@null"
+                            android:src="@drawable/servicepage_btn2_push4"
+                            android:visibility="gone"
+                            android:scaleType="centerCrop" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/servicepage_gift_btn"
+                    android:background="@null"
+                    android:src="@drawable/servicepage_gift_btn"
+                    android:layout_marginBottom="20dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/color_brown"
+                    android:elevation="1dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:outlineProvider="bounds"
+                    android:text="@string/premium_service_notice"
+                    android:textColor="@color/color_white" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/payBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="false"
+        android:background="@drawable/red_round_btn"
+        android:longClickable="false"
+        android:minHeight="60dp"
+        android:text="@string/buyBtnText"
+        android:textColor="@color/color_red"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp" />
+
+</RelativeLayout>

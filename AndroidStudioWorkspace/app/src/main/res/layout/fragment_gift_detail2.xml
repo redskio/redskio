@@ -1,0 +1,258 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eaeaea"
+    android:orientation="vertical"
+    tools:context="kr.whatshoe.WhatShoe.PointFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView6" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="#ffffff"
+                android:elevation="1dp"
+                android:outlineProvider="bounds">
+
+                <ImageView
+                    android:id="@+id/coupon_image_detail2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/gift_detail_5000_2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="30dp" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="구두 닦이 쿠폰"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_alignTop="@+id/coupon_image_detail2"
+                    android:layout_toRightOf="@+id/coupon_image_detail2"
+                    android:layout_toEndOf="@+id/coupon_image_detail2"
+                    android:layout_marginLeft="10dp" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5000 원"
+                    android:textColor="@color/color_red"
+                    android:textIsSelectable="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/textView18"
+                    android:layout_alignLeft="@+id/textView18"
+                    android:layout_alignStart="@+id/textView18"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사용처 | 왓슈"
+                    android:id="@+id/textView24"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:layout_below="@+id/textView23"
+                    android:layout_alignLeft="@+id/textView23"
+                    android:layout_alignStart="@+id/textView23"
+                    android:layout_marginTop="30dp" />
+
+                <kr.whatshoe.Util.UnderlineText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:ems="10"
+                    android:id="@+id/messageText"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignLeft="@+id/coupon_image_detail2"
+                    android:layout_alignStart="@+id/coupon_image_detail2"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/coupon_image_detail2"
+                    android:layout_marginBottom="30dp"
+                    android:lines="3"
+                    android:gravity="top"
+                    android:lineSpacingExtra="25dip"
+                    android:maxLines="3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="From. Whatshoe"
+                    android:id="@+id/fromIDText"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignRight="@+id/messageText"
+                    android:layout_alignEnd="@+id/messageText"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="5dp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#eaeaea"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:elevation="1dp"
+                android:outlineProvider="bounds">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:paddingLeft="10dp"
+                    android:background="#ffffff"
+                    android:paddingBottom="20dp"
+                    android:layout_marginBottom="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="어떻게 선물할까요?"
+                        android:id="@+id/giftHowTitle"
+                        android:textColor="#000000" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/checkBox"
+                        android:layout_below="@+id/giftHowTitle"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="10dp"
+                        android:button="@drawable/checkbox_gift_message" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/checkBox2"
+                        android:layout_alignTop="@+id/checkBox"
+                        android:layout_toRightOf="@+id/checkBox"
+                        android:layout_toEndOf="@+id/checkBox"
+                        android:layout_marginLeft="20dp"
+                        android:button="@drawable/checkbox_gift_kakao" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="받을 사람 선택"
+                        android:id="@+id/textView30"
+                        android:textColor="#000000" />
+
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/giftPersonListView"
+                        android:layout_below="@+id/textView30"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp" />
+
+                    <Button
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:text="+"
+                        android:id="@+id/addGiftPerson"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/giftPersonListView"
+                        android:background="@drawable/rec_btn"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:text="폰 주소록에서 찾기"
+                        android:id="@+id/contactsBtn"
+                        android:background="@drawable/rec_btn"
+                        android:layout_below="@+id/giftPersonListView"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_toRightOf="@+id/addGiftPerson"
+                        android:layout_toEndOf="@+id/addGiftPerson"
+                        android:layout_marginLeft="10dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#ffffff"
+                android:paddingTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="결제 방법"
+                    android:id="@+id/textView31"
+                    android:textColor="#000000" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="포인트 결제"
+                    android:id="@+id/pointGift"
+                    android:layout_below="@+id/textView31"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/rec_btn"
+                    android:paddingLeft="20dp"
+                    android:gravity="center_vertical|left"
+                    android:layout_marginTop="20dp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="카드 결제"
+                    android:id="@+id/cardPay"
+                    android:layout_below="@+id/pointGift"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/rec_btn"
+                    android:layout_marginTop="2dp"
+                    android:paddingLeft="20dp"
+                    android:gravity="center_vertical|left"
+                    android:layout_marginBottom="20dp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

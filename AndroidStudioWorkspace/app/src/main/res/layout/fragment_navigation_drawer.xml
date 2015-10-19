@@ -1,0 +1,200 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:choiceMode="singleChoice"
+    android:divider="@android:color/transparent" android:dividerHeight="0dp"
+    android:background="#231715" tools:context="kr.whatshoe.whatShoe.NavigationDrawerFragment"
+    android:orientation="vertical"
+    android:id="@+id/navigationLayout">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView5" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#d6d6d6">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="144dp"
+                android:background="#ffffff">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/action_setting"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:background="@null"
+                    android:src="@drawable/navi_ad"
+                    android:scaleType="fitStart" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="61.5dp"
+                android:background="#231715">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID"
+                    android:id="@+id/id_text"
+                    android:textSize="14sp"
+                    android:layout_centerVertical="true"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LV"
+                    android:id="@+id/level_text"
+                    android:textSize="14sp"
+                    android:layout_centerVertical="true"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="42.5dp"
+                    android:id="@+id/pointBtn"
+                    android:background="@drawable/button_navi_text2"
+                    style="@null"
+                    android:src="@drawable/actionbar_point"
+                    android:scaleType="center"
+                    android:layout_gravity="center_horizontal|left"
+                    android:layout_centerInParent="true"
+                    android:text=" 포인트"
+                    android:drawableStart="@drawable/navi_point"
+                    android:gravity="center_vertical|left"
+                    android:paddingLeft="15dp"
+                    android:textColor="@color/color_brown"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="42.5dp"
+                    android:id="@+id/couponBtn"
+                    android:background="@drawable/button_navi_text2"
+                    style="@null"
+                    android:src="@drawable/actionbar_coupon"
+                    android:scaleType="center"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_centerInParent="true"
+                    android:text=" 쿠폰"
+                    android:drawableStart="@drawable/navi_coupon"
+                    android:gravity="center_vertical|left"
+                    android:paddingLeft="15dp"
+                    android:textColor="@color/color_brown"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="42.5dp"
+                    android:id="@+id/historyBtn"
+                    android:background="@drawable/button_navi_text2"
+                    style="@null"
+                    android:src="@drawable/actionbar_history"
+                    android:scaleType="center"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_centerInParent="true"
+                    android:text=" 주문 내역"
+                    android:drawableStart="@drawable/navi_history"
+                    android:gravity="center_vertical|left"
+                    android:paddingLeft="15dp"
+                    android:textColor="@color/color_brown"
+                    android:textSize="15sp" />
+
+                <Button
+                    style="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="42.5dp"
+                    android:id="@+id/healthBtn"
+                    android:background="@drawable/button_navi_text2"
+                    android:scaleType="center"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_centerInParent="true"
+                    android:text=" 왓슈 헬스케어"
+                    android:drawableStart="@drawable/navi_heathcare"
+                    android:gravity="center_vertical|left"
+                    android:paddingLeft="15dp"
+                    android:textColor="@color/color_brown"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="42.5dp"
+                    android:text="공지사항"
+                    android:drawableStart="@drawable/navi_btn"
+                    android:id="@+id/notice_btn"
+                    android:background="@drawable/button_navi_text2"
+                    style="@null"
+                    android:gravity="center_vertical|left"
+                    android:textColor="@color/color_brown"
+                    android:textStyle="bold"
+                    android:paddingLeft="15dp"
+                    android:textSize="15sp"
+                    />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="42.5dp"
+                    android:text="이벤트"
+                    android:drawableStart="@drawable/navi_event"
+                    android:id="@+id/event_btn"
+                    android:background="@drawable/button_navi_text2"
+                    style="@null"
+                    android:gravity="center_vertical|left"
+                    android:textColor="@color/color_brown"
+                    android:textStyle="bold"
+                    android:paddingLeft="15dp"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="42.5dp"
+                    android:text="고객센터"
+                    android:drawableStart="@drawable/navi_question"
+                    android:id="@+id/call_btn"
+                    android:background="@drawable/button_navi_text2"
+                    style="@null"
+                    android:gravity="center_vertical|left"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_brown"
+                    android:paddingLeft="15dp"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="42.5dp"
+                    android:text="공유하기"
+                    android:drawableStart="@drawable/navi_share"
+                    android:id="@+id/talkBtn"
+
+                    android:textColor="@color/color_brown"
+                    android:background="@drawable/button_navi_text2"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="15dp"
+                    android:gravity="center_vertical|left"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="314dp"
+        android:layout_height="262.5dp"
+        android:background="@drawable/coupon_roundlayout"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="62.5dp"
+            android:background="@drawable/top_round_red_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="쿠폰 등록"
+                android:id="@+id/dialog_title"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_alignParentTop="false"
+                android:layout_centerInParent="true" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/coupon_close"
+                android:layout_alignParentEnd="false"
+                android:src="@drawable/coupon_cancle_btn"
+                android:background="@null"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="12dp"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="선물 받은 쿠폰 등록"
+                android:id="@+id/textView19"
+                android:layout_marginTop="30dp"
+                android:textSize="14sp"
+                android:layout_marginLeft="30dp" />
+
+            <EditText
+                android:layout_width="262.5dp"
+                android:layout_height="50dp"
+                android:id="@+id/couponText"
+                android:layout_below="@+id/textView19"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_coupon" />
+
+            <Button
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:text="등 록"
+                android:id="@+id/registerBtn"
+                android:background="@drawable/red_round_fill_btn"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="31dp"
+                android:textSize="14sp"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

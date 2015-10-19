@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#231815">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f2f2f2"
+        android:id="@+id/item_layout"
+        android:layout_margin="1dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5000원"
+            android:id="@+id/price_text"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/color_black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="왓슈 open 이벤트"
+            android:id="@+id/desc_text"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_below="@+id/price_text"
+            android:layout_alignLeft="@+id/price_text"
+            android:layout_alignStart="@+id/title_text"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/coupon_status_text"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/red_circle_fill_btn"
+            android:layout_marginRight="10dp"
+            android:text="사용 전"
+            android:textColor="#ffffff"
+            android:gravity="center_vertical|center_horizontal" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="kr.whatshoe.WhatShoe.PointFragment"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageButton3"
+            android:src="@drawable/navi_healthcare_guide"
+            android:scaleType="fitXY"
+            android:tint="#eaeaea"
+            android:tintMode="screen" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ing"
+            android:id="@+id/imageView4"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="현재 헬스케어 서비스 준비 중입니다."
+            android:id="@+id/textView22"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/imageView4" />
+
+    </RelativeLayout>
+
+</LinearLayout>

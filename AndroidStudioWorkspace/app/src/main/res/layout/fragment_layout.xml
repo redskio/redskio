@@ -1,0 +1,154 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivityFragment"
+    android:background="#231815"
+    android:paddingLeft="11dp"
+    android:paddingRight="11dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/login_logo"
+            android:adjustViewBounds="true"
+            android:layout_marginTop="29.50dp"
+            android:layout_marginBottom="31dp"
+            android:layout_centerHorizontal="true" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/imageView2"
+            android:id="@+id/id_layout">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="237dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_margin="1dp"
+                android:layout_gravity="center_horizontal">
+
+                <EditText
+                    android:layout_width="237dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/login_id_text"
+                    android:background="@drawable/edittext_join"
+                    android:drawableStart="@drawable/login_id"
+                    android:hint="@string/login_id_hint"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="@color/color_gray"
+                    android:textColor="@color/color_white"
+                    android:textSize="12sp"
+                    android:layout_gravity="center_horizontal" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:background="@null"
+            android:gravity="center_horizontal"
+            android:id="@+id/pw_layout"
+            android:layout_below="@+id/id_layout">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="237dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_margin="1dp">
+
+                <EditText
+                    android:layout_width="237dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/login_pw_text"
+                    android:drawableStart="@drawable/login_pw"
+                    android:background="@drawable/edittext_login"
+                    android:hint="@string/login_pw_hint"
+                    android:paddingLeft="10dp"
+                    android:textColorHint="@color/color_gray"
+                    android:textColor="@color/color_white"
+                    android:textSize="12sp"
+                    android:inputType="textPassword"
+                    android:layout_gravity="center_horizontal" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:layout_width="237dp"
+            android:layout_height="40dp"
+            android:text="@string/loginButton"
+            android:id="@+id/login_ws_button"
+            android:textColor="#ffffff"
+            android:background="@drawable/button_round_red"
+            android:layout_marginTop="21dp"
+            android:textSize="15sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/pw_layout"
+            android:layout_centerHorizontal="true" />
+
+        <com.facebook.login.widget.LoginButton
+            xmlns:fb="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/login_button"
+            android:layout_width="237dp"
+            android:layout_height="40dp"
+            fb:login_text="@string/loginFacebookButton"
+            style="@style/FacebookLoginButton"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/login_ws_button"
+            android:layout_centerHorizontal="true" />
+
+        <kr.whatshoe.Util.kLoginButton
+            android:id="@+id/com_kakao_login"
+            android:layout_width="237dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@+id/login_button"
+            android:layout_centerHorizontal="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_below="@+id/com_kakao_login">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/lost_pw_button"
+                android:id="@+id/lost_pw_button"
+                android:textColor="#969595"
+                android:background="@null"
+                android:layout_marginTop="5dp"
+                style="@null"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="false" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/join_ws_button"
+                android:id="@+id/join_ws_button"
+                android:textColor="#ffffff"
+                android:background="@null"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:layout_alignParentStart="true" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

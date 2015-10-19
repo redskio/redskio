@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\network\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4a445ebd5790ee03b8ee8615a5300da62d7f7618">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-838864b4d6df092f147e4bc9a3c2982c5ba7af76.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\push\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f33451c8b3a8adff2115e7bb32273aa904f664f5">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-7c2f86d3b692ca9cf96a70d239d3f929fb8f5f68.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e23ea11124bb700eeddd4ab7aa848c615f493850">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-30e124e2a6e7d920cd40315c5e1044f87144d4c3.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6e85edfc9b5346d216e50ccef1f8e825504144a3">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-0af4e9f7232dcc21edc5df7316a552e5a62a3899.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\libs\libDaumMapAndroid.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="91c9de067eff6b3e026d21934e91ec45db8cd277">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\libDaumMapAndroid-6f6a2e64127fa718abb14ac53a8a4300f232d39c.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="42a1ee578b62fd1bd28b3307a679dc9ba0791587">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-dd63a44c659a1f4f06dcaf54bb737b93ba800efa.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\auth\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ad06a8c3d1b280d8bb9118fd34a35a8e223e905">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-433dda87f932fbfe69998f9774792e5ad33bf1dd.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0f254ec13d6671680482d2218f01ecf14dfa93e6">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-c3cda9f587d4480cd05447de7ebeb4921c178de6.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c5cafb324568d954780abb858c25db7ce675ab3c">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-c822729d9ed5506b6289c5c12d9ca0e69ebef9d1.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-5b1282214cdb3b28415039eef59de9511a509286.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="130b32ed466fa0f63efd4c7d6250ccd2ed506790">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-3c192a78590270f7a00e84e650c5d6559975ba56.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.4\129874135e6081269ace2312092031558865de12\bolts-android-1.1.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="129874135e6081269ace2312092031558865de12">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-28cddd50982097ee54da885993a302476dcd297a.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="2e24e5f1b11170163028277de63f709e42525db4">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-80a4b11b78efacc5da3c354fc8c73dc6a6402a0a.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\friends\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a80583b581d38887a4a9342a0d5ea110ff529a00">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-05d5525b3c76b1da06c98fe458f42f16fdd7ce01.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="77a9dcb5f8b1dba36aacaa9c150eb0942dbea158">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-2e906d2284c7d607990b5d78dc8cfbbd9434255f.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="edea92852b40eee716e910af8dad9eeaa58fb0e1">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-aab85839ade062bec51f21c12ab170d60d188ab6.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-c9be509a90df83a006a8a491fb87d77433953704.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="cb6fab7a71fa9ec1f483d44c5fca65ab469d8aca">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-b4a669307df7abff1c4911f5c3f0006bf18bfd47.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\kakaolink\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b4d3e69914bd558f3015c95b8510ee606a73683e">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-6e1b2a26fd82525b4b93a8eb98c0ebc4339a4495.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-2c4e4b682dec2898506cf2803143cd696514cd6e.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="adebe28e0c0c05d34a3bfd76f3275bf4d8ff87b6">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-3dbe6cec79f133aa21123b10819691170fcbf863.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-acbf456eab747c14ef14a543cf73a5c112e875fb.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\.gradle\caches\modules-2\files-2.1\com.mcxiaoke.volley\library\1.0.6\b2e6988baeea1aed656995f973aaa2fc3feaf447\library-1.0.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b2e6988baeea1aed656995f973aaa2fc3feaf447">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\library-1.0.6-41bba89ceb2fbc2a3043bc00483117b705491d7f.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\kakaostory\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c7a97a51da747eb36a4262adc20c5a387d6df991">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-fd80e4a2b1256cb50f8afdeff1b102cf2bc8bec6.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-fc62b32ff89fb593cd7fcfe59644095ef0435512.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ff30fa49c07a08c3035d7218a3efebf5680d522">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-d05dab6e5f9710c0166141cb975fd703e3d887fc.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="2491ae1b2a848af1f4f0c795f3117c1bd6a1989f">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-7d561d1c2cd2cf5f7af269e3d97720e4fc5f9e24.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\kakaotalk\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6e46697056c4a0946b0ec7d8e473587a8568e289">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-7214b0542645adb7c030ebf6e19a1e1f5292db17.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b99f0b78bbcb76b915bc6529a83b65d4d46990dd">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-6ad11c37497a01184f6e7d9ebc0ec0f3c1c44d4d.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0124ce31248c0e8acfa2b28283c6d1a4d76e73d2">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-30320747230b2d48e8fe49d6d1dd756407a39d83.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4a135d56554069e5d0ff80e3220e887e57146ee5">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-738869f92158b20a9010d423c07d3c6131863a8d.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="98137c4d12c50923f5809852b1ef4d1c4e162081">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-eec4f3c84e74062f61f95610dbe02e226ab43a1f.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="166e458ee3b5fb5fcff0f936df3f3a788e6c54f3">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-2bbf8e77ec4edaffdec72a6947c44ace7ac79792.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-124edc0131d13f1cc81ce45826b8f8091ab1cb5e.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-dc3cab25a02d6ce0869d5fd46e2f1251fa49b402.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\libs\android-async-http-1.4.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a845a88238be0b5be9d238652c1bc0605ef91f52">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.6-c2edde96b0bcdd7f650356966030df8eafd90f75.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c756d14e99d39471e99013a1e8fd2f3813ed42bf">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-8f068ec89236850ee9e5e395506a1c6b6179d030.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c2ac04c5b232f6f0658ee4f1c13be09cd76406e2">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-a603b0039576881653b62a8ee4c590ca5aaed663.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.8.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d11330ea68c0d964d30d5caed1f27e6b1488b189">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-7f8181711bb86aa2edbb7086422c912adc767d03.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\usermgmt\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a0950b05197b92b417ed98a9ac87fad636ce0810">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-1866dc77b94fd7f8918ffd007684c8016b2d10a0.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\util\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3e2e87274ea207e0d8baf956db3f914f7e7506a0">
+        <dex dex="C:\Users\jaewoo\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-3f56ca73d1754ffaca3f7a1ccb7313ca1e249aa1.jar" />
+    </item>
+
+</items>
