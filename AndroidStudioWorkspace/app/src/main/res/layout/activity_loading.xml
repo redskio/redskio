@@ -3,7 +3,7 @@
     android:id="@+id/LinearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loading"
+    android:background="@drawable/app_loading"
     android:orientation="vertical"
     tools:context="kr.whatshoe.forestlabcom.MainActivity$PlaceholderFragment" >
 

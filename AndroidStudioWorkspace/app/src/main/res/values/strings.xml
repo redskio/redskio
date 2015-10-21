@@ -24,7 +24,7 @@
     <string name="loginButton">로그인</string>
     <string name="singleOrderText">혼자 왓슈</string>
     <string name="groupOrderText">단체로 왓슈</string>
-    <string name="buyBtnText">결 제 하 기</string>
+    <string name="buyBtnText">장 소 선 택</string>
     <string name="locationBtnText">장소 선택 완료</string>
     <string name="service_title">위치 확인</string>
     <string name="search_title">위치 검색</string>

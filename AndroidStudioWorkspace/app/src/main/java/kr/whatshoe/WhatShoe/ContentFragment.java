@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 
 /**
@@ -88,7 +87,7 @@ public class ContentFragment extends Fragment implements View.OnClickListener, V
 
         switch (v.getId()) {
             case kr.whatshoe.WhatShoe.R.id.service_layout:
-                getActivity().getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new MainActivityFragment()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new ServiceFragment()).commit();
                 break;
             case R.id.upper_content_layout:
                 startContentDetail(ContentDetailActivity.class, 0);
@@ -150,18 +149,18 @@ public class ContentFragment extends Fragment implements View.OnClickListener, V
         return false;
     }
     private void refreshPushIcon(){
-        orderPreferences = getActivity().getSharedPreferences("order_pref",0);
-        if(orderPreferences.contains("orderCode")){
-            ActionBar actionbar = ((ActionBarActivity) getActivity()).getSupportActionBar();
-            View mCustomView = actionbar.getCustomView();
-            TextView pushIcon = (TextView)mCustomView.findViewById(R.id.push_text);
-            if(!orderPreferences.getBoolean("isRead",true)) {
-                pushIcon.setVisibility(View.VISIBLE);
-                actionbar.setCustomView(mCustomView);
-            } else{
-                pushIcon.setVisibility(View.INVISIBLE);
-                actionbar.setCustomView(mCustomView);
-            }
-        }
+//        orderPreferences = getActivity().getSharedPreferences("order_pref",0);
+//        if(orderPreferences.contains("orderCode")){
+//            ActionBar actionbar = ((ActionBarActivity) getActivity()).getSupportActionBar();
+//            View mCustomView = actionbar.getCustomView();
+//            TextView pushIcon = (TextView)mCustomView.findViewById(R.id.push_text);
+//            if(!orderPreferences.getBoolean("isRead",true)) {
+//                pushIcon.setVisibility(View.VISIBLE);
+//                actionbar.setCustomView(mCustomView);
+//            } else{
+//                pushIcon.setVisibility(View.INVISIBLE);
+//                actionbar.setCustomView(mCustomView);
+//            }
+//        }
     }
 }

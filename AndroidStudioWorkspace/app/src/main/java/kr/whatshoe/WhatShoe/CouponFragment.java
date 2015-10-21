@@ -1,5 +1,6 @@
 package kr.whatshoe.WhatShoe;
 
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -44,7 +45,26 @@ public class CouponFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onResume() {
+        requestDBUpdate();
         super.onResume();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.couponBtn:
+                final CouponDialog dialog = new CouponDialog(getActivity());
+                dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+                        requestDBUpdate();
+                    }
+                });
+                dialog.show();
+                break;
+        }
+    }
+    private void requestDBUpdate(){
         WhatshoeDbHelper dbHelper = new WhatshoeDbHelper(getActivity());
         dbHelper.open();
         Cursor cursor = dbHelper.fetchAllCoupons();
@@ -60,16 +80,5 @@ public class CouponFragment extends Fragment implements View.OnClickListener {
             emptyView.setVisibility(View.GONE);
         }
         adapter.notifyDataSetChanged();
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.couponBtn:
-                final CouponDialog dialog = new CouponDialog(getActivity());
-                dialog.show();
-                break;
-        }
     }
 }

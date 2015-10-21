@@ -29,8 +29,6 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
     private ImageButton manBtn;
     private ImageButton womanBtn;
     private ImageView[] shoeImg;
-    private String locationResult = "";
-    private String locationResultDetail = "";
     public ServiceFragment() {
 
     }
@@ -41,10 +39,9 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
         ActionBar actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
         actionBar.hide();
 
+
         View rootView = inflater.inflate(R.layout.fragment_service, container, false);
         this.inflater = inflater;
-        locationResult = getArguments().getString("locationResult");
-        locationResultDetail = getArguments().getString("locationResultDetail");
         manBtn = (ImageButton) rootView.findViewById(R.id.manBtn);
         manBtn.setOnClickListener(this);
         womanBtn = (ImageButton) rootView.findViewById(R.id.womanBtn);
@@ -131,18 +128,14 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
                     Toast.makeText(getActivity(), "현재 선택된 주문이 없습니다. 주문을 선택해 주세요.", Toast.LENGTH_SHORT).show();
                     break;
                 }
-                MainActivity.currentFragment = MainActivity.FRAGMENT_FLAG_CONTENT;
-                intent = new Intent();
-                intent.setClass(getActivity(), PayActivity.class);
-                intent.putExtra("order", arraylist);
-                intent.putExtra("locationResult", locationResult);
-                intent.putExtra("locationResultDetail", locationResultDetail);
-                getActivity().startActivity(intent);
-//                }
-
+                MapFragment fragment = new MapFragment();
+                Bundle bundle= new Bundle();
+                bundle.putParcelableArrayList("order",arraylist);
+                fragment.setArguments(bundle);
+                getActivity().getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, fragment).commit();
                 break;
             case R.id.cancel_btn:
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, new MainActivityFragment()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, new MapFragment()).commit();
                 break;
             case R.id.servicepage_gift_btn:
                 MainActivity.currentFragment = MainActivity.FRAGMENT_FLAG_SERVICE;

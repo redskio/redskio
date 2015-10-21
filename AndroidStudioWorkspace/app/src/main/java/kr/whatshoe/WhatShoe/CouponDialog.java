@@ -86,7 +86,7 @@ public class CouponDialog extends Dialog {
                             SharedPreferences idPreferences = context.getSharedPreferences("login_pref", 0);
                             String id = idPreferences.getString("id", "WhatShoe");
                             addCouponToDB(desc, date, price, 1);
-                            Toast.makeText(context,price+"원 쿠폰입니다.",Toast.LENGTH_SHORT).show();
+                            close();
 
                         } catch (JSONException e) {
                             Toast.makeText(context,"등록되지 않은 쿠폰번호입니다.",Toast.LENGTH_SHORT).show();
@@ -119,6 +119,7 @@ public class CouponDialog extends Dialog {
         dbHelper.open();
         dbHelper.createCoupon(desc,date,price, Integer.toString(state));
     }
+
 }
 
 

@@ -17,7 +17,7 @@ public class GiftDetailFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DrawerActivity.type = DrawerActivity.GIFT_DETAIL_FRAGMENT_TYPE;
+        ((DrawerActivity)getActivity()).type = DrawerActivity.GIFT_DETAIL_FRAGMENT_TYPE;
     }
 
     @Override

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -153,8 +154,13 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(kr.whatshoe.WhatShoe.R.layout.fragment_layout, container, false);
-        Button joinBtn = (Button) rootView.findViewById(R.id.join_ws_button);
+        View rootView = inflater.inflate(R.layout.login_fragment,container,false);
+
+        ViewPager pager = (ViewPager)rootView.findViewById(R.id.pager);
+        Tutorial_adapter adapter = new Tutorial_adapter(inflater);
+        pager.setAdapter(adapter);
+        View loginView = inflater.inflate(kr.whatshoe.WhatShoe.R.layout.fragment_layout, null);
+        Button joinBtn = (Button) loginView.findViewById(R.id.join_ws_button);
         joinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -163,25 +169,18 @@ public class LoginFragment extends Fragment {
                 getActivity().startActivity(intent);
             }
         });
-
-        return rootView;
-
-    }
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        loginText = (EditText) view.findViewById(R.id.login_id_text);
-        passwdText = (EditText) view.findViewById(R.id.login_pw_text);
-        LoginButton loginButton = (LoginButton) view.findViewById(kr.whatshoe.WhatShoe.R.id.login_button);
-        loginWsButton = (Button) view.findViewById(kr.whatshoe.WhatShoe.R.id.login_ws_button);
+        loginText = (EditText) loginView.findViewById(R.id.login_id_text);
+        passwdText = (EditText) loginView.findViewById(R.id.login_pw_text);
+        LoginButton loginButton = (LoginButton) loginView.findViewById(kr.whatshoe.WhatShoe.R.id.login_button);
+        loginWsButton = (Button) loginView.findViewById(kr.whatshoe.WhatShoe.R.id.login_ws_button);
         loginWsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginType = SIMPLELOGIN;
                 id = loginText.getText().toString();
                 String password = passwdText.getText().toString();
-                if(id.equals("")){
-                    Toast.makeText(getActivity(),"아이디를 확인해 주세요.",Toast.LENGTH_SHORT).show();
+                if (id.equals("")) {
+                    Toast.makeText(getActivity(), "아이디를 확인해 주세요.", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 doLogin(passwdText.getText().toString());
@@ -190,7 +189,10 @@ public class LoginFragment extends Fragment {
         loginButton.setReadPermissions(Arrays.asList("public_profile, email, user_birthday"));
         loginButton.setFragment(this);
         loginButton.registerCallback(callbackManager, callback);
-
+        loginButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.login_facebook_btn, 0, 0, 0);
+        adapter.addView(loginView);
+        adapter.notifyDataSetChanged();
+        return rootView;
 
     }
 

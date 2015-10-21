@@ -134,7 +134,7 @@ public class MapSearchFragment extends Fragment implements View.OnClickListener,
 
             case R.id.cancel_btn:
                 closeKeyboad(searchText);
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, new MainActivityFragment()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, new MapFragment()).commit();
                 break;
             default:
                 break;

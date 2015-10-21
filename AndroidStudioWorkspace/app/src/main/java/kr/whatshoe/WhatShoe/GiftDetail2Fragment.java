@@ -57,7 +57,7 @@ public class GiftDetail2Fragment extends Fragment implements View.OnClickListene
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DrawerActivity.type = DrawerActivity.GIFT_DETAIL_FRAGMENT2_TYPE;
+        ((DrawerActivity)getActivity()).type = DrawerActivity.GIFT_DETAIL_FRAGMENT2_TYPE;
     }
 
     @Override

@@ -16,7 +16,6 @@ import android.os.Message;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
@@ -59,7 +58,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         actionBarSetting();
         setLocationSetting();
         if (currentFragment == FRAGMENT_FLAG_SERVICEORDER) {
-            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new MainActivityFragment()).commitAllowingStateLoss();
+            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new MapFragment()).commitAllowingStateLoss();
         } else if (currentFragment == FRAGMENT_FLAG_CONTENT) {
             getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new ContentFragment()).commitAllowingStateLoss();
         }
@@ -146,7 +145,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         } else if (currentFragment == FRAGMENT_FLAG_SERVICEORDER) {
             getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new ContentFragment()).commit();
         } else if (currentFragment == FRAGMENT_FLAG_SEARCH){
-            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new MainActivityFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new MapFragment()).commit();
         }
     }
 
@@ -186,14 +185,17 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     };
 
     private void actionBarSetting() {
+        orderPreferences = getSharedPreferences("order_pref", 0);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setElevation(0);
-
         View mCustomView = LayoutInflater.from(this).inflate(
                 kr.whatshoe.WhatShoe.R.layout.action_bar, null);
+
+        final TextView pushIcon = (TextView) mCustomView.findViewById(R.id.push_text);
+        refreshPushIcon(pushIcon);
         ImageButton actionBtn = (ImageButton) mCustomView.findViewById(R.id.action_imageButton1);
         actionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -202,7 +204,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                 dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
                     @Override
                     public void onDismiss(DialogInterface dialog) {
-                        refreshPushIcon();
+                        refreshPushIcon(pushIcon);
                     }
                 });
 
@@ -214,29 +216,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                 dialog.show();
             }
         });
-
-        orderPreferences = getSharedPreferences("order_pref", 0);
-        if (orderPreferences.contains("orderCode")) {
-            ActionBar actionbar = getSupportActionBar();
-            TextView pushIcon = (TextView) mCustomView.findViewById(R.id.push_text);
-            if (!orderPreferences.getBoolean("isRead", true)) {
-                pushIcon.setVisibility(View.VISIBLE);
-                actionbar.setCustomView(mCustomView);
-            } else {
-                pushIcon.setVisibility(View.INVISIBLE);
-                actionbar.setCustomView(mCustomView);
-            }
-        }
-
-        //ActionBar Layout setting.
-        Toolbar parent = (Toolbar) mCustomView.getParent();
-        parent.setContentInsetsAbsolute(0, 0);
+        actionBar.setCustomView(mCustomView);
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.argb(255, 35,
                 23, 21)));
-
-        ActionBar.LayoutParams params = new ActionBar.LayoutParams(
-                ActionBar.LayoutParams.MATCH_PARENT,
-                ActionBar.LayoutParams.MATCH_PARENT);
 
     }
 
@@ -316,19 +298,13 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
     }
 
-    private void refreshPushIcon() {
-        orderPreferences = getSharedPreferences("order_pref", 0);
-        if (orderPreferences.contains("orderCode")) {
-            ActionBar actionbar = getSupportActionBar();
-            View mCustomView = actionbar.getCustomView();
-            TextView pushIcon = (TextView) mCustomView.findViewById(R.id.push_text);
-            if (!orderPreferences.getBoolean("isRead", true)) {
-                pushIcon.setVisibility(View.VISIBLE);
-                actionbar.setCustomView(mCustomView);
-            } else {
-                pushIcon.setVisibility(View.INVISIBLE);
-                actionbar.setCustomView(mCustomView);
-            }
+    private void refreshPushIcon(TextView view) {
+          if (orderPreferences.contains("orderCode")) {
+                        if (!orderPreferences.getBoolean("isRead", true)) {
+                view.setVisibility(View.VISIBLE);
+                        } else {
+                            view.setVisibility(View.INVISIBLE);
+                        }
         }
     }
 }

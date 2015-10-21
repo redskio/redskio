@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@null" >
+        android:background="@color/color_brown" >
 
         <ImageView
             android:id="@+id/imageItem"
@@ -38,7 +38,9 @@
                 android:src="@drawable/button_actionbar"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="10dp"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="false"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
 
             <TextView
                 android:layout_width="wrap_content"

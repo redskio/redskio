@@ -6,7 +6,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -44,7 +43,6 @@ public class PayActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         loginPreference = getSharedPreferences("login_pref", 0);
         orderPreference = getSharedPreferences("order_pref", 0);
-
         arrayList = bundle.getParcelableArrayList("order");
         locationResult = bundle.getString("locationResult", "");
         locationResultDetail = bundle.getString("locationResultDetail","");
@@ -126,7 +124,6 @@ public class PayActivity extends AppCompatActivity {
                                   Throwable arg3) {
                 Toast.makeText(PayActivity.this, "인터넷 접속이 원할하지 않습니다.",
                         Toast.LENGTH_SHORT).show();
-                Log.i("PostingFailed", arg2);
             }
 
             @Override

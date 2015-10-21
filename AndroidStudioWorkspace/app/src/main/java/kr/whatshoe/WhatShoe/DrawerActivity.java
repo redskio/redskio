@@ -75,11 +75,7 @@ public class DrawerActivity extends AppCompatActivity {
                 if (type == GIFT_DETAIL_FRAGMENT_TYPE) {
                     getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new GiftFragment()).commit();
                 } else if (type == GIFT_DETAIL_FRAGMENT2_TYPE) {
-                    GiftDetailFragment fragment = new GiftDetailFragment();
-                    Bundle bundle = new Bundle();
-                    bundle.putInt("price", fragment.getArguments().getInt("price"));
-                    fragment.setArguments(bundle);
-                    getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, fragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new GiftFragment()).commit();
                 } else {
                     finish();
                 }
@@ -92,12 +88,9 @@ public class DrawerActivity extends AppCompatActivity {
         if (type == GIFT_DETAIL_FRAGMENT_TYPE) {
             getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new GiftFragment()).commit();
         } else if (type == GIFT_DETAIL_FRAGMENT2_TYPE) {
-            GiftDetailFragment fragment = new GiftDetailFragment();
-            Bundle bundle = new Bundle();
-            bundle.putInt("price", fragment.getArguments().getInt("price"));
-            fragment.setArguments(bundle);
-            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, fragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new GiftFragment()).commit();
+        } else {
+            finish();
         }
-        super.onBackPressed();
     }
 }

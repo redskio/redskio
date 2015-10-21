@@ -67,7 +67,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="57.5dp"
+                        android:layout_height="62.5dp"
                         android:layout_weight="1"
                         android:background="@color/color_login_default"
                         android:orientation="vertical">
@@ -109,7 +109,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="57.5dp"
+                        android:layout_height="62.5dp"
                         android:layout_weight="1"
                         android:background="#d9d9d9"
                         android:orientation="vertical"
@@ -337,7 +337,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
         android:background="@drawable/red_round_btn"
         android:longClickable="false"
         android:minHeight="60dp"

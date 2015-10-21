@@ -36,15 +36,14 @@
                 android:layout_width="237dp"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:layout_margin="1dp"
-                android:layout_gravity="center_horizontal">
+                android:layout_margin="1dp">
 
                 <EditText
                     android:layout_width="237dp"
                     android:layout_height="40dp"
                     android:id="@+id/login_id_text"
-                    android:background="@drawable/edittext_join"
-                    android:drawableStart="@drawable/login_id"
+                    android:background="@drawable/edittext_login"
+                    android:drawableLeft="@drawable/login_id"
                     android:hint="@string/login_id_hint"
                     android:paddingLeft="10dp"
                     android:textColorHint="@color/color_gray"
@@ -75,7 +74,7 @@
                     android:layout_width="237dp"
                     android:layout_height="40dp"
                     android:id="@+id/login_pw_text"
-                    android:drawableStart="@drawable/login_pw"
+                    android:drawableLeft="@drawable/login_pw"
                     android:background="@drawable/edittext_login"
                     android:hint="@string/login_pw_hint"
                     android:paddingLeft="10dp"
@@ -146,7 +145,7 @@
                 android:background="@null"
                 android:layout_marginTop="5dp"
                 android:textStyle="bold"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentLeft="true" />
         </RelativeLayout>
 
     </RelativeLayout>
