@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.os.Parcel;
 import android.os.Parcelable;

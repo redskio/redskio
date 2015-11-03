@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,7 +15,7 @@ public class LoadingActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(kr.whatshoe.WhatShoe.R.layout.activity_loading);
+        setContentView(kr.whatshoe.whatShoe.R.layout.activity_loading);
         mRunnable = new Runnable() {
             @Override
             public void run() {

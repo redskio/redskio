@@ -8,7 +8,7 @@ import android.os.Looper;
 
 import com.kakao.util.helper.log.Logger;
 
-import kr.whatshoe.WhatShoe.R;
+import kr.whatshoe.whatShoe.R;
 
 /**
  * @author leoshin, created at 15. 7. 30..

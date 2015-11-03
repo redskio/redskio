@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.content.Context;
 import android.view.LayoutInflater;

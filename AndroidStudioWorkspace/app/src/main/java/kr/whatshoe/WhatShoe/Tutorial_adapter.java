@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -23,10 +23,12 @@ public class Tutorial_adapter extends PagerAdapter {
     // return POSITION_NONE.
     public Tutorial_adapter(LayoutInflater inflater){
         this.inflater = inflater;
-        addImageView(R.drawable.page1);
         addImageView(R.drawable.page2);
         addImageView(R.drawable.page3);
         addImageView(R.drawable.page4);
+        addImageView(R.drawable.page5);
+        addImageView(R.drawable.page6);
+        addImageView(R.drawable.page7);
     }
     @Override
     public int getItemPosition (Object object)

@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -8,6 +8,7 @@ import android.os.Parcelable;
  */
 public class FixOrder implements Parcelable{
     private String contentText;
+    private String time;
     private int isChecked; //was boolean but int for check the order count
     private int price;
     public static final Parcelable.Creator<FixOrder> CREATOR = new Creator<FixOrder>() {
@@ -27,14 +28,16 @@ public class FixOrder implements Parcelable{
 
     }
 
-    public FixOrder(String contentText, int isChecked, int price) {
+    public FixOrder(String contentText, int isChecked, int price, String time) {
         this.contentText = contentText;
         this.isChecked = isChecked;
         this.price = price;
+        this.time = time;
     }
 
     public FixOrder(Parcel parcel){
         this.contentText=parcel.readString();
+        this.time = parcel.readString();
         this.isChecked = parcel.readInt();
         this.price = parcel.readInt();
     }
@@ -60,6 +63,12 @@ public class FixOrder implements Parcelable{
     public void setPrice(int price){
         this.price = price;
     }
+    public void setTime(String time){
+        this.time = time;
+    }
+    public String getTime(){
+        return time;
+    }
 
     @Override
     public int describeContents() {
@@ -69,6 +78,7 @@ public class FixOrder implements Parcelable{
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(contentText);
+        dest.writeString(time);
         dest.writeInt(isChecked);
         dest.writeInt(price);
     }

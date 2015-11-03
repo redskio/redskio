@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -28,32 +28,32 @@ public class DrawerActivity extends AppCompatActivity {
             case POINT_FRAGMENT_TYPE :
                 title = "POINT";
                 actionBarSetting();
-                getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new PointFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new PointFragment()).commit();
                 break;
             case GIFT_FRAGMENT_TYPE :
                 title = "선물 하기";
                 actionBarSetting();
-                getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new GiftFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new GiftFragment()).commit();
                 break;
             case HEALTHCARE_FRAGMENT_TYPE :
                 title = "왓슈 헬스케어";
                 actionBarSetting();
-                getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new HealthcareFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new HealthcareFragment()).commit();
                 break;
             case COUPON_FRAGMENT_TYPE:
                 title = "왓슈 쿠폰";
                 actionBarSetting();
-                getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new CouponFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new CouponFragment()).commit();
                 break;
             case EVENT_FRAGMENT_TYPE:
                 title = "왓슈 이벤트";
                 actionBarSetting();
-                getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new EventFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new EventFragment()).commit();
                 break;
             case HISTORY_FRAGMENT_TYPE:
                 title = "주문 내역";
                 actionBarSetting();
-                getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new HistoryFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new HistoryFragment()).commit();
                 break;
         }
     }
@@ -73,9 +73,9 @@ public class DrawerActivity extends AppCompatActivity {
             // Respond to the action bar's Up/Home button
             case android.R.id.home:
                 if (type == GIFT_DETAIL_FRAGMENT_TYPE) {
-                    getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new GiftFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new GiftFragment()).commit();
                 } else if (type == GIFT_DETAIL_FRAGMENT2_TYPE) {
-                    getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new GiftFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new GiftFragment()).commit();
                 } else {
                     finish();
                 }
@@ -86,9 +86,9 @@ public class DrawerActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (type == GIFT_DETAIL_FRAGMENT_TYPE) {
-            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new GiftFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new GiftFragment()).commit();
         } else if (type == GIFT_DETAIL_FRAGMENT2_TYPE) {
-            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new GiftFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new GiftFragment()).commit();
         } else {
             finish();
         }

@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -64,7 +64,7 @@ public class GroupOrderAdapter extends ArrayAdapter<FixOrder> {
         if (convertView == null) {
             convertView = inflater.inflate(layout, parent, false);
         }
-        ImageButton button = (ImageButton) convertView.findViewById(kr.whatshoe.WhatShoe.R.id.imageButton2);
+        ImageButton button = (ImageButton) convertView.findViewById(kr.whatshoe.whatShoe.R.id.imageButton2);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,17 +95,17 @@ public class GroupOrderAdapter extends ArrayAdapter<FixOrder> {
             }
         });
         washOrder.add(position, 0);
-        ImageButton button1 = (ImageButton) convertView.findViewById(kr.whatshoe.WhatShoe.R.id.imageButton);
+        ImageButton button1 = (ImageButton) convertView.findViewById(kr.whatshoe.whatShoe.R.id.imageButton);
         button1.setOnClickListener(new View.OnClickListener() {
             int order = washOrder.get(position);
 
             @Override
             public void onClick(View v) {
                 if (order > 0) {
-                    ((ImageButton) v).setImageResource(kr.whatshoe.WhatShoe.R.drawable.servicepage_btn1);
+                    ((ImageButton) v).setImageResource(kr.whatshoe.whatShoe.R.drawable.servicepage_woman);
                     order = 0;
                 } else {
-                    ((ImageButton) v).setImageResource(kr.whatshoe.WhatShoe.R.drawable.servicepage_btn1_push);
+                    ((ImageButton) v).setImageResource(kr.whatshoe.whatShoe.R.drawable.servicepage_woman_push);
                     order = 1;
                 }
             }

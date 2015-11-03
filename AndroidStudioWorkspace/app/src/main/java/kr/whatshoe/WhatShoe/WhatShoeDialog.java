@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -208,7 +208,7 @@ public class WhatShoeDialog extends Dialog {
     }
 
     private void setLayout() {
-        ImageButton cancleBtn = (ImageButton) findViewById(kr.whatshoe.WhatShoe.R.id.dialog_cancel_btn);
+        ImageButton cancleBtn = (ImageButton) findViewById(kr.whatshoe.whatShoe.R.id.dialog_cancel_btn);
         cancleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

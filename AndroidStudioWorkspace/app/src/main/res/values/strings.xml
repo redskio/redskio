@@ -11,8 +11,9 @@
     <string name="title_activity_loading">왓슈</string>
     <string name="pay_notice">* 주문 취소는 15분 이내에만 가능합니다.</string>
     <string name="pay_with_point">포인트 결제</string>
-    <string name="pay_with_phone">핸드폰 소액 결제</string>
+    <string name="pay_with_phone">휴대폰 소액 결제</string>
     <string name="pay_with_card">카드 결제</string>
+    <string name="pay_at_place">현장 결제</string>
     <string name="cancel_order">주문 취소</string>
     <string name="total_pay">총 결제 금액</string>
     <string name="address_guide"> 상세 주소를 입력해 주세요. (ex : 왓슈빌딩 1층)</string>
@@ -26,7 +27,7 @@
     <string name="groupOrderText">단체로 왓슈</string>
     <string name="buyBtnText">장 소 선 택</string>
     <string name="locationBtnText">장소 선택 완료</string>
-    <string name="service_title">위치 확인</string>
+    <string name="service_title">위치 알려주기</string>
     <string name="search_title">위치 검색</string>
     <string name="service_subtitle1">어딨슈</string>
     <string name="join_ws_button">회원가입</string>
@@ -58,18 +59,18 @@
     <string name="forman_fix_half">남자 반창덧댐</string>
     <string name="forman_fix_sub">남자 보조굽</string>
     <string name="forman_fix_wash_menu">구두 닦이\n(5,000원)</string>
-    <string name="forman_fix_whole_menu">남자 통굽갈이\n(15,000원)</string>
-    <string name="forman_fix_half_menu">남자 반창덧댐\n(12,000원)</string>
-    <string name="forman_fix_sub_menu">남자 보조굽\n(12,000원)</string>
+    <string name="forman_fix_whole_menu">남자 통굽갈이\n(18,000원)</string>
+    <string name="forman_fix_half_menu">남자 반창덧댐\n(15,000원)</string>
+    <string name="forman_fix_sub_menu">남자 보조굽\n(15,000원)</string>
 
     <string name="forwoman_title">숙녀의 구두 수선</string>
     <string name="forwoman_fix_sub">여자 보조굽</string>
     <string name="forwoman_fix_submid">여자 보조굽(중)</string>
     <string name="forwoman_fix_subbig">여자 보조굽(대)</string>
     <string name="forwoman_fix_wash_menu">구두 닦이\n(5,000원)</string>
-    <string name="forwoman_fix_sub_menu">여자 보조굽\n(3,000원)</string>
-    <string name="forwoman_fix_submid_menu">여자 보조굽(중)\n(4,000원)</string>
-    <string name="forwoman_fix_subbig_menu">여자 보조굽(대)\n(5,000원)</string>
+    <string name="forwoman_fix_sub_menu">여자 보조굽\n(5,000원)</string>
+    <string name="forwoman_fix_submid_menu">여자 보조굽(중)\n(6,000원)</string>
+    <string name="forwoman_fix_subbig_menu">여자 보조굽(대)\n(7,000원)</string>
     <string name="action_example">Example action</string>
 
     <string name="present_service_title">현재 서비스 안내</string>
@@ -381,5 +382,6 @@
     <string name="content_detail4_description1">‘훈남이다.’ 캐주얼한 셔츠에 편안하게 걷어 올린 소매, 셔츠 색과 잘 어울리는 네이비색 면바지까지. 패션 센스 또한 훌륭하다고 생각하는 순간, 검정색 스포츠 샌들이 눈에 보인다. 여기에 예의를 갖춰 신은 흰색 양말을 보자 방금 전 느꼈던 흐뭇한 감정은 온데간데없이 사라진다.‘\n\n로퍼를 신었더라면….’ 여자는 생각했다.\n\n이처럼 아무리 잘생기고 옷차림에 신경 썼더라도 신발을 잘못 선택했다면 외모가 반감되고 옷 고르느라 공들인 시간이 한순간에 무의미해질 수도 있다.\n\n물론, 패션에 신경 쓰는 남성이라면 신발에도 신경 쓰기 마련이긴 하지만 말이다.\n\n‘패션의 완성은 얼굴’이라고 말들 하지만 신발이 얼굴을 완성시키기도, 미완성시키기도 한다. 디자인 외에 한 가지 더 기억해야 할 것은 청결이라는 사실을 잊지 말자.\n\n남자를 완성시키는 구두에 대해 알아본다. </string>
     <string name="content_detail4_title2">#1. LVMH 그룹의 최고급 남성 수제화 브랜드, 벨루티(Berluti)</string>
     <string name="content_detail4_description2">895년 파리에 첫 매장을 오픈한 이래로 4대에 걸쳐 이어온 이 시대 최고의 장인 정신의 아이콘이라고 할 수 있는 유럽 상류 사회 대표 브랜드이다.\n\n250번의 손길을 거쳐서 완성하는 이탈리아 수제구두인 벨루티는 고객과의 두 번에 걸친 상담을 통해 완성되며 제작기간이 10개월이 걸린다.\n\n베네치아 가죽은 살아 숨쉬는 스킨처럼 가죽 표면의 생명력을 유지하고 최고 유연함과 부드러움을 지녔다. 케네디 전 미국 대통령, 예술가 앤디 워홀, 칼 라거펠트 등과 같은 정치, 예술, 패션계의 저명인사들이 애용해왔다.</string>
+    <string name="title_activity_pg">PGActivity</string>
 
 </resources>

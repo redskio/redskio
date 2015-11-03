@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import kr.whatshoe.WhatShoe.R;
+import kr.whatshoe.whatShoe.R;
 
 
 import java.util.List;

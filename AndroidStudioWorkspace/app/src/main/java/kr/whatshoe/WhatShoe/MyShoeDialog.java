@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -25,22 +25,27 @@ import com.loopj.android.http.TextHttpResponseHandler;
 
 import org.apache.http.Header;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import kr.whatshoe.Util.HttpClient;
 
 /**
  * Created by jaewoo on 2015-08-20.
  */
-public class MyShoeDialog extends Dialog {
+public class MyShoeDialog extends Dialog implements View.OnClickListener {
     final static int MALE = 1;
     final static int FEMALE = 2;
+    final static int NODATA = 3;
     Context context;
 
     private ArrayList<Integer> orderList;
     private ImageView[] images;
     private TextView[] statusTitles;
     private ImageView[] statusIcons;
+    private int sex;
     SharedPreferences orderPreferences;
     SharedPreferences loginPreferences;
     @Override
@@ -75,26 +80,25 @@ public class MyShoeDialog extends Dialog {
         callBtn.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse("http://goto.kakao.com/@whatshoe"));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://goto.kakao.com/@whatshoe"));
                 context.startActivity(intent);
                 return false;
             }
         });
         ImageButton closeBtn = (ImageButton)findViewById(R.id.myshoe_close);
-        closeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                close();
-            }
-        });
+        closeBtn.setOnClickListener(this);
         ImageView myshoeImage = (ImageView)findViewById(R.id.myshoe_image);
-        int sex = getOrderSex();
+        ImageButton pickUpCancleBtn = (ImageButton)findViewById(R.id.pickup_cancle_btn);
+        pickUpCancleBtn.setOnClickListener(this);
+
+        initStatus();
+        sex = getOrderSex();
         if(sex==MALE) {
             LinearLayout myshoeLayout = (LinearLayout)findViewById(R.id.myshoe_layout);
             myshoeLayout.setVisibility(View.VISIBLE);
             LinearLayout myshoeEmptyLayout = (LinearLayout)findViewById(R.id.myshoe_empty_layout);
             myshoeEmptyLayout.setVisibility(View.GONE);
-            myshoeImage.setImageResource(R.drawable.myshoe_men);
+            myshoeImage.setImageResource(R.drawable.myshoe_men1);
         } else if( sex==FEMALE) {
             LinearLayout myshoeLayout = (LinearLayout)findViewById(R.id.myshoe_layout);
             myshoeLayout.setVisibility(View.VISIBLE);
@@ -107,8 +111,7 @@ public class MyShoeDialog extends Dialog {
             LinearLayout myshoeEmptyLayout = (LinearLayout)findViewById(R.id.myshoe_empty_layout);
             myshoeEmptyLayout.setVisibility(View.VISIBLE);
         }
-        initImageResources();
-        initStatus();
+
         TextView callText = (TextView)findViewById(R.id.call_text);
         Html.ImageGetter imageGetter = new Html.ImageGetter() {
 
@@ -127,12 +130,13 @@ public class MyShoeDialog extends Dialog {
         };
         Spanned htmlText = Html.fromHtml( "지금 <img src=\"icon\" width=50 height=50> 문의 하기", imageGetter, null );
         callText.setText(htmlText);
+        initImageResources();
 
 }
     private int getOrderSex(){
         initOrderData();
         if(orderList.isEmpty())
-            return 0;
+            return NODATA;
         if(orderList.get(0)>=14){
             return FEMALE;
         } else {
@@ -182,12 +186,10 @@ public class MyShoeDialog extends Dialog {
                                   Throwable arg3) {
                 Toast.makeText(context, "인터넷 접속상태를 확인해 주세요.",
                         Toast.LENGTH_SHORT).show();
-                Log.i("PostingFailed", arg2);
             }
 
             @Override
             public void onSuccess(int arg0, Header[] arg1, String arg2) {
-                Log.i("!!!!!!!!!!!!",arg2);
                 if (arg2.trim().equals("\uFEFFfail")) {
                     turnOnStatus((0));
                 } else if(arg2.trim().equals("\uFEFF0")){
@@ -196,6 +198,10 @@ public class MyShoeDialog extends Dialog {
                     turnOnStatus(1);
                 } else if(arg2.trim().equals("\uFEFF2")){
                     turnOnStatus(2);
+                } else if(arg2.trim().equals("\uFEFF3")){
+                    orderPreferences.edit().clear().apply();
+                } else {
+                    orderPreferences.edit().clear().apply();
                 }
             }
         });
@@ -222,11 +228,68 @@ public class MyShoeDialog extends Dialog {
                 break;
         }
     }
+    private void pushStatus(int status){
+        RequestParams params = new RequestParams();
+        params.put("id", loginPreferences.getString("id", "whatshoe"));
+        params.put("order_time", orderPreferences.getString("orderTime", "0"));
+        params.put("order_code", orderPreferences.getString("orderCode","0"));
+        params.put("order_state", status);
+        HttpClient.post("member/android_get_orderupdate.php", params, new TextHttpResponseHandler() {
 
+            @Override
+            public void onFailure(int arg0, Header[] arg1, String arg2,
+                                  Throwable arg3) {
+                Toast.makeText(context, "인터넷 접속상태를 확인해 주세요.",
+                        Toast.LENGTH_SHORT).show();
+                Log.i("PostingFailed", arg2);
+            }
+
+            @Override
+            public void onSuccess(int arg0, Header[] arg1, String arg2) {
+                if (arg2.trim().equals("\uFEFFfail")) {
+                    Toast.makeText(context, "취소에 실패했습니다. 고객센터로 문의해 주세요.",
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(context, "주문이 취소되었습니다.",
+                            Toast.LENGTH_SHORT).show();
+                    orderPreferences.edit().clear().apply();
+                }
+            }
+        });
+    }
     public void close() {
         this.dismiss();
     }
 
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.myshoe_close:
+                close();
+                break;
+            case R.id.pickup_cancle_btn:
+                try {
+                    SimpleDateFormat transFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+                    Date orderDate = transFormat.parse(orderPreferences.getString("orderTime", "2015-10-1 10:10:10"));
+                    Long i= orderDate.getTime()+900*1000;
+                    if(new Date().getTime()>i){
+                        Toast.makeText(context, "주문 후 15분 내에만 취소 할 수 있습니다.",
+                                Toast.LENGTH_SHORT).show();
+                        break;
+                    }else {
+                         pushStatus(4);
+                        close();
+                    }
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                    Toast.makeText(context, "취소에 실패했습니다. 고객센터로 문의해 주세요.",
+                            Toast.LENGTH_SHORT).show();
+
+                }
+
+                break;
+        }
+    }
 }
 
 

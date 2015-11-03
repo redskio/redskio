@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -46,10 +46,11 @@ public class GiftDetail2Fragment extends Fragment implements View.OnClickListene
     private int KAKAO = 2;
     private int couponType = 0;
     private UnderlineText messageText;
+    public static final long HOUR = 3600*1000;
     String id = "";
     Cursor cursor;
     String couponCode;
-
+    private BroadcastReceiver receiver;
     public GiftDetail2Fragment() {
         // Required empty public constructor
     }
@@ -172,7 +173,6 @@ public class GiftDetail2Fragment extends Fragment implements View.OnClickListene
                             null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + id, null, null);
                     while (phones.moveToNext()) {
                         people_Number = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                        Log.i("!!!!!", people_Number);
                     }
                     phones.close();    //	End
                 }
@@ -228,8 +228,7 @@ public class GiftDetail2Fragment extends Fragment implements View.OnClickListene
 
         PendingIntent sentPI = PendingIntent.getBroadcast(getActivity(), 0, new Intent(SENT), 0);
         // 문자 보내는 상태를 감지하는 BroadcastReceiver를 등록한다.
-
-        getActivity().registerReceiver(new BroadcastReceiver() {
+        receiver = new BroadcastReceiver() {
 
 
             // 문자를 수신하면, 발생.
@@ -255,7 +254,8 @@ public class GiftDetail2Fragment extends Fragment implements View.OnClickListene
                         break;
                 }
             }
-        }, new IntentFilter(SENT));
+        };
+        getActivity().registerReceiver(receiver, new IntentFilter(SENT));
         // SmsManager를 가져온다.
         SmsManager sms = SmsManager.getDefault();
         // sms를 보낸다.
@@ -271,8 +271,8 @@ public class GiftDetail2Fragment extends Fragment implements View.OnClickListene
         Random random = new Random();
         int couponNum = random.nextInt(100000);
         couponCode = id.substring(0, 2) + couponNum;
-        texts.add("마음을 담은 왓슈! 쿠폰받고 빛나는 하루와 구두 되세요~");
-        texts.add("상품명 : 왓슈 불광 쿠폰 5000원");
+        texts.add("마음을 담은 왓슈! 쿠폰받고 빛나는 하루와 구두 되세요~\n");
+        texts.add("상품명 : 왓슈 불광 쿠폰 5000\n");
         texts.add("상품수량: 1개\n쿠폰번호: " + couponCode);
         ArrayList<PendingIntent> pi = new ArrayList<PendingIntent>();
         for (int i = 0; i < texts.size(); i++) {
@@ -315,9 +315,16 @@ public class GiftDetail2Fragment extends Fragment implements View.OnClickListene
     }
     private String getEventTime(){
         SimpleDateFormat formatter = new SimpleDateFormat ( "yyyy.MM.dd HH:mm:ss", Locale.KOREAN );
-        Date currentTime = new Date( );
-        currentTime.after(new Date(0, 2,0));
+        Date currentTime = new Date();
         String dTime = formatter.format ( currentTime );
         return dTime;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if(receiver!=null) {
+            getActivity().unregisterReceiver(receiver);
+        }
     }
 }

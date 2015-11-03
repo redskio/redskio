@@ -1,9 +1,11 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -13,20 +15,30 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.loopj.android.http.RequestParams;
+import com.loopj.android.http.TextHttpResponseHandler;
+
+import org.apache.http.Header;
 
 import java.util.Calendar;
 
 import kr.whatshoe.Util.GPSListener;
+import kr.whatshoe.Util.HttpClient;
+import kr.whatshoe.Util.QuickStartPreference;
+import kr.whatshoe.Util.RegistrationIntentService;
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
     private static final int BACKKEY_TIMEOUT = 2;
@@ -37,6 +49,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     public static final int FRAGMENT_FLAG_SERVICE = 2;
     public static final int FRAGMENT_FLAG_SEARCH = 3;
     public static int currentFragment = FRAGMENT_FLAG_CONTENT;
+    private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
+    private BroadcastReceiver mRegistrationBroadcastReceiver;
     private boolean mIsBackKeyPressed = false;
     public static boolean needLogin = true;
     private long mCurrTimeInMillis = 0;
@@ -47,7 +61,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     private LocationManager locationManager;
     private GPSListener gpsListener;
     private static String locationInfo = "";
-    private kr.whatshoe.WhatShoe.NavigationDrawerFragment mNavigationDrawerFragment;
+    private kr.whatshoe.whatShoe.NavigationDrawerFragment mNavigationDrawerFragment;
+    private SharedPreferences loginPreferences;
     private SharedPreferences orderPreferences;
 
     public static final boolean IS_JBMR2 = Build.VERSION.SDK_INT == Build.VERSION_CODES.JELLY_BEAN_MR2;
@@ -55,19 +70,31 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     @Override
     protected void onResume() {
         super.onResume();
+        if (currentFragment == FRAGMENT_FLAG_SERVICEORDER) {
+            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new ServiceFragment()).commitAllowingStateLoss();
+        } else if (currentFragment == FRAGMENT_FLAG_CONTENT) {
+            getInstanceIdToken();
+            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new ContentFragment()).commitAllowingStateLoss();
+        }  else {
+        getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new ContentFragment()).commitAllowingStateLoss();
+        }
         actionBarSetting();
         setLocationSetting();
-        if (currentFragment == FRAGMENT_FLAG_SERVICEORDER) {
-            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new MapFragment()).commitAllowingStateLoss();
-        } else if (currentFragment == FRAGMENT_FLAG_CONTENT) {
-            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new ContentFragment()).commitAllowingStateLoss();
-        }
+        LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
+                new IntentFilter(QuickStartPreference.REGISTRATION_READY));
+        LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
+                new IntentFilter(QuickStartPreference.REGISTRATION_GENERATING));
+        LocalBroadcastManager.getInstance(this).registerReceiver(mRegistrationBroadcastReceiver,
+                new IntentFilter(QuickStartPreference.REGISTRATION_COMPLETE));
+
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(kr.whatshoe.WhatShoe.R.layout.activity_main);
+        setContentView(kr.whatshoe.whatShoe.R.layout.activity_main);
+
+        registBroadcastReceiver();
 
 
         // After enter the activity, call Loading Activity. and transaction the ContentFragment
@@ -81,7 +108,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                     R.id.navigation_drawer,
                     (DrawerLayout) findViewById(R.id.drawer_layout));
             getSupportFragmentManager().beginTransaction()
-                    .add(kr.whatshoe.WhatShoe.R.id.container, new ContentFragment()).commit();
+                    .add(kr.whatshoe.whatShoe.R.id.container, new ContentFragment()).commit();
         }
 
     }
@@ -133,6 +160,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
             if (mIsBackKeyPressed == false) {
                 mIsBackKeyPressed = true;
                 mCurrTimeInMillis = Calendar.getInstance().getTimeInMillis();
+
                 Toast.makeText(this, "한번 더 Back 키를 눌러 주시면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show();
                 startTimer();
 
@@ -143,9 +171,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                 }
             }
         } else if (currentFragment == FRAGMENT_FLAG_SERVICEORDER) {
-            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new ContentFragment()).commit();
-        } else if (currentFragment == FRAGMENT_FLAG_SEARCH){
-            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new MapFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new ContentFragment()).commit();
+        } else if (currentFragment == FRAGMENT_FLAG_SERVICE){
+            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new ServiceFragment()).commit();
         }
     }
 
@@ -192,7 +220,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setElevation(0);
         View mCustomView = LayoutInflater.from(this).inflate(
-                kr.whatshoe.WhatShoe.R.layout.action_bar, null);
+                kr.whatshoe.whatShoe.R.layout.action_bar, null);
 
         final TextView pushIcon = (TextView) mCustomView.findViewById(R.id.push_text);
         refreshPushIcon(pushIcon);
@@ -219,7 +247,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         actionBar.setCustomView(mCustomView);
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.argb(255, 35,
                 23, 21)));
-
     }
 
     private void setLocationSetting() {
@@ -291,6 +318,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         if (locationManager != null && gpsListener != null) {
             locationManager.removeUpdates(gpsListener);
         }
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(mRegistrationBroadcastReceiver);
+
     }
 
     @Override
@@ -307,4 +336,88 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                         }
         }
     }
+    /**
+     * Instance ID를 이용하여 디바이스 토큰을 가져오는 RegistrationIntentService를 실행한다.
+     */
+    public void getInstanceIdToken() {
+        if (checkPlayServices()) {
+            // Start IntentService to register this application with GCM.
+            Intent intent = new Intent(this, RegistrationIntentService.class);
+            startService(intent);
+        }
+    }
+
+    /**
+     * LocalBroadcast 리시버를 정의한다. 토큰을 획득하기 위한 READY, GENERATING, COMPLETE 액션에 따라 UI에 변화를 준다.
+     */
+    public void registBroadcastReceiver(){
+        mRegistrationBroadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String action = intent.getAction();
+
+
+                if(action.equals(QuickStartPreference.REGISTRATION_READY)){
+                    Log.i("whatshoeGCM", "ready.");
+                    // 액션이 READY일 경우
+
+                } else if(action.equals(QuickStartPreference.REGISTRATION_COMPLETE)){
+                    // 액션이 COMPLETE일 경우
+                    String token = intent.getStringExtra("token");
+                    addToken(token);
+                }else if(action.equals(QuickStartPreference.REGISTRATION_GENERATING)){
+                    // 액션이 GENERATING일 경우
+                    Log.i("whatshoeGCM", "generating.");
+
+                }
+
+            }
+        };
+    }
+    private void addToken(final String token){
+        loginPreferences = getSharedPreferences("login_pref", 0);
+        String id= loginPreferences.getString("id","whatshoe");
+            if(id.equals("whatshoe")){
+                return;
+            } else if(loginPreferences.contains("token")){
+                return;
+            }
+            RequestParams params = new RequestParams();
+            params.put("id", id );
+            params.put("token", token );
+
+            HttpClient.post("member/android_token.php", params, new TextHttpResponseHandler() {
+
+                @Override
+                public void onFailure(int arg0, Header[] arg1, String arg2,
+                                      Throwable arg3) {
+                    Log.i("whatshoeGCM", "token_failed_to_register");
+                }
+
+                @Override
+                public void onSuccess(int arg0, Header[] arg1, String arg2) {
+                    if (arg2.trim().equals("\uFEFFsuccess")) {
+                        Log.i("whatshoeGCM","token_registered");
+                        loginPreferences.edit().putString("token",token).commit();
+                    }
+                }
+            });
+
+    }
+    private boolean checkPlayServices() {
+        int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+        if (resultCode != ConnectionResult.SUCCESS) {
+            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
+                Log.i("whatshoeGCM", "can use playservice.");
+                GooglePlayServicesUtil.getErrorDialog(resultCode, this,
+                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
+            } else {
+                Log.i("whatshoeGCM", "This device is not supported.");
+                finish();
+            }
+            return false;
+        }
+        return true;
+    }
+
 }

@@ -28,7 +28,7 @@ import com.android.volley.toolbox.NetworkImageView;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.MeResponseCallback;
 import com.kakao.usermgmt.response.model.UserProfile;
-import kr.whatshoe.WhatShoe.R;
+import kr.whatshoe.whatShoe.R;
 import kr.whatshoe.Util.GlobalApplication;
 
 ////TODO image upload, back button, cancel button

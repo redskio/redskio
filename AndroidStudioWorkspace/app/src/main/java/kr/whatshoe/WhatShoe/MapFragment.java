@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -47,24 +47,27 @@ public class MapFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         ActionBar actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
         actionBar.hide();
-        arraylist=getArguments().getParcelableArrayList("order");
 
-        View rootView = inflater.inflate(kr.whatshoe.WhatShoe.R.layout.fragment_main, container, false);
-        TextView locationText = (TextView) rootView.findViewById(kr.whatshoe.WhatShoe.R.id.currentId);
+        arraylist=getArguments().getParcelableArrayList("order");
+        if(arraylist== null){
+            getActivity().finish();
+        }
+        View rootView = inflater.inflate(kr.whatshoe.whatShoe.R.layout.fragment_main, container, false);
+        TextView locationText = (TextView) rootView.findViewById(kr.whatshoe.whatShoe.R.id.currentId);
         locationText.setText(MainActivity.getLocationInfo());
 
 
         currentDetail = (EditText) rootView.findViewById(R.id.currentIdDetail);
         locationDetail = (EditText) rootView.findViewById(R.id.locationDetail);
 
-        Button locationBtn = (Button) rootView.findViewById(kr.whatshoe.WhatShoe.R.id.locationBtn);
+        Button locationBtn = (Button) rootView.findViewById(kr.whatshoe.whatShoe.R.id.locationBtn);
         locationBtn.setOnClickListener(this);
 
         Button resetBtn = (Button) rootView.findViewById(R.id.reset_location);
         resetBtn.setOnClickListener(this);
 
 
-        ImageButton cancelBtn = (ImageButton) rootView.findViewById(kr.whatshoe.WhatShoe.R.id.cancel_btn);
+        ImageButton cancelBtn = (ImageButton) rootView.findViewById(kr.whatshoe.whatShoe.R.id.cancel_btn);
         cancelBtn.setOnClickListener(this);
 
 
@@ -141,15 +144,15 @@ public class MapFragment extends Fragment implements View.OnClickListener {
             case R.id.textCancleBtn:
                 locationDetail.setText("");
                 break;
-            case kr.whatshoe.WhatShoe.R.id.locationBtn:
+            case kr.whatshoe.whatShoe.R.id.locationBtn:
                 if(this.locationDetail.getText().toString().equals("")){
                     Toast.makeText(getActivity(),"상세 주소가 입력되지 않았습니다. 상세주소를 입력해 주세요",Toast.LENGTH_SHORT).show();
                     break;
                 }
                 if (MainActivity.getCurrentCity() == null || MainActivity.getCurrentCity().equals("")) {
-                    makeAlert("현재 강남구에서만 서비스 가능한 서비스 입니다.\n현재 위치 정보를 확인 할 수 없으니 입력하신 주소를 다시 한번 확인해 주세요.");
-                } else if (!MainActivity.getCurrentCity().equals("강남구")) {
-                    makeAlert("현재 강남구만 서비스 가능합니다. 곧 좋은 서비스로 찾아뵙겠습니다.");
+                    makeAlert("현재 강남구 및 서초구에서만 서비스 가능한 서비스 입니다.\n현재 위치 정보를 확인 할 수 없으니 입력하신 주소를 다시 한번 확인해 주세요.");
+                } else if (!MainActivity.getCurrentCity().equals("강남구")&& !MainActivity.getCurrentCity().equals("서초구")) {
+                    makeAlert("현재 강남구 및 서초구만 서비스 가능합니다. 곧 좋은 서비스로 찾아뵙겠습니다.");
                 } else {
                     MainActivity.currentFragment = MainActivity.FRAGMENT_FLAG_CONTENT;
                     String locationResult = currentDetail.getText().toString();
@@ -166,11 +169,11 @@ public class MapFragment extends Fragment implements View.OnClickListener {
 
                 break;
             case R.id.reset_location:
-                getActivity().getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new MapSearchFragment()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new MapSearchFragment()).commit();
                 break;
-            case kr.whatshoe.WhatShoe.R.id.cancel_btn:
+            case kr.whatshoe.whatShoe.R.id.cancel_btn:
                 closeKeyboad(currentDetail);
-                getActivity().getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new ContentFragment()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new ServiceFragment()).commit();
                 break;
             default:
                 break;

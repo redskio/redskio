@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -33,24 +34,24 @@ public class ContentFragment extends Fragment implements View.OnClickListener, V
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(kr.whatshoe.WhatShoe.R.layout.fragment_content, container, false);
+        View rootView = inflater.inflate(kr.whatshoe.whatShoe.R.layout.fragment_content, container, false);
         ActionBar actionBar = ((ActionBarActivity)getActivity()).getSupportActionBar();
         actionBar.show();
-        RelativeLayout layout = (RelativeLayout) rootView.findViewById(kr.whatshoe.WhatShoe.R.id.service_layout);
+        RelativeLayout layout = (RelativeLayout) rootView.findViewById(kr.whatshoe.whatShoe.R.id.service_layout);
         layout.setOnClickListener(this);
         RelativeLayout upperLayout = (RelativeLayout)rootView.findViewById(R.id.upper_content_layout);
         upperLayout.setOnClickListener(this);
         upperLayout.setOnTouchListener(this);
-        RelativeLayout contentLayout1 = (RelativeLayout)rootView.findViewById(kr.whatshoe.WhatShoe.R.id.contentLayout1);
+        RelativeLayout contentLayout1 = (RelativeLayout)rootView.findViewById(kr.whatshoe.whatShoe.R.id.contentLayout1);
         contentLayout1.setOnClickListener(this);
         contentLayout1.setOnTouchListener(this);
-        RelativeLayout contentLayout2 = (RelativeLayout)rootView.findViewById(kr.whatshoe.WhatShoe.R.id.contentLayout2);
+        RelativeLayout contentLayout2 = (RelativeLayout)rootView.findViewById(kr.whatshoe.whatShoe.R.id.contentLayout2);
         contentLayout2.setOnClickListener(this);
         contentLayout2.setOnTouchListener(this);
-        RelativeLayout contentLayout3 = (RelativeLayout)rootView.findViewById(kr.whatshoe.WhatShoe.R.id.contentLayout3);
+        RelativeLayout contentLayout3 = (RelativeLayout)rootView.findViewById(kr.whatshoe.whatShoe.R.id.contentLayout3);
         contentLayout3.setOnClickListener(this);
         contentLayout3.setOnTouchListener(this);
-        RelativeLayout contentLayout4 = (RelativeLayout)rootView.findViewById(kr.whatshoe.WhatShoe.R.id.contentLayout4);
+        RelativeLayout contentLayout4 = (RelativeLayout)rootView.findViewById(kr.whatshoe.whatShoe.R.id.contentLayout4);
         contentLayout4.setOnClickListener(this);
         contentLayout4.setOnTouchListener(this);
         contentImgUpper=(ImageView)rootView.findViewById(R.id.contentImgUpper);
@@ -70,6 +71,7 @@ public class ContentFragment extends Fragment implements View.OnClickListener, V
         if (!MainActivity.needLogin) {
             if (!loginPreferences.contains("id")) {
                 getActivity().finish();
+                Log.i("notLogin", "notLogin");
             }
         }
         super.onResume();
@@ -86,22 +88,22 @@ public class ContentFragment extends Fragment implements View.OnClickListener, V
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case kr.whatshoe.WhatShoe.R.id.service_layout:
-                getActivity().getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, new ServiceFragment()).commit();
+            case kr.whatshoe.whatShoe.R.id.service_layout:
+                getActivity().getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new ServiceFragment()).commit();
                 break;
             case R.id.upper_content_layout:
                 startContentDetail(ContentDetailActivity.class, 0);
                 break;
-            case kr.whatshoe.WhatShoe.R.id.contentLayout1:
+            case kr.whatshoe.whatShoe.R.id.contentLayout1:
                 startContentDetail(ContentDetailActivity.class, 1);
                 break;
-            case kr.whatshoe.WhatShoe.R.id.contentLayout2:
+            case kr.whatshoe.whatShoe.R.id.contentLayout2:
                 startContentDetail(ContentDetailActivity.class, 2);
                 break;
-            case kr.whatshoe.WhatShoe.R.id.contentLayout3:
+            case kr.whatshoe.whatShoe.R.id.contentLayout3:
                 startContentDetail(ContentDetailActivity.class, 3);
                 break;
-            case kr.whatshoe.WhatShoe.R.id.contentLayout4:
+            case kr.whatshoe.whatShoe.R.id.contentLayout4:
                 startContentDetail(ContentDetailActivity.class, 4);
                 break;
             default:
@@ -130,16 +132,16 @@ public class ContentFragment extends Fragment implements View.OnClickListener, V
             case R.id.upper_content_layout:
                 onPressedEffect(contentImgUpper, event);
                 break;
-            case kr.whatshoe.WhatShoe.R.id.contentLayout1:
+            case kr.whatshoe.whatShoe.R.id.contentLayout1:
                 onPressedEffect(contentImg1, event);
                 break;
-            case kr.whatshoe.WhatShoe.R.id.contentLayout2:
+            case kr.whatshoe.whatShoe.R.id.contentLayout2:
                 onPressedEffect(contentImg2, event);
                 break;
-            case kr.whatshoe.WhatShoe.R.id.contentLayout3:
+            case kr.whatshoe.whatShoe.R.id.contentLayout3:
                 onPressedEffect(contentImg3, event);
                 break;
-            case kr.whatshoe.WhatShoe.R.id.contentLayout4:
+            case kr.whatshoe.whatShoe.R.id.contentLayout4:
                 onPressedEffect(contentImg4, event);
                 break;
             default:

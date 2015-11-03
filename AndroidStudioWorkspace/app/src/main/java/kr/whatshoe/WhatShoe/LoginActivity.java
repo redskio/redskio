@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,8 +18,10 @@ public class LoginActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(kr.whatshoe.WhatShoe.R.layout.activity_login);
+        setContentView(kr.whatshoe.whatShoe.R.layout.activity_login);
         android.support.v7.app.ActionBar actionbar = getSupportActionBar();
+        getSupportFragmentManager().beginTransaction()
+                .add(kr.whatshoe.whatShoe.R.id.container, new LoginFragment()).commit();
         actionbar.hide();
 
     }
@@ -59,7 +61,7 @@ public class LoginActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(kr.whatshoe.WhatShoe.R.menu.menu_main, menu);
+        getMenuInflater().inflate(kr.whatshoe.whatShoe.R.menu.menu_main, menu);
         return true;
     }
 
@@ -71,7 +73,7 @@ public class LoginActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == kr.whatshoe.WhatShoe.R.id.action_settings) {
+        if (id == kr.whatshoe.whatShoe.R.id.action_settings) {
             return true;
         }
 

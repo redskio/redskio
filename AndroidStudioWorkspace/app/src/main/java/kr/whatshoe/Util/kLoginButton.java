@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import kr.whatshoe.WhatShoe.R;
+import kr.whatshoe.whatShoe.R;
 
 /**
  * Created by jaewoo on 2015-10-15.

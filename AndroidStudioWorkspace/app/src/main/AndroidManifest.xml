@@ -1,42 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="kr.whatshoe.WhatShoe"
-    android:versionCode="7"
-    android:versionName="1.6" >
+    package="kr.whatshoe.whatShoe"
+    android:versionCode="8"
+    android:versionName="1.7" >
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="ANDROID.PERMISSION.READ_PHONE_STATE"/>
+    <uses-permission android:name="ANDROID.PERMISSION.READ_PHONE_STATE" />
+
+    <permission
+        android:name="kr.whatshoe.whatShoe.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="kr.whatshoe.whatShoe.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name="kr.whatshoe.Util.GlobalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:name="kr.whatshoe.Util.GlobalApplication"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/app_id" />
         <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <activity
             android:name=".LoginActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="adjustResize"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,40 +61,64 @@
         </activity>
         <activity
             android:name=".PayActivity"
-            android:windowSoftInputMode="stateAlwaysHidden"
             android:label="@string/title_activity_pay"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".LoadingActivity"
             android:label="@string/title_activity_loading"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name=".ContentDetailActivity"
             android:label="@string/title_activity_content_detail"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name=".JoinActivity"
-            android:label="@string/title_activity_join"
-            android:windowSoftInputMode="adjustResize"
-            android:screenOrientation="portrait"
-            >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DrawerActivity"
             android:label="@string/title_activity_drawer"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LawActivity"
             android:label="@string/title_activity_law"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="kr.whatshoe.whatShoe" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="kr.whatshoe.Util.MyGcmListenerService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="kr.whatshoe.Util.MyInstanceIDListenerService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="kr.whatshoe.Util.RegistrationIntentService"
+            android:exported="false" />
+
+        <activity
+            android:name=".PGActivity"
+            android:label="@string/title_activity_pg" >
         </activity>
     </application>
 

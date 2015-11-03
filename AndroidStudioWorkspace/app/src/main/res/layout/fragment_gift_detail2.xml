@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="#eaeaea"
     android:orientation="vertical"
-    tools:context="kr.whatshoe.WhatShoe.PointFragment">
+    tools:context="kr.whatshoe.whatShoe.PointFragment">
 
 
     <ScrollView

@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -51,6 +51,8 @@ import kr.whatshoe.Util.HttpClient;
 import kr.whatshoe.widget.DialogBuilder;
 import kr.whatshoe.widget.KakaoToast;
 
+import static com.kakao.usermgmt.response.model.UserProfile.loadFromCache;
+
 
 /**
  * A placeholder fragment containing a simple view.
@@ -58,7 +60,9 @@ import kr.whatshoe.widget.KakaoToast;
 public class LoginFragment extends Fragment {
 
     private CallbackManager callbackManager;
-
+    public final static int kakao =0;
+    public final static int facebook = 1;
+    public final static int normal = 2;
     private LoginButton loginButton;
     private Button loginWsButton;
     SharedPreferences preference;
@@ -72,54 +76,11 @@ public class LoginFragment extends Fragment {
     private static final int SIMPLELOGIN = 1;
     private static final int FACEBOOKLOGIN = 2;
     private SessionCallback kakao_callback;
-    private FacebookCallback<LoginResult> callback = new FacebookCallback<LoginResult>() {
-        @Override
-        public void onSuccess(LoginResult loginResult) {
-            GraphRequest request = GraphRequest.newMeRequest(
-                    loginResult.getAccessToken(),
-                    new GraphRequest.GraphJSONObjectCallback() {
-                        @Override
-                        public void onCompleted(
-                                JSONObject object,
-                                GraphResponse response) {
-                            LoginFragment.this.response = response;
-                            if(response.getJSONObject()==null){
-                                Toast.makeText(getActivity(),"네트워크 연결에 문제가 있습니다.",Toast.LENGTH_SHORT).show();
-                            }
-
-                            try {
-                                id = (String) response.getJSONObject().get("email");
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                            loginType= FACEBOOKLOGIN;
-                            doLogin("whatshoe" + id);
-                        }
-                    });
-            Bundle parameters = new Bundle();
-            parameters.putString("fields","id,name,email,gender,birthday");
-            request.setParameters(parameters);
-            request.executeAsync();
-
-        }
-
-        @Override
-        public void onCancel() {
-
-        }
-
-        @Override
-        public void onError(FacebookException e) {
-
-        }
-    };
-
     public LoginFragment() {
 
     }
 
-
-    @Override
+        @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         MainActivity.needLogin=false;
@@ -159,20 +120,19 @@ public class LoginFragment extends Fragment {
         ViewPager pager = (ViewPager)rootView.findViewById(R.id.pager);
         Tutorial_adapter adapter = new Tutorial_adapter(inflater);
         pager.setAdapter(adapter);
-        View loginView = inflater.inflate(kr.whatshoe.WhatShoe.R.layout.fragment_layout, null);
+        View loginView = inflater.inflate(kr.whatshoe.whatShoe.R.layout.fragment_layout, null);
         Button joinBtn = (Button) loginView.findViewById(R.id.join_ws_button);
         joinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), JoinActivity.class);
-                getActivity().startActivity(intent);
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(kr.whatshoe.whatShoe.R.id.container, new JoinFragment()).commit();
             }
         });
         loginText = (EditText) loginView.findViewById(R.id.login_id_text);
         passwdText = (EditText) loginView.findViewById(R.id.login_pw_text);
-        LoginButton loginButton = (LoginButton) loginView.findViewById(kr.whatshoe.WhatShoe.R.id.login_button);
-        loginWsButton = (Button) loginView.findViewById(kr.whatshoe.WhatShoe.R.id.login_ws_button);
+        LoginButton loginButton = (LoginButton) loginView.findViewById(kr.whatshoe.whatShoe.R.id.login_button);
+        loginWsButton = (Button) loginView.findViewById(kr.whatshoe.whatShoe.R.id.login_ws_button);
         loginWsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -195,92 +155,7 @@ public class LoginFragment extends Fragment {
         return rootView;
 
     }
-
-    protected void showSignup() {
-        Log.d("kakao", "not registered user");
-//        redirectLoginActivity();
-        String message = "not registered user.\nYou should signup at UserManagememt menu.";
-        Dialog dialog = new DialogBuilder(getActivity())
-                .setMessage(message)
-                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        onClickSignup();
-                        dialog.dismiss();
-                    }
-                }).create();
-
-        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-            @Override
-            public void onDismiss(DialogInterface dialog) {
-                getActivity().finish();
-            }
-        });
-        dialog.show();
-    }
-    private void onClickSignup() {
-        final Map<String, String> properties = new HashMap<String, String>();
-        properties.put("nickname", "leo");
-
-        UserManagement.requestSignup(new ApiResponseCallback<Long>() {
-
-            @Override
-            public void onSessionClosed(final ErrorResult errorResult) {
-                requestMe();
-            }
-
-            @Override
-            public void onNotSignedUp() {
-
-            }
-
-            @Override
-            public void onFailure(final ErrorResult errorResult) {
-                Log.e("kakao", "failed to sign up. msg = " + errorResult);
-            }
-
-            @Override
-            public void onSuccess(Long aLong) {
-                Toast.makeText(getActivity(), "로그인되었습니다.",
-                        Toast.LENGTH_SHORT).show();
-            }
-        }, properties);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
-            return;
-        }
-        callbackManager.onActivityResult(requestCode, resultCode, data);
-        super.onActivityResult(requestCode, resultCode, data);
-
-    }
-
-
-    @Override
-    public void onDestroy(){
-
-        super.onDestroy();
-        Session.getCurrentSession().removeCallback(kakao_callback);
-    }
-    @Override
-    public void onStop() {
-        super.onStop();
-        accessTokenTracker.stopTracking();
-        profileTracker.stopTracking();
-    }
-
-    @Override
-    public void onResume() {
-        Profile profile = Profile.getCurrentProfile();
-        if (profile != null && preference.contains("id")) {
-            getActivity().finish();
-        }
-
-        super.onResume();
-    }
-    private void doLogin(String pw){
+    private void doLogin(String pw){ //normal login
         RequestParams params = new RequestParams();
         params.put("id", id);
         params.put("pass", pw);
@@ -317,61 +192,108 @@ public class LoginFragment extends Fragment {
             }
         });
     }
-    private void startWithFacebook(){
-        String name = "";
-        String email = "";
-        String gender = "";
-        String birthday = "";
-        RequestParams params = new RequestParams();
-        try {
-            id = (String) response.getJSONObject().get("email");
-            name = (String) response.getJSONObject().get("name");
-            email = (String) response.getJSONObject().get("email");
-            gender = (String) response.getJSONObject().get("gender");
-            birthday = (String) response.getJSONObject().get("birthday");
+    @Override
+    public void onDestroy(){
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-                if(e.getMessage().toString().equals("No value for birthday")){
-                    birthday = "2015-10-01";
-                }
-        } finally {
-            params.put("id", id);
-            params.put("pass1", "whatshoe"+id);
-            params.put("name", name);
-            params.put("sex", gender);
-            params.put("birth", birthday);
-            params.put("mail", email);
-            params.put("phone", "");
-            params.put("pass2", "whatshoe" + id);
+        super.onDestroy();
+        Session.getCurrentSession().removeCallback(kakao_callback);
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+        accessTokenTracker.stopTracking();
+        profileTracker.stopTracking();
+    }
 
-            HttpClient.post("member/android_join.php", params, new TextHttpResponseHandler() {
-
-                @Override
-                public void onFailure(int arg0, Header[] arg1, String arg2,
-                                      Throwable arg3) {
-                    Toast.makeText(getActivity(), "가입에 실패했습니다.",
-                            Toast.LENGTH_SHORT).show();
-                    Log.i("PostingFailed", arg2);
-                }
-
-                @Override
-                public void onSuccess(int arg0, Header[] arg1, String arg2) {
-                    if (arg2.trim().equals("\uFEFFsuccess")) {
-                        Toast.makeText(getActivity(), "가입되었습니다.",
-                                Toast.LENGTH_SHORT).show();
-                        preference
-                                .edit()
-                                .putString(
-                                        "id", id)
-                                .apply();
-                        getActivity().finish();
-                    }
-                }
-            });
+    @Override
+    public void onResume() {
+        Profile profile = Profile.getCurrentProfile();
+        if (profile != null && preference.contains("id")) {
+            getActivity().finish();
         }
 
+        super.onResume();
     }
+    protected void showSignup() { // for kakao Login
+        String message = "not registered user.\nYou should signup at UserManagememt menu.";
+        Dialog dialog = new DialogBuilder(getActivity())
+                .setMessage(message)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        onClickSignup();
+                        dialog.dismiss();
+                    }
+                }).create();
+
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                getActivity().finish();
+            }
+        });
+        dialog.show();
+    }
+    private void onClickSignup() { // for kakao Login
+        final Map<String, String> properties = new HashMap<String, String>();
+        properties.put("nickname", "leo");
+
+        UserManagement.requestSignup(new ApiResponseCallback<Long>() {
+
+            @Override
+            public void onSessionClosed(final ErrorResult errorResult) {
+                requestMe();
+            }
+
+            @Override
+            public void onNotSignedUp() {
+
+            }
+
+            @Override
+            public void onFailure(final ErrorResult errorResult) {
+                Log.e("kakao", "failed to sign up. msg = " + errorResult);
+            }
+
+            @Override
+            public void onSuccess(Long aLong) {
+                String id = null;
+                if (loadFromCache() == null || loadFromCache().getNickname() == null) {
+                    id = "";
+                } else {
+                    id = loadFromCache().getNickname();
+                }
+                PhoneFragment fragment = new PhoneFragment();
+                Bundle bundle = new Bundle();
+                bundle.putInt("type", kakao);
+                bundle.putString("id", id);
+                bundle.putString("pass", "");
+                bundle.putString("name", "");
+                bundle.putString("gender", "");
+                bundle.putString("birthday", "");
+                bundle.putString("email", "");
+                fragment.setArguments(bundle);
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(kr.whatshoe.whatShoe.R.id.container, fragment).commit();
+
+            }
+        }, properties);
+
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
+            return;
+        }
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+
+    }
+
+
+
 
     private class SessionCallback implements ISessionCallback {
 
@@ -418,7 +340,6 @@ public class LoginFragment extends Fragment {
             @Override
             public void onSuccess(UserProfile userProfile) {
                 Log.d("kakao", "UserProfile : " + userProfile);
-//                Toast.makeText(getActivity(),userProfile.getNickname()+ " 님 환영합니다.",Toast.LENGTH_SHORT).show();
                 preference
                         .edit()
                         .putString(
@@ -441,4 +362,83 @@ public class LoginFragment extends Fragment {
 
         getActivity().finish();
     }
+
+    //for facebook
+    private FacebookCallback<LoginResult> callback = new FacebookCallback<LoginResult>() {
+        @Override
+        public void onSuccess(LoginResult loginResult) {
+            GraphRequest request = GraphRequest.newMeRequest(
+                    loginResult.getAccessToken(),
+                    new GraphRequest.GraphJSONObjectCallback() {
+                        @Override
+                        public void onCompleted(
+                                JSONObject object,
+                                GraphResponse response) {
+                            LoginFragment.this.response = response;
+                            if(response.getJSONObject()==null){
+                                Toast.makeText(getActivity(),"네트워크 연결에 문제가 있습니다.",Toast.LENGTH_SHORT).show();
+                            }
+
+                            try {
+                                id = (String) response.getJSONObject().get("email");
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                            loginType= FACEBOOKLOGIN;
+                            doLogin("whatshoe" + id);
+                        }
+                    });
+            Bundle parameters = new Bundle();
+            parameters.putString("fields","id,name,email,gender,birthday");
+            request.setParameters(parameters);
+            request.executeAsync();
+
+        }
+
+        @Override
+        public void onCancel() {
+
+        }
+
+        @Override
+        public void onError(FacebookException e) {
+
+        }
+    };
+    private void startWithFacebook(){
+        String name = "";
+        String email = "";
+        String gender = "";
+        String birthday = "";
+
+        try {
+            id = (String) response.getJSONObject().get("email");
+            name = (String) response.getJSONObject().get("name");
+            email = (String) response.getJSONObject().get("email");
+            gender = (String) response.getJSONObject().get("gender");
+            birthday = (String) response.getJSONObject().get("birthday");
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+                if(e.getMessage().toString().equals("No value for birthday")){
+                    birthday = "2015-10-01";
+                }
+        } finally {
+            PhoneFragment fragment = new PhoneFragment();
+            Bundle bundle = new Bundle();
+            bundle.putInt("type",facebook);
+            bundle.putString("id",email);
+            bundle.putString("pass","whatshoe"+email);
+            bundle.putString("name",name);
+            bundle.putString("gender", gender);
+            bundle.putString("birthday",birthday);
+            bundle.putString("email",email);
+            fragment.setArguments(bundle);
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(kr.whatshoe.whatShoe.R.id.container, fragment).commit();
+        }
+
+    }
+
+
 }

@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -33,7 +33,7 @@ public class ContentDetailActivity extends AppCompatActivity {
         }
 
         actionBarSetting();
-        RelativeLayout layout = (RelativeLayout) findViewById(kr.whatshoe.WhatShoe.R.id.service_layout);
+        RelativeLayout layout = (RelativeLayout) findViewById(kr.whatshoe.whatShoe.R.id.service_layout);
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -12,12 +12,12 @@
     </string-array>
     <integer-array name="price">
         <item>5000</item>
+        <item>18000</item>
         <item>15000</item>
-        <item>12000</item>
-        <item>12000</item>
+        <item>15000</item>
         <item>5000</item>
-        <item>3000</item>
-        <item>4000</item>
         <item>5000</item>
+        <item>6000</item>
+        <item>7000</item>
     </integer-array>
 </resources>

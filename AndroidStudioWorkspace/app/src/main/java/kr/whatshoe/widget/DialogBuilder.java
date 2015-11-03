@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import kr.whatshoe.WhatShoe.R;
+import kr.whatshoe.whatShoe.R;
 
 /**
  * Created by leoshin on 15. 6. 19..

@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -48,9 +48,9 @@ public class OrderAdapter extends ArrayAdapter<FixOrder> {
             convertView = inflater.inflate(resource, parent, false);
         }
 
-        TextView contentText = (TextView) convertView.findViewById(kr.whatshoe.WhatShoe.R.id.title_text);
+        TextView contentText = (TextView) convertView.findViewById(kr.whatshoe.whatShoe.R.id.title_text);
         contentText.setText(list.get(position).getContentText());
-        TextView priceText = (TextView) convertView.findViewById(kr.whatshoe.WhatShoe.R.id.desc_text);
+        TextView priceText = (TextView) convertView.findViewById(kr.whatshoe.whatShoe.R.id.desc_text);
         priceText.setText(list.get(position).getPrice() + " 원");
         return convertView;
     }

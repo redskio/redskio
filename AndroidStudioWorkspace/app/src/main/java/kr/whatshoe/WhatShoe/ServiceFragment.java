@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -8,13 +8,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -28,7 +26,6 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
     ArrayList<FixOrder> arraylist = new ArrayList<FixOrder>();
     private ImageButton manBtn;
     private ImageButton womanBtn;
-    private ImageView[] shoeImg;
     public ServiceFragment() {
 
     }
@@ -48,35 +45,30 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
         womanBtn.setOnClickListener(this);
 
 
-        Button payBtn = (Button) rootView.findViewById(R.id.payBtn);
-        payBtn.setOnClickListener(this);
-
-
         ImageButton cancelBtn = (ImageButton) rootView.findViewById(R.id.cancel_btn);
         cancelBtn.setOnClickListener(this);
-
-        ImageButton giftBtn = (ImageButton) rootView.findViewById(R.id.servicepage_gift_btn);
+        Button giftBtn = (Button) rootView.findViewById(R.id.servicepage_gift_btn);
         giftBtn.setOnClickListener(this);
-
+        ImageButton premiumWoman = (ImageButton) rootView.findViewById(R.id.premium_woman_btn);
+        premiumWoman.setOnClickListener(this);
+        ImageButton premiumMan = (ImageButton) rootView.findViewById(R.id.premium_man_btn);
+        premiumMan.setOnClickListener(this);
         Resources resource = getResources();
         if (resource != null) {
             String[] ordernameForman = resource.getStringArray(R.array.order);
             int[] orderpriceForman = getResources().getIntArray(R.array.price);
             for (int i = 0; i < ordernameForman.length; i++) {
-                FixOrder fixorder = new FixOrder(ordernameForman[i], 0, orderpriceForman[i]);
+                FixOrder fixorder = new FixOrder(ordernameForman[i], 0, orderpriceForman[i],"");
                 arraylist.add(fixorder);
             }
         }
 
-        initializeImageView(rootView);
         return rootView;
     }
 
     @Override
     public void onResume() {
         MainActivity.currentFragment = MainActivity.FRAGMENT_FLAG_SERVICEORDER;
-
-
         super.onResume();
     }
 
@@ -86,16 +78,16 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
-                Log.i("!!!!!!!!!!!!", "!!!!!!!!!!!!!!!!");
-                if (inflater != null) {
-                    for (int i = 0; i < arraylist.size(); i++) {
-                        if (arraylist.get(i).getIsChecked() > 0) {
-                            shoeImg[i].setVisibility(View.VISIBLE);
-                        } else {
-                            shoeImg[i].setVisibility(View.GONE);
-                        }
-                    }
+
+                if (isEmptyOrder(arraylist)) {
+                    Toast.makeText(getActivity(), "현재 선택된 주문이 없습니다. 주문을 선택해 주세요.", Toast.LENGTH_SHORT).show();
+                    return;
                 }
+                MapFragment fragment = new MapFragment();
+                Bundle bundle= new Bundle();
+                bundle.putParcelableArrayList("order",arraylist);
+                fragment.setArguments(bundle);
+                getActivity().getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, fragment).commit();
             }
         });
         dialog.show();
@@ -107,8 +99,8 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.manBtn:
 
-                manBtn.setImageResource(R.drawable.servicepage_btn2_push);
-                womanBtn.setImageResource(R.drawable.servicepage_btn1);
+                manBtn.setImageResource(R.drawable.servicepage_man_push);
+                womanBtn.setImageResource(R.drawable.servicepage_woman);
                 for (int i = 4; i < arraylist.size(); i++) {
                     arraylist.get(i).setIsChecked(0);
                 }
@@ -116,26 +108,15 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.womanBtn:
 
-                manBtn.setImageResource(R.drawable.servicepage_btn2);
-                womanBtn.setImageResource(R.drawable.servicepage_btn1_push);
+                manBtn.setImageResource(R.drawable.servicepage_man);
+                womanBtn.setImageResource(R.drawable.servicepage_woman_push);
                 for (int i = 0; i < 4; i++) {
                     arraylist.get(i).setIsChecked(0);
                 }
                 DialogChoiceMenu(getActivity(), WhatShoeDialog.FEMALE);
                 break;
-            case R.id.payBtn:
-                if (isEmptyOrder(arraylist)) {
-                    Toast.makeText(getActivity(), "현재 선택된 주문이 없습니다. 주문을 선택해 주세요.", Toast.LENGTH_SHORT).show();
-                    break;
-                }
-                MapFragment fragment = new MapFragment();
-                Bundle bundle= new Bundle();
-                bundle.putParcelableArrayList("order",arraylist);
-                fragment.setArguments(bundle);
-                getActivity().getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, fragment).commit();
-                break;
             case R.id.cancel_btn:
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, new MapFragment()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, new ContentFragment()).commit();
                 break;
             case R.id.servicepage_gift_btn:
                 MainActivity.currentFragment = MainActivity.FRAGMENT_FLAG_SERVICE;
@@ -144,26 +125,19 @@ public class ServiceFragment extends Fragment implements View.OnClickListener {
                 intent.putExtra("Fragment", DrawerActivity.GIFT_FRAGMENT_TYPE);
                 startActivity(intent);
                 break;
+            case R.id.premium_woman_btn:
+                Toast.makeText(getActivity(),"Coming Soon.",Toast.LENGTH_LONG).show();
+                break;
+            case R.id.premium_man_btn:
+                Toast.makeText(getActivity(),"Coming Soon.",Toast.LENGTH_LONG).show();
+                break;
             default:
                 break;
         }
     }
 
 
-    private void initializeImageView(View rootView) {
 
-        shoeImg = new ImageView[8];
-        shoeImg[0] = (ImageView) rootView.findViewById(R.id.main_man_wash_img);
-        shoeImg[1] = (ImageView) rootView.findViewById(R.id.main_man_whole_img);
-        shoeImg[2] = (ImageView) rootView.findViewById(R.id.main_man_half_img);
-        shoeImg[3] = (ImageView) rootView.findViewById(R.id.main_man_sub_img);
-        shoeImg[4] = (ImageView) rootView.findViewById(R.id.main_woman_wash_img);
-        shoeImg[5] = (ImageView) rootView.findViewById(R.id.main_woman_sub_img);
-        shoeImg[6] = (ImageView) rootView.findViewById(R.id.main_woman_submid_img);
-        shoeImg[7] = (ImageView) rootView.findViewById(R.id.main_woman_subbig_img);
-
-
-    }
 
     private boolean isEmptyOrder(ArrayList<FixOrder> array) {
         for (int i = 0; i < array.size(); i++) {

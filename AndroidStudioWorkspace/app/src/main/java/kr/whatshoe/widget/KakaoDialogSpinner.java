@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import kr.whatshoe.WhatShoe.R;
+import kr.whatshoe.whatShoe.R;
 import java.util.Arrays;
 import java.util.List;
 

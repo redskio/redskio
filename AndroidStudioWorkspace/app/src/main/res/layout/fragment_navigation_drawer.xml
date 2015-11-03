@@ -84,7 +84,8 @@
                     android:gravity="center_vertical|left"
                     android:paddingLeft="15dp"
                     android:textColor="@color/color_brown"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
                 <Button
                     android:layout_width="match_parent"
@@ -101,7 +102,8 @@
                     android:gravity="center_vertical|left"
                     android:paddingLeft="15dp"
                     android:textColor="@color/color_brown"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
                 <Button
                     android:layout_width="match_parent"
@@ -118,7 +120,8 @@
                     android:gravity="center_vertical|left"
                     android:paddingLeft="15dp"
                     android:textColor="@color/color_brown"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
                 <Button
                     style="@null"
@@ -134,7 +137,23 @@
                     android:gravity="center_vertical|left"
                     android:paddingLeft="15dp"
                     android:textColor="@color/color_brown"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="42.5dp"
+                    android:text="공유하기"
+                    android:drawableStart="@drawable/navi_share"
+                    android:id="@+id/talkBtn"
+
+                    android:textColor="@color/color_brown"
+                    android:background="@drawable/button_navi_text2"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="15dp"
+                    android:gravity="center_vertical|left"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
                 <Button
                     android:layout_width="match_parent"
@@ -177,20 +196,6 @@
                     android:textStyle="bold"
                     android:textColor="@color/color_brown"
                     android:paddingLeft="15dp"
-                    android:textSize="15sp" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="42.5dp"
-                    android:text="공유하기"
-                    android:drawableStart="@drawable/navi_share"
-                    android:id="@+id/talkBtn"
-
-                    android:textColor="@color/color_brown"
-                    android:background="@drawable/button_navi_text2"
-                    android:paddingTop="10dp"
-                    android:paddingLeft="15dp"
-                    android:gravity="center_vertical|left"
                     android:textSize="15sp" />
 
             </LinearLayout>

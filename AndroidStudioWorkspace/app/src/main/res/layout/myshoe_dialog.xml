@@ -81,7 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/myshoe_men1"
-                    android:src="@drawable/myshoe_men1"
+                    android:src="@drawable/myshoe_men2"
                     android:layout_gravity="center"
                     android:layout_centerInParent="true"
                     android:visibility="gone" />
@@ -99,7 +99,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/myshoe_men3"
-                    android:src="@drawable/myshoe_men2"
+                    android:src="@drawable/myshoe_men4"
                     android:layout_gravity="center"
                     android:layout_centerInParent="true"
                     android:visibility="gone" />
@@ -108,7 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/myshoe_men4"
-                    android:src="@drawable/myshoe_men4"
+                    android:src="@drawable/myshoe_men5"
                     android:layout_gravity="center"
                     android:layout_centerInParent="true"
                     android:visibility="gone" />
@@ -126,15 +126,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/myshoe_women2"
-                    android:src="@drawable/myshoe_women2"
-                    android:layout_gravity="center"
-                    android:layout_centerInParent="true"
-                    android:visibility="gone" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/myshoe_women3"
                     android:src="@drawable/myshoe_women3"
                     android:layout_gravity="center"
                     android:layout_centerInParent="true"
@@ -143,8 +134,17 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/myshoe_women4"
+                    android:id="@+id/myshoe_women3"
                     android:src="@drawable/myshoe_women4"
+                    android:layout_gravity="center"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/myshoe_women4"
+                    android:src="@drawable/myshoe_women2"
                     android:layout_gravity="center"
                     android:layout_centerInParent="true"
                     android:visibility="gone" />

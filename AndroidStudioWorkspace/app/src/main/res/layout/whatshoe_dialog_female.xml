@@ -56,7 +56,7 @@
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:id="@+id/forwoman_wash_img"
-                android:src="@drawable/push_women2"
+                android:src="@drawable/push_women_shine"
                 android:visibility="gone" />
 
             <ImageView
@@ -65,7 +65,7 @@
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:id="@+id/forwoman_sub_img"
-                android:src="@drawable/push_women3"
+                android:src="@drawable/push_women_heel_small"
                 android:visibility="gone" />
 
             <ImageView
@@ -74,7 +74,7 @@
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:id="@+id/forwoman_submid_img"
-                android:src="@drawable/push_women4"
+                android:src="@drawable/push_women_heel_mid"
                 android:visibility="gone" />
 
             <ImageView
@@ -83,7 +83,7 @@
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
                 android:id="@+id/forwoman_subbig_img"
-                android:src="@drawable/push_women5"
+                android:src="@drawable/push_women_heel_big"
                 android:visibility="gone" />
 
         </RelativeLayout>

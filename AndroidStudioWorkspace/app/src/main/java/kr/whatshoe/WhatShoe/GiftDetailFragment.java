@@ -1,4 +1,4 @@
-package kr.whatshoe.WhatShoe;
+package kr.whatshoe.whatShoe;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -49,7 +49,7 @@ public class GiftDetailFragment extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putInt("type",getArguments().getInt("type"));
                 fragment.setArguments(bundle);
-                getActivity().getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.WhatShoe.R.id.container, fragment).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, fragment).commit();
             }
         });
         return rootView;

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import kr.whatshoe.WhatShoe.R;
+import kr.whatshoe.whatShoe.R;
 
 
 /**
