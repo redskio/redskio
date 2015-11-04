@@ -144,8 +144,8 @@ public class MyShoeDialog extends Dialog implements View.OnClickListener {
         }
     }
     private void initOrderData(){
-
         String order = orderPreferences.getString("orderCode","0");
+        Log.i("whatshoe",order);
         int ordercode = Integer.parseInt(order);
         while(ordercode%100 !=0){
             orderList.add(ordercode%100);
@@ -175,6 +175,7 @@ public class MyShoeDialog extends Dialog implements View.OnClickListener {
         statusTitles[0] =(TextView)findViewById(R.id.pickup_title);
         statusTitles[1] =(TextView)findViewById(R.id.fix_title);
         statusTitles[2] =(TextView)findViewById(R.id.delivery_title);
+
         RequestParams params = new RequestParams();
         params.put("id", loginPreferences.getString("id", "whatshoe"));
         params.put("order_time", orderPreferences.getString("orderTime", "0"));
@@ -191,7 +192,7 @@ public class MyShoeDialog extends Dialog implements View.OnClickListener {
             @Override
             public void onSuccess(int arg0, Header[] arg1, String arg2) {
                 if (arg2.trim().equals("\uFEFFfail")) {
-                    turnOnStatus((0));
+                    orderPreferences.edit().clear().commit();
                 } else if(arg2.trim().equals("\uFEFF0")){
                     turnOnStatus(0);
                 } else if(arg2.trim().equals("\uFEFF1")){

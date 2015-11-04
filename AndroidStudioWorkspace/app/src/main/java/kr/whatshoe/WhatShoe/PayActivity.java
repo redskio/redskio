@@ -194,14 +194,12 @@ public class PayActivity extends AppCompatActivity {
                     intent.putExtra("price",Integer.toString(totalPay));
                     intent.putExtra("openpaytype",how);
                     intent.putExtra("recvphone", phoneText.getText().toString());
-                    intent.putExtra("code",randomcode);
-                    intent.setClass(PayActivity.this,PGActivity.class);
+                    intent.putExtra("code", randomcode);
+                    intent.setClass(PayActivity.this, PGActivity.class);
                     startActivityForResult(intent, 0);
-                    finish();
                 } else {
                     Toast.makeText(PayActivity.this, "결재 정보에 문제가 있습니다. 관리자에게 문의해 주세요.",
                             Toast.LENGTH_SHORT).show();
-                    finish();
                 }
             }
         });
@@ -323,6 +321,40 @@ public class PayActivity extends AppCompatActivity {
             @Override
             public void onSuccess(int arg0, Header[] arg1, String arg2) {
 
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Toast.makeText(PayActivity.this, "요청 결과를 처리 중입니다.",
+                Toast.LENGTH_SHORT).show();
+        RequestParams params = new RequestParams();
+        params.put("id", loginPreference.getString("id", "whatshoe"));
+        params.put("order_time", orderPreference.getString("orderTime", "0"));
+        params.put("order_code", orderPreference.getString("orderCode","0"));
+        HttpClient.post("member/android_get_orderstatus.php", params, new TextHttpResponseHandler() {
+
+            @Override
+            public void onFailure(int arg0, Header[] arg1, String arg2,
+                                  Throwable arg3) {
+                Toast.makeText(PayActivity.this, "인터넷 접속상태를 확인해 주세요.",
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSuccess(int arg0, Header[] arg1, String arg2) {
+                if (arg2.trim().equals("\uFEFFfail")) {
+                    Toast.makeText(PayActivity.this, "결제가 취소되었습니다.",
+                            Toast.LENGTH_LONG).show();
+                    orderPreference.edit().clear().commit();
+                    finish();
+                } else {
+                    Toast.makeText(PayActivity.this, "결제가 완료되었습니다.",
+                            Toast.LENGTH_LONG).show();
+                    finish();
+                }
             }
         });
     }

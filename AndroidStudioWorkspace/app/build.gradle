@@ -8,8 +8,8 @@ android {
         applicationId "kr.whatshoe.whatShoe"
         minSdkVersion 16
         targetSdkVersion 22
-        versionCode 20
-        versionName "2.0.9"
+        versionCode 21
+        versionName "2.0.10"
     }
     buildTypes {
         release {
