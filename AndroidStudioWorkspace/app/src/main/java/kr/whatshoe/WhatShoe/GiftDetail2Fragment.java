@@ -18,8 +18,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -64,7 +68,7 @@ public class GiftDetail2Fragment extends Fragment implements View.OnClickListene
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_gift_detail2, container, false);
+        final View rootView = inflater.inflate(R.layout.fragment_gift_detail2, container, false);
 
         ImageView couponImage = (ImageView) rootView.findViewById(R.id.coupon_image_detail2);
         couponType = getArguments().getInt("type");
@@ -109,6 +113,38 @@ public class GiftDetail2Fragment extends Fragment implements View.OnClickListene
         Button pointPay = (Button) rootView.findViewById(R.id.pointGift);
         cardPay.setOnClickListener(this);
         pointPay.setOnClickListener(this);
+
+        final CheckBox smsCheck = (CheckBox)rootView.findViewById(R.id.smsCheck);
+        final CheckBox kakaoCheck = (CheckBox)rootView.findViewById(R.id.kakaoCheck);
+        smsCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    smsCheck.setChecked(true);
+                    kakaoCheck.setChecked(false);
+                    RelativeLayout smsLayout = (RelativeLayout) rootView.findViewById(R.id.smsLayout);
+                    smsLayout.setVisibility(View.VISIBLE);
+                    LinearLayout kakaoLayout = (LinearLayout) rootView.findViewById(R.id.kakaoLayout);
+                    kakaoLayout.setVisibility(View.GONE);
+                    sendType=SMS;
+                }
+            }
+        });
+
+        kakaoCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    smsCheck.setChecked(false);
+                    kakaoCheck.setChecked(true);
+                    RelativeLayout smsLayout = (RelativeLayout) rootView.findViewById(R.id.smsLayout);
+                    smsLayout.setVisibility(View.GONE);
+                    LinearLayout kakaoLayout = (LinearLayout) rootView.findViewById(R.id.kakaoLayout);
+                    kakaoLayout.setVisibility(View.VISIBLE);
+                    sendType=KAKAO;
+                }
+            }
+        });
         return rootView;
     }
 

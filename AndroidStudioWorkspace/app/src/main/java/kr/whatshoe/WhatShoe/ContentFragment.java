@@ -16,17 +16,20 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 
-/**
- * A placeholder fragment containing a simple view.
- */
-public class ContentFragment extends Fragment implements View.OnClickListener, View.OnTouchListener{
-    ImageView contentImgUpper;
-    ImageView contentImg1;
-    ImageView contentImg2;
-    ImageView contentImg3;
-    ImageView contentImg4;
-    SharedPreferences orderPreferences;
+/*************************************************************
+ * Content Fragment shown for the first page.
+ * not used now
+ * Used at MainActivity.
+ *************************************************************/
+public class ContentFragment extends Fragment implements View.OnClickListener, View.OnTouchListener {
+    private ImageView contentImgUpper;
+    private ImageView contentImg1;
+    private ImageView contentImg2;
+    private ImageView contentImg3;
+    private ImageView contentImg4;
+    private SharedPreferences orderPreferences;
     private SharedPreferences loginPreferences;
+
     public ContentFragment() {
 
     }
@@ -35,39 +38,38 @@ public class ContentFragment extends Fragment implements View.OnClickListener, V
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(kr.whatshoe.whatShoe.R.layout.fragment_content, container, false);
-        ActionBar actionBar = ((ActionBarActivity)getActivity()).getSupportActionBar();
+        ActionBar actionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
         actionBar.show();
         RelativeLayout layout = (RelativeLayout) rootView.findViewById(kr.whatshoe.whatShoe.R.id.service_layout);
         layout.setOnClickListener(this);
-        RelativeLayout upperLayout = (RelativeLayout)rootView.findViewById(R.id.upper_content_layout);
+        RelativeLayout upperLayout = (RelativeLayout) rootView.findViewById(R.id.upper_content_layout);
         upperLayout.setOnClickListener(this);
         upperLayout.setOnTouchListener(this);
-        RelativeLayout contentLayout1 = (RelativeLayout)rootView.findViewById(kr.whatshoe.whatShoe.R.id.contentLayout1);
+        RelativeLayout contentLayout1 = (RelativeLayout) rootView.findViewById(kr.whatshoe.whatShoe.R.id.contentLayout1);
         contentLayout1.setOnClickListener(this);
         contentLayout1.setOnTouchListener(this);
-        RelativeLayout contentLayout2 = (RelativeLayout)rootView.findViewById(kr.whatshoe.whatShoe.R.id.contentLayout2);
+        RelativeLayout contentLayout2 = (RelativeLayout) rootView.findViewById(kr.whatshoe.whatShoe.R.id.contentLayout2);
         contentLayout2.setOnClickListener(this);
         contentLayout2.setOnTouchListener(this);
-        RelativeLayout contentLayout3 = (RelativeLayout)rootView.findViewById(kr.whatshoe.whatShoe.R.id.contentLayout3);
+        RelativeLayout contentLayout3 = (RelativeLayout) rootView.findViewById(kr.whatshoe.whatShoe.R.id.contentLayout3);
         contentLayout3.setOnClickListener(this);
         contentLayout3.setOnTouchListener(this);
-        RelativeLayout contentLayout4 = (RelativeLayout)rootView.findViewById(kr.whatshoe.whatShoe.R.id.contentLayout4);
+        RelativeLayout contentLayout4 = (RelativeLayout) rootView.findViewById(kr.whatshoe.whatShoe.R.id.contentLayout4);
         contentLayout4.setOnClickListener(this);
         contentLayout4.setOnTouchListener(this);
-        contentImgUpper=(ImageView)rootView.findViewById(R.id.contentImgUpper);
-        contentImg1=(ImageView)rootView.findViewById(R.id.contentImg1);
-        contentImg2=(ImageView)rootView.findViewById(R.id.contentImg2);
-        contentImg3=(ImageView)rootView.findViewById(R.id.contentImg3);
-        contentImg4=(ImageView)rootView.findViewById(R.id.contentImg4);
+        contentImgUpper = (ImageView) rootView.findViewById(R.id.contentImgUpper);
+        contentImg1 = (ImageView) rootView.findViewById(R.id.contentImg1);
+        contentImg2 = (ImageView) rootView.findViewById(R.id.contentImg2);
+        contentImg3 = (ImageView) rootView.findViewById(R.id.contentImg3);
+        contentImg4 = (ImageView) rootView.findViewById(R.id.contentImg4);
 
         return rootView;
     }
 
     @Override
     public void onResume() {
-        loginPreferences = getActivity().getSharedPreferences("login_pref", 0);
+
         MainActivity.currentFragment = MainActivity.FRAGMENT_FLAG_CONTENT;
-        refreshPushIcon();
         if (!MainActivity.needLogin) {
             if (!loginPreferences.contains("id")) {
                 getActivity().finish();
@@ -76,13 +78,6 @@ public class ContentFragment extends Fragment implements View.OnClickListener, V
         }
         super.onResume();
     }
-
-    @Override
-    public void onPause() {
-
-        super.onPause();
-    }
-
 
     @Override
     public void onClick(View v) {
@@ -110,22 +105,24 @@ public class ContentFragment extends Fragment implements View.OnClickListener, V
                 break;
         }
     }
-    private void onPressedEffect(ImageView img, MotionEvent event){
-        if(event.getAction()==MotionEvent.ACTION_DOWN){
+
+    private void onPressedEffect(ImageView img, MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
             img.setColorFilter(Color.argb(70, 50, 50, 50));
-        }
-        else if(event.getAction()==MotionEvent.ACTION_UP){
+        } else if (event.getAction() == MotionEvent.ACTION_UP) {
             img.clearColorFilter();
-        } else if(event.getAction()==MotionEvent.ACTION_CANCEL){
+        } else if (event.getAction() == MotionEvent.ACTION_CANCEL) {
             img.clearColorFilter();
         }
     }
+
     private void startContentDetail(Class<?> cls, int num) {
         Intent intent = new Intent();
-        intent.putExtra("content",num);
+        intent.putExtra("content", num);
         intent.setClass(getActivity(), cls);
         getActivity().startActivity(intent);
     }
+
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         switch (v.getId()) {
@@ -149,20 +146,5 @@ public class ContentFragment extends Fragment implements View.OnClickListener, V
         }
 
         return false;
-    }
-    private void refreshPushIcon(){
-//        orderPreferences = getActivity().getSharedPreferences("order_pref",0);
-//        if(orderPreferences.contains("orderCode")){
-//            ActionBar actionbar = ((ActionBarActivity) getActivity()).getSupportActionBar();
-//            View mCustomView = actionbar.getCustomView();
-//            TextView pushIcon = (TextView)mCustomView.findViewById(R.id.push_text);
-//            if(!orderPreferences.getBoolean("isRead",true)) {
-//                pushIcon.setVisibility(View.VISIBLE);
-//                actionbar.setCustomView(mCustomView);
-//            } else{
-//                pushIcon.setVisibility(View.INVISIBLE);
-//                actionbar.setCustomView(mCustomView);
-//            }
-//        }
     }
 }

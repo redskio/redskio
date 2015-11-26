@@ -1,5 +1,6 @@
 package kr.whatshoe.whatShoe;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -90,9 +91,10 @@ public class JoinFragment extends Fragment implements View.OnClickListener{
         useLawText.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-//                Intent intent = new Intent();
-//                intent.setClass(JoinActivity.this,LawActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent();
+                intent.setClass(getActivity(),LawActivity.class);
+                intent.putExtra("law",1);
+                startActivity(intent);
                 return false;
             }
         });
@@ -100,9 +102,10 @@ public class JoinFragment extends Fragment implements View.OnClickListener{
         personalLawText.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-//                Intent intent = new Intent();
-//                intent.setClass(JoinActivity.this,LawActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent();
+                intent.setClass(getActivity(),LawActivity.class);
+                intent.putExtra("law",2);
+                startActivity(intent);
                 return false;
             }
         });

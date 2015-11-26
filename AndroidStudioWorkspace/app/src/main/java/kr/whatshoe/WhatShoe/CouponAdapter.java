@@ -53,11 +53,10 @@ public class CouponAdapter extends ArrayAdapter<Coupon> {
             convertView = inflater.inflate(layout, parent, false);
         }
         Coupon coupon = list.get(position);
-        TextView priceText = (TextView)convertView.findViewById(R.id.price_text);
+        TextView priceText = (TextView) convertView.findViewById(R.id.price_text);
         priceText.setText(coupon.getPrice() + "원");
-        TextView descText = (TextView)convertView.findViewById(R.id.desc_text);
-        switch(Integer.parseInt(coupon.getDesc()))
-        {
+        TextView descText = (TextView) convertView.findViewById(R.id.desc_text);
+        switch (Integer.parseInt(coupon.getDesc())) {
             case 1:
                 descText.setText("과장님 충성 쿠폰");
                 break;
@@ -72,8 +71,8 @@ public class CouponAdapter extends ArrayAdapter<Coupon> {
                 break;
         }
 
-        TextView couponStatus = (TextView)convertView.findViewById(R.id.coupon_status_text);
-        if(coupon.getStatus() == 1){
+        TextView couponStatus = (TextView) convertView.findViewById(R.id.coupon_status_text);
+        if (coupon.getStatus() == 1) {
             couponStatus.setText("사용 전");
         } else {
             couponStatus.setText("사용\n완료");

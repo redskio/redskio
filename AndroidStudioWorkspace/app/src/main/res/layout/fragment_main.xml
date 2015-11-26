@@ -9,7 +9,7 @@
         android:id="@+id/title_layout"
         android:layout_width="match_parent"
         android:layout_height="57.5dp"
-        android:background="@color/color_login_default">
+        android:background="@color/color_brown">
 
         <ImageButton
             android:id="@+id/cancel_btn"
@@ -63,11 +63,11 @@
         android:orientation="vertical"
         android:layout_below="@+id/title_layout">
 
-        <RelativeLayout
+        <net.daum.mf.map.api.MapView
             android:id="@+id/map_view"
             android:layout_width="match_parent"
             android:layout_height="280dp">
-        </RelativeLayout>
+        </net.daum.mf.map.api.MapView>
 
         <LinearLayout
             android:orientation="vertical"
@@ -79,21 +79,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <EditText
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:id="@+id/currentIdDetail"
+                    android:id="@+id/currentLocation"
                     android:layout_marginBottom="0.5dp"
                     android:background="#ffffff"
                     android:paddingLeft="50dp"
                     android:hint="Ex: 서울시 강남구 역삼동"
-                    android:textSize="14sp" />
+                    android:focusable="true"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical" />
 
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/location_btn"
-                    android:id="@+id/button"
+                    android:id="@+id/btnRefreshLoc"
                     android:background="@null"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="10dp" />
@@ -119,7 +121,7 @@
                 android:outlineProvider="bounds"
                 android:background="#ffffff">
 
-                <EditText
+                <TextView
                     android:id="@+id/locationDetail"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -131,9 +133,10 @@
                     android:textColorHint="#666666"
                     android:textSize="14sp"
                     android:paddingLeft="10dp"
-                    android:imeOptions="actionDone">
+                    android:focusable="true"
+                    android:gravity="center_vertical">
                     <requestFocus/>
-                </EditText>
+                </TextView>
                 <ImageButton
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -153,13 +156,14 @@
                 android:textColor="#000000"
                 android:button="@drawable/button_default_location"
                 android:id="@+id/buttonSetDefault"
-                android:background="#ffffff"
                 android:gravity="center_vertical|left"
                 android:layout_marginTop="1dp"
                 android:textSize="14sp"
                 android:elevation="0.5dp"
                 android:outlineProvider="bounds"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:background="@color/color_dark_gray"
+                android:checked="false" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -178,7 +182,7 @@
             android:longClickable="false"
             android:minHeight="60dp"
             android:text="@string/locationBtnText"
-            android:textColor="@color/color_red"
+            android:textColor="@color/button_red_text"
             android:textSize="16sp"
             android:textStyle="bold"
             android:visibility="visible"

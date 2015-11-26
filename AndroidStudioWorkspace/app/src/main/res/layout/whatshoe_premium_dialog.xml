@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="337dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/roundlayout"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/forman_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="false"
+                android:layout_centerInParent="true"
+                android:text="@string/forman_title"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/dialog_cancel_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="7.25dp"
+                android:layout_marginRight="15.5dp"
+                android:layout_marginTop="7.25dp"
+                android:background="@null"
+                android:src="@drawable/button_dialog_cancle" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView12"
+            android:layout_width="wrap_content"
+            android:layout_height="380dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/after_order_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff" >
+
+                        <TextView
+                            android:id="@+id/after_order_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/after_order"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/after_order_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_counsel"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:checked="false" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_shoe_full_man"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginLeft="0.75dp">
+
+                        <TextView
+                            android:id="@+id/pre_shoe_full_man_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_shoe_full_man"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_shoe_full_man_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_shoecare_full_man"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:checked="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/pre_deepshoecare_man"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginRight="0.75dp">
+
+                        <TextView
+                            android:id="@+id/pre_deepshoecare_man_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_deep_shoecare_man"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_deepshoecare_man_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_deepshoecare_man"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:checked="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_heel_mid_man"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginLeft="0.75dp">
+
+                        <TextView
+                            android:id="@+id/pre_heel_mid_man_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_heel_mid_man"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_heel_mid_man_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_heel_mid_man"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:checked="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/pre_heel_big_man"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginRight="0.75dp">
+
+                        <TextView
+                            android:id="@+id/pre_heel_big_man_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_heel_big_man"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_heel_big_man_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_heel_big_man"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:checked="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_vibram_heel_man"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_marginTop="1.5dp">
+
+                        <TextView
+                            android:id="@+id/pre_vibram_heel_man_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_vibram_heel_man"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_vibram_heel_man_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_vibram_heel_man"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:checked="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:id="@+id/pre_soles_rubber_man"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp">
+
+                        <TextView
+                            android:id="@+id/pre_soles_rubber_man_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_soles_rubber_man"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_soles_rubber_man_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_soles_rubber_man"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_vibram_soles_man"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_marginLeft="0.75dp">
+
+                        <TextView
+                            android:id="@+id/pre_vibram_soles_man_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_vibram_soles_man"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_vibram_soles_man_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_vibram_soles_man"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/pre_allsoles_man"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp">
+
+                        <TextView
+                            android:id="@+id/pre_allsoles_man_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_allsoles_man"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_allsoles_man_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_allsoles_man"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_italy_allsoles_man"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_marginLeft="0.75dp">
+
+                        <TextView
+                            android:id="@+id/pre_italy_allsoles_man_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_italy_allsoles_man"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_italy_allsoles_man_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_italy_allsoles_man"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/pre_eng_allsoles_man"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp">
+
+                        <TextView
+                            android:id="@+id/pre_eng_allsoles_man_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_eng_allsoles_man"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_eng_allsoles_man_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_eng_allsoles_man"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_bond_man"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_marginTop="1.5dp">
+
+                        <TextView
+                            android:id="@+id/pre_bond_man_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_bond_man"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_bond_man_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_bond_man"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/pre_color_man"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp">
+
+                        <TextView
+                            android:id="@+id/pre_color_man_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_color_man"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_color_man_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_color_man"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_sewing_man"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_marginTop="1.5dp">
+
+                        <TextView
+                            android:id="@+id/pre_sewing_man_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_sewing_man"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_sewing_man_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_sewing_man"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/pre_socks"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginTop="1.5dp">
+
+                        <TextView
+                            android:id="@+id/pre_socks_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/forman_socks"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_socks_man_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_socks_man"
+                            android:clickable="false"
+                            android:focusable="false" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_tobacco"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginTop="1.5dp" >
+
+                        <TextView
+                            android:id="@+id/pre_tobacco_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_tobacco"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_cigarette_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_cigarette"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal" >
+
+                    <RelativeLayout
+                        android:id="@+id/pre_lighter"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginTop="1.5dp" >
+
+                        <TextView
+                            android:id="@+id/pre_lighter_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_lighter"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_lighter_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_lighter"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout3"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginTop="1.5dp" >
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:background="#eaeaea"
+            android:minHeight="40dp">
+
+            <TextView
+                android:id="@+id/dialogTotalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentTop="false"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15.5dp"
+                android:text="@string/dialog_totalprice"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dialogTotalPriceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="false"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="10.5dp"
+                android:text="0원"
+                android:textColor="@color/color_login_default"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/set_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/listView"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_round_red"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="New Button"
+            android:textColor="@color/button_red_text"
+            android:textStyle="bold" />
+        />
+    </LinearLayout>
+
+</RelativeLayout>

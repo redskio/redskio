@@ -1,4 +1,4 @@
-package kr.whatshoe.whatShoe;
+package kr.whatshoe.Order;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -11,6 +11,8 @@ public class FixOrder implements Parcelable{
     private String time;
     private int isChecked; //was boolean but int for check the order count
     private int price;
+    private int gender;
+    private int code;
     public static final Parcelable.Creator<FixOrder> CREATOR = new Creator<FixOrder>() {
         @Override
         public FixOrder createFromParcel(Parcel in) {
@@ -28,11 +30,13 @@ public class FixOrder implements Parcelable{
 
     }
 
-    public FixOrder(String contentText, int isChecked, int price, String time) {
+    public FixOrder(String contentText, int isChecked, int price, String time, int gender, int code) {
         this.contentText = contentText;
         this.isChecked = isChecked;
         this.price = price;
         this.time = time;
+        this.gender = gender;
+        this.code = code;
     }
 
     public FixOrder(Parcel parcel){
@@ -40,6 +44,8 @@ public class FixOrder implements Parcelable{
         this.time = parcel.readString();
         this.isChecked = parcel.readInt();
         this.price = parcel.readInt();
+        this.gender = parcel.readInt();
+        this.code = parcel.readInt();
     }
     public int getIsChecked() {
         return isChecked;
@@ -69,7 +75,18 @@ public class FixOrder implements Parcelable{
     public String getTime(){
         return time;
     }
-
+    public int getGender(){
+        return gender;
+    }
+    public void setGender(int gender){
+        this.gender = gender;
+    }
+    public int getCode(){
+        return code;
+    }
+    public void setCode(int code){
+        this.code = code;
+    }
     @Override
     public int describeContents() {
         return 0;
@@ -81,6 +98,8 @@ public class FixOrder implements Parcelable{
         dest.writeString(time);
         dest.writeInt(isChecked);
         dest.writeInt(price);
+        dest.writeInt(gender);
+        dest.writeInt(code);
     }
 
 }

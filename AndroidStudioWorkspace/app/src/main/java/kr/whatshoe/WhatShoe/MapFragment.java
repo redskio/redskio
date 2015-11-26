@@ -1,7 +1,6 @@
 package kr.whatshoe.whatShoe;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,13 +10,12 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,15 +26,18 @@ import net.daum.mf.map.api.MapView;
 
 import java.util.ArrayList;
 
+import kr.whatshoe.Order.FixOrder;
+
 
 /**
  * A placeholder fragment containing a simple view.
  */
-public class MapFragment extends Fragment implements View.OnClickListener {
-    private EditText currentDetail;
-    private EditText locationDetail;
+public class MapFragment extends Fragment implements View.OnClickListener{
+    private TextView currentLocation;
+    private TextView locationDetail;
     private MapView mapView;
     private ViewGroup mapViewContainer;
+    private boolean isPremium;
     ArrayList<FixOrder> arraylist;
     public MapFragment() {
 
@@ -52,13 +53,14 @@ public class MapFragment extends Fragment implements View.OnClickListener {
         if(arraylist== null){
             getActivity().finish();
         }
+        isPremium = getArguments().getBoolean("premium");
         View rootView = inflater.inflate(kr.whatshoe.whatShoe.R.layout.fragment_main, container, false);
         TextView locationText = (TextView) rootView.findViewById(kr.whatshoe.whatShoe.R.id.currentId);
         locationText.setText(MainActivity.getLocationInfo());
 
 
-        currentDetail = (EditText) rootView.findViewById(R.id.currentIdDetail);
-        locationDetail = (EditText) rootView.findViewById(R.id.locationDetail);
+        currentLocation = (TextView) rootView.findViewById(R.id.currentLocation);
+        locationDetail = (TextView) rootView.findViewById(R.id.locationDetail);
 
         Button locationBtn = (Button) rootView.findViewById(kr.whatshoe.whatShoe.R.id.locationBtn);
         locationBtn.setOnClickListener(this);
@@ -73,7 +75,7 @@ public class MapFragment extends Fragment implements View.OnClickListener {
 
         Resources resources = getActivity().getResources();
         String key = resources.getString(R.string.mapKey);
-        mapView = new MapView(getActivity());
+        mapView = (MapView) rootView.findViewById(R.id.map_view);
         mapView.setDaumMapApiKey(key);
         if (MainActivity.getLocation() != null) {
             MapPoint mapPoint = MapPoint.mapPointWithGeoCoord(MainActivity.getLocation().getLatitude(), MainActivity.getLocation().getLongitude());
@@ -87,13 +89,11 @@ public class MapFragment extends Fragment implements View.OnClickListener {
             mapView.addPOIItem(marker);
             mapView.setMapTilePersistentCacheEnabled(true);
 
-            currentDetail.setText(MainActivity.getCurrentLocality() + " " +
+            currentLocation.setText(MainActivity.getCurrentLocality() + " " +
                     MainActivity.getCurrentCity() + " " + MainActivity.getLocationInfo());
         } else {
             Toast.makeText(getActivity(), "현재 위치를 가져올 수 없습니다. 직접 주소를 입력해 주세요.", Toast.LENGTH_LONG).show();
         }
-        mapViewContainer = (ViewGroup) rootView.findViewById(R.id.map_view);
-        mapViewContainer.addView(mapView);
 
 
         ImageButton textCancle = (ImageButton)rootView.findViewById(R.id.textCancleBtn);
@@ -104,7 +104,7 @@ public class MapFragment extends Fragment implements View.OnClickListener {
         if(preference.getBoolean("isDefaultLocation",false)) {
             setOnDefaultButton.setChecked(true);
             locationDetail.setText(preference.getString("defaultLocation", ""));
-            currentDetail.setText(preference.getString("cityLocation",""));
+            currentLocation.setText(preference.getString("cityLocation", ""));
         }
         setOnDefaultButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -112,27 +112,64 @@ public class MapFragment extends Fragment implements View.OnClickListener {
                 if(isChecked){
                     if(locationDetail!=null && !locationDetail.getText().toString().equals("")){
                         Toast.makeText(getActivity(),"현재 주소가 기본 주소로 저장되었습니다.",Toast.LENGTH_SHORT).show();
-                        preference.edit().putBoolean("isDefaultLocation",true).apply();
-                        preference.edit().putString("defaultLocation",locationDetail.getText().toString()).apply();
-                        preference.edit().putString("cityLocation",currentDetail.getText().toString()).apply();
+                        preference.edit().putBoolean("isDefaultLocation", true).apply();
+                        preference.edit().putString("defaultLocation", locationDetail.getText().toString()).apply();
+                        preference.edit().putString("cityLocation",currentLocation.getText().toString()).apply();
+                        Resources resources = getActivity().getResources();
+                        if(resources!=null){
+                            buttonView.setBackgroundColor(resources.getColor(R.color.color_red));
+                            buttonView.setTextColor(resources.getColor(R.color.color_white));
+                        }
                     }
                     else {
                         Toast.makeText(getActivity(),"현재 주소가 입력되지 않았습니다.",Toast.LENGTH_SHORT).show();
                         buttonView.setChecked(false);
+                        Resources resources = getActivity().getResources();
+                        if(resources!=null){
+                            buttonView.setBackgroundColor(resources.getColor(R.color.color_dark_gray));
+                            buttonView.setTextColor(resources.getColor(R.color.color_black));
+                        }
                     }
                 } else{
                     preference.edit().remove("isDefaultLocation").apply();
                     preference.edit().remove("defaultLocation").apply();
                     preference.edit().remove("cityLocation").apply();
+                    Resources resources = getActivity().getResources();
+                    if(resources!=null){
+                        buttonView.setBackgroundColor(resources.getColor(R.color.color_dark_gray));
+                        buttonView.setTextColor(resources.getColor(R.color.color_black));
+                    }
                 }
+            }
+        });
+        currentLocation.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    showAddressDialog();
+                }
+                return false;
+            }
+        });
+        locationDetail.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    showAddressDialog();
+                 }
+                return false;
             }
         });
         return rootView;
     }
+    private void showAddressDialog(){
+        final AddressDialog dialog = new AddressDialog(getActivity(),currentLocation,locationDetail);
 
+        dialog.show();
+    }
     @Override
     public void onResume() {
-        MainActivity.currentFragment = MainActivity.FRAGMENT_FLAG_SERVICE;
+        MainActivity.currentFragment = MainActivity.FRAGMENT_FLAG_MAP;
         super.onResume();
     }
 
@@ -149,13 +186,13 @@ public class MapFragment extends Fragment implements View.OnClickListener {
                     Toast.makeText(getActivity(),"상세 주소가 입력되지 않았습니다. 상세주소를 입력해 주세요",Toast.LENGTH_SHORT).show();
                     break;
                 }
-                if (MainActivity.getCurrentCity() == null || MainActivity.getCurrentCity().equals("")) {
-                    makeAlert("현재 강남구 및 서초구에서만 서비스 가능한 서비스 입니다.\n현재 위치 정보를 확인 할 수 없으니 입력하신 주소를 다시 한번 확인해 주세요.");
-                } else if (!MainActivity.getCurrentCity().equals("강남구")&& !MainActivity.getCurrentCity().equals("서초구")) {
-                    makeAlert("현재 강남구 및 서초구만 서비스 가능합니다. 곧 좋은 서비스로 찾아뵙겠습니다.");
+                if (!isPremium && (MainActivity.getCurrentCity() == null || MainActivity.getCurrentCity().equals(""))) {
+                    makeAlert("현재 강남구, 서초구, 분당/판교에서만 사용 가능한 서비스 입니다.\n현재 위치 정보를 확인 할 수 없으니 입력하신 주소를 다시 한번 확인해 주세요.");
+                } else if (!isPremium && !MainActivity.getCurrentCity().equals("강남구")&& !MainActivity.getCurrentCity().equals("서초구")&& !MainActivity.getCurrentCity().equals("분당구")) {
+                    makeAlert("현재 강남구, 서초구, 분당/판교만 서비스 가능합니다. 곧 좋은 서비스로 찾아뵙겠습니다.");
                 } else {
-                    MainActivity.currentFragment = MainActivity.FRAGMENT_FLAG_CONTENT;
-                    String locationResult = currentDetail.getText().toString();
+//                    MainActivity.currentFragment = MainActivity.FRAGMENT_FLAG_SERVICEORDER;
+                    String locationResult = currentLocation.getText().toString();
                     String locationResultDetail = locationDetail.getText().toString();
                     intent = new Intent();
                     intent.setClass(getActivity(), PayActivity.class);
@@ -172,7 +209,6 @@ public class MapFragment extends Fragment implements View.OnClickListener {
                 getActivity().getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new MapSearchFragment()).commit();
                 break;
             case kr.whatshoe.whatShoe.R.id.cancel_btn:
-                closeKeyboad(currentDetail);
                 getActivity().getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new ServiceFragment()).commit();
                 break;
             default:
@@ -189,8 +225,8 @@ public class MapFragment extends Fragment implements View.OnClickListener {
                     @Override
 
                     public void onClick(DialogInterface dialog, int which) {
-                        MainActivity.currentFragment = MainActivity.FRAGMENT_FLAG_CONTENT;
-                        String locationResult = currentDetail.getText().toString();
+//                      MainActivity.currentFragment = MainActivity.FRAGMENT_FLAG_SERVICEORDER;
+                        String locationResult = currentLocation.getText().toString();
                         String locationResultDetail = locationDetail.getText().toString();
                         Intent intent = new Intent();
                         intent.setClass(getActivity(),PayActivity.class);
@@ -209,16 +245,6 @@ public class MapFragment extends Fragment implements View.OnClickListener {
             }
 
         }).show();
-    }
-
-    private void closeKeyboad(EditText edittext) {
-
-        InputMethodManager inputMethodManager =
-
-                (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-
-        inputMethodManager.hideSoftInputFromWindow(edittext.getWindowToken(), 0);
-
     }
 
 }

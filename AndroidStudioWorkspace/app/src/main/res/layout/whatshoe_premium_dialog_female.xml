@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="337dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/roundlayout"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/forwoman_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="false"
+                android:layout_centerInParent="true"
+                android:text="@string/forwoman_title"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/dialog_cancel_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="7.25dp"
+                android:layout_marginRight="15.5dp"
+                android:layout_marginTop="7.25dp"
+                android:background="@null"
+                android:src="@drawable/button_dialog_cancle" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView12"
+            android:layout_width="wrap_content"
+            android:layout_height="380dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/after_order_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/after_order_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/after_order"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/after_order_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_counsel"
+                            android:checked="false"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_shoe_full_woman"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/pre_shoe_full_woman_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_shoecare_full_woman"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_shoecare_full_woman_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_shoecare_full_woman"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/pre_deepshoecare_woman"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/pre_deepshoecare_woman_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_deepshoecare_woman"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_deepshoecare_woman_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_deepshoecare_woman"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_heel_small_woman"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginBottom="1.5dp"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/pre_heel_small_woman_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_heel_small_woman"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_heel_small_woman_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_heel_small_woman"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/pre_heel_mid_woman"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/pre_heel_mid_woman_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_heel_mid_woman"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_heel_mid_woman_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_heel_mid_woman"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_heel_big_woman"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/pre_heel_big_woman_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_heel_big_woman"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_heel_big_woman_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_heel_big_woman"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/pre_soles_rubber_woman"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/pre_soles_rubber_woman_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_soles_rubber_woman"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_soles_rubber_woman_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_soles_rubber_woman"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_vibram_soles_woman"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/pre_vibram_soles_woman_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_vibram_soles_woman"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_vibram_soles_woman_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_vibram_soles_woman"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/pre_all_soles"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/pre_all_soles_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_all_soles"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_all_soles_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_all_soles"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_heel_woman"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/pre_heel_woman_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_heel_woman"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_heel_woman_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_heel_woman"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/pre_in_woman"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/pre_eng_allsoles_woman_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_in_woman"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_in_woman_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_in_woman"
+                            android:clickable="false"
+                            android:focusable="false" />
+                        />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_bond_woman"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/pre_bond_woman_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_bond_woman"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_bond_woman_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_bond_woman"
+                            android:clickable="false"
+                            android:focusable="false" />
+                        />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/pre_color_woman"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/pre_color_woman_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_color_woman"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_color_woman_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_color_woman"
+                            android:clickable="false"
+                            android:focusable="false" />
+                        />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_sewing_woman"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/pre_sewing_woman_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_sewing_woman"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_sewing_woman_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_sewing_woman"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/pre_stocking"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/pre_stocking_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/forwoman_stocking"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_stocking_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_stocking_woman"
+                            android:clickable="false"
+                            android:focusable="false" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_band_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/pre_band_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/forwoman_band"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_band_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_band_woman"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/pre_tobacco"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginTop="1.5dp" >
+
+                        <TextView
+                            android:id="@+id/pre_tobacco_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/pre_tobacco"
+                            android:textColor="#000000"
+                            android:textSize="12sp"
+                            android:layout_marginLeft="15.5dp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_cigarette_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_cigarette"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pre_lighter"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginTop="1.5dp" >
+
+                        <TextView
+                            android:id="@+id/pre_lighter_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/pre_lighter"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/pre_lighter_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/pre_lighter"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:background="#eaeaea"
+            android:minHeight="40dp">
+
+            <TextView
+                android:id="@+id/dialogTotalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="false"
+                android:layout_alignParentTop="false"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15.5dp"
+                android:text="@string/dialog_totalprice"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dialogTotalPriceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="false"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="10.5dp"
+                android:text="0원"
+                android:textColor="@color/color_login_default"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/set_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/listView"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_round_red"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="New Button"
+            android:textColor="@color/button_red_text"
+            android:textStyle="bold" />
+        />
+    </LinearLayout>
+
+</RelativeLayout>

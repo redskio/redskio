@@ -155,10 +155,10 @@ public class PGActivity extends AppCompatActivity {
             }
         }
         String sb =stringBuilder.toString();
-        int start = sb.indexOf("payurl=")+7;
+       int start = sb.indexOf("payurl=")+7;
        int end = sb.indexOf("errno")-1;
        sb = sb.substring(start,end);
-
+        
 
         return sb;
     }

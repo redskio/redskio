@@ -8,7 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
-
+/*************************************************************
+Activity for News contents detail page.
+ hard coded contents.
+ *************************************************************/
 public class ContentDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -6,10 +6,10 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.ImageButton;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -21,7 +21,7 @@ public class GiftPersonAdapter extends ArrayAdapter {
     private int layout;
     LayoutInflater inflater;
     Context context;
-    int position;
+
 
 
     public GiftPersonAdapter(Context context, int layout,
@@ -51,7 +51,7 @@ public class GiftPersonAdapter extends ArrayAdapter {
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, final ViewGroup parent) {
         if (convertView == null) {
             convertView = inflater.inflate(layout, parent, false);
         }
@@ -95,22 +95,31 @@ public class GiftPersonAdapter extends ArrayAdapter {
         phoneText.setText(person.getPhoneNum());
 
 
-        final Spinner spinner = (Spinner) convertView.findViewById(R.id.spinner);
         Integer[] much = {1,2,3,4,5};
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(
-        context, android.R.layout.simple_spinner_item, much);
-        spinner.setAdapter(adapter);
-             spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                 @Override
-                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                     person.setNum((Integer) spinner.getSelectedItem());
-                 }
+        ImageButton cancleItem = (ImageButton)convertView.findViewById(R.id.cancleItem);
+        cancleItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                list.remove(position);
+                notifyDataSetChanged();
+                setListViewHeightBasedOnChildren((ListView) parent);
+            }
+        });
 
-                 @Override
-                 public void onNothingSelected(AdapterView<?> parent) {
-
-                 }
-             });
         return convertView;
+    }
+    public void setListViewHeightBasedOnChildren(ListView listView) {
+
+        int totalHeight = 0;
+        for (int i = 0; i < getCount(); i++) {
+            View listItem = getView(i, null, listView);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (getCount() - 1));
+        listView.setLayoutParams(params);
+        listView.requestLayout();
     }
 }

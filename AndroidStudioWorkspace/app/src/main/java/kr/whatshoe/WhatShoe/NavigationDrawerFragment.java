@@ -249,6 +249,9 @@ public class NavigationDrawerFragment extends Fragment implements View.OnClickLi
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if(mDrawerToggle==null){
+            return true;
+        }
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }

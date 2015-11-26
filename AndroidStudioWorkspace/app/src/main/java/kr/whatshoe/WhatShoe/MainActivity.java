@@ -46,9 +46,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     private static final int MSG_TIMER_EXPIRED = 1;
     public static final int FRAGMENT_FLAG_CONTENT = 0;
     public static final int FRAGMENT_FLAG_SERVICEORDER = 1;
-    public static final int FRAGMENT_FLAG_SERVICE = 2;
+    public static final int FRAGMENT_FLAG_MAP = 2;
     public static final int FRAGMENT_FLAG_SEARCH = 3;
-    public static int currentFragment = FRAGMENT_FLAG_CONTENT;
+    public static int currentFragment = FRAGMENT_FLAG_SERVICEORDER;
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private BroadcastReceiver mRegistrationBroadcastReceiver;
     private boolean mIsBackKeyPressed = false;
@@ -71,11 +71,14 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     protected void onResume() {
         super.onResume();
         if (currentFragment == FRAGMENT_FLAG_SERVICEORDER) {
+            getInstanceIdToken();
             getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new ServiceFragment()).commitAllowingStateLoss();
         } else if (currentFragment == FRAGMENT_FLAG_CONTENT) {
             getInstanceIdToken();
             getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new ContentFragment()).commitAllowingStateLoss();
-        }  else {
+        }  else if (currentFragment == FRAGMENT_FLAG_MAP) {
+            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new ServiceFragment()).commitAllowingStateLoss();
+        }else {
         getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new ContentFragment()).commitAllowingStateLoss();
         }
         actionBarSetting();
@@ -95,10 +98,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         setContentView(kr.whatshoe.whatShoe.R.layout.activity_main);
 
         registBroadcastReceiver();
-
-
         // After enter the activity, call Loading Activity. and transaction the ContentFragment
-        if (savedInstanceState == null) {
             Intent intent = new Intent();
             intent.setClass(MainActivity.this, LoadingActivity.class);
             startActivity(intent);
@@ -108,9 +108,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                     R.id.navigation_drawer,
                     (DrawerLayout) findViewById(R.id.drawer_layout));
             getSupportFragmentManager().beginTransaction()
-                    .add(kr.whatshoe.whatShoe.R.id.container, new ContentFragment()).commit();
-        }
-
+                    .add(kr.whatshoe.whatShoe.R.id.container, new ServiceFragment()).commit();
     }
 
 
@@ -156,7 +154,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
     @Override
     public void onBackPressed() {
-        if (currentFragment == FRAGMENT_FLAG_CONTENT) {
+        if (currentFragment == FRAGMENT_FLAG_SERVICEORDER) {
             if (mIsBackKeyPressed == false) {
                 mIsBackKeyPressed = true;
                 mCurrTimeInMillis = Calendar.getInstance().getTimeInMillis();
@@ -170,9 +168,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                     System.exit(0);
                 }
             }
-        } else if (currentFragment == FRAGMENT_FLAG_SERVICEORDER) {
-            getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new ContentFragment()).commit();
-        } else if (currentFragment == FRAGMENT_FLAG_SERVICE){
+        }
+        else if (currentFragment == FRAGMENT_FLAG_MAP){
             getSupportFragmentManager().beginTransaction().replace(kr.whatshoe.whatShoe.R.id.container, new ServiceFragment()).commit();
         }
     }

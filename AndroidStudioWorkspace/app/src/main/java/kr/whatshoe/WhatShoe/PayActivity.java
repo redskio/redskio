@@ -28,6 +28,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
 
+import kr.whatshoe.Order.FixOrder;
 import kr.whatshoe.Util.HttpClient;
 
 public class PayActivity extends AppCompatActivity {
@@ -35,6 +36,7 @@ public class PayActivity extends AppCompatActivity {
     ArrayList<FixOrder> orderList = new ArrayList<FixOrder>();
     SharedPreferences loginPreference;
     SharedPreferences orderPreference;
+    private static final String CODEVERSION= "#01";
     String time;
     String locationResult="";
     String locationResultDetail = "";
@@ -254,10 +256,12 @@ public class PayActivity extends AppCompatActivity {
         return dTime;
     }
     private String getOrderCode(){
-        String orderCode = "";
-        for(int i = 0 ; i < arrayList.size() ; i++){
-            if(arrayList.get(i).getIsChecked()>0){
-                orderCode+="1"+i;
+        String orderCode = CODEVERSION;
+        FixOrder order = null;
+        for(int i = 0 ; i <arrayList.size();i++){
+            order =  arrayList.get(i);
+            if(order.getIsChecked()>0){
+                orderCode+= (order.getGender()*100 + order.getCode());
             }
         }
         return orderCode;

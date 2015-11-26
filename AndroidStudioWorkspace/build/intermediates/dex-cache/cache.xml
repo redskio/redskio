@@ -2,312 +2,305 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.1.0\jars\classes.jar"
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\network\1.1.4\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="041d93cf0533591c29d1d7263b2fa114dbfb20bd">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-4b29f4856a04f265099b81927db977792feb32fd.jar" />
+        sha1="4a445ebd5790ee03b8ee8615a5300da62d7f7618">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-412909e990c58da4791a1908f052d00a03737501.jar" />
     </item>
     <item
         jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\usermgmt\1.1.4\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="a0950b05197b92b417ed98a9ac87fad636ce0810">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-bdda1ee8bb35934fdd25e9389bea574a359d9a91.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="0f254ec13d6671680482d2218f01ecf14dfa93e6">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-b8bf464960aba4c5f0cf76810745c3fc3e4f4aa3.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-0009ba8c6df8f4b5f09bac3a8e8204c0c6172444.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\libs\internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\internal_impl-22.2.0-51da8edd7c20982f4ea8124d72a713f44fbe4bce.jar" />
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-bdda1ee8bb35934fdd25e9389bea574a359d9a91.jar" />
     </item>
     <item
         jar="C:\Users\jaewoo\.gradle\caches\modules-2\files-2.1\com.mcxiaoke.volley\library\1.0.6\b2e6988baeea1aed656995f973aaa2fc3feaf447\library-1.0.6.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="b2e6988baeea1aed656995f973aaa2fc3feaf447">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\library-1.0.6-41bba89ceb2fbc2a3043bc00483117b705491d7f.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\kakaostory\1.1.4\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c7a97a51da747eb36a4262adc20c5a387d6df991">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-8653c834a42a1ffaf38bc40be53c0f883ff5501b.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="17449c47df35c754b257532052f1270c444f7993">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-e6c905a89de8bd603f34508eff2cc8be708480a0.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="482de223655d06253cc6a4955d653f8994169500">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-22453548835369940817ff08ccd41a387a04d1b7.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\libs\android-async-http-1.4.6.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a845a88238be0b5be9d238652c1bc0605ef91f52">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\android-async-http-1.4.6-d6d5401630e1804e3e7d3f22792a625a483032d0.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d93480da1d303122ee67dc3bc23e6297bdef9951">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-c5888aa6851695c7fc170d826e774900ebac8feb.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\support-annotations-22.2.1-124edc0131d13f1cc81ce45826b8f8091ab1cb5e.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="993834cb17d07d51b92db89d2c330243592ebf77">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-c395bdf3aefcbc7fd1986a0da82fbd22c74fd636.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="997773777cf3904c11d6764fe3b7668538220e49">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-c28923c501aaabe549adc497535c321a46e941d1.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="82825756edeeb3b56b15e73b2edd56e93da5a444">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-24a2cdc91b194b0ed3d92afb3d051f2b9e8c746c.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-b0cd1c043c629dc7408a47bad90ee32b7d2de366.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="9cf8c0ef60847621c7ad00b4f78dbfc9daba4af2">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-aba09d09658f1c53bef3ea7cca7d5ef7ef35288d.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="3178362320bcf51228835b60ff978efadfd1f783">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-412e75bd2ffb94b76f119fc05b1423327d712ef9.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-1b3159cf06856c1b5172b8023974741f3da5d9ce.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\libs\gcm.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a6d7bce795a14c7f86111756c4ceb44b79de14aa">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\gcm-7f8c38d1a766fc6d299abed569c43822e27261dd.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f8efd0096475e0daf054267b61544e10dc776503">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-9f1a6a76e2b70b161065c3ca963e03429c4c6095.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="97f3b099801a9ad9d70e835b9125273e986eb68d">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-b4677d59d8b6b0419a38171a45bb9375953f85a4.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b92002cb2f0e11a226ac5bac6dff1dc2a9d0b774">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-c083ee02a0d6aabcea6d2181d43f2d299f4cfd23.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\internal_impl-22.2.1-fd5ba094b3f527510bb8e07abde1036cb1eddb04.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\libs\libDaumMapAndroid.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="91c9de067eff6b3e026d21934e91ec45db8cd277">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\libDaumMapAndroid-c3948e235ca18515546863a92181b6bb2412175b.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="325788a04b436a0bccbc5b4c54cf0f12ebdcbd2d">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-248157600a9b1d7c14d7263a3073dd2668b8f4e3.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-9090470fdefddbf4d9615af6863e87813564e4f1.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\util\1.1.4\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="3e2e87274ea207e0d8baf956db3f914f7e7506a0">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-e4a9a620608d19487a104c90e68a17b08bd53938.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\network\1.1.4\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="4a445ebd5790ee03b8ee8615a5300da62d7f7618">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-412909e990c58da4791a1908f052d00a03737501.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="3b05c18f60969ecc2ba49c0409c4b96be2d9cb0c">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-544446e727a10d1a82caa364e632630f364c9d99.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="dcb5b75baf05d92e61d5706737200ee55949f97b">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-faa1acd2c55a1abaf2f1e3a5c1a3ca52fcaed31d.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="2a7e47da654546f9457deb6132364f1bf33a1857">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-6bec020084decb5f315921c0f105e36ee279f302.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="95758a2905669affbffc5ddd262921d375674fad">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-a9ec2165cbb5db801863ba3bebb9de33e6f3c07a.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d61920aba361832a9545a43fa8c9453eb02f18f7">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-54386adb6ec57437f73f9394426b5dcb9fde3eb6.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="3aed37c38c56679602255dd72ef356da5d327cda">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-d56db20c23fa48ca88047a23b9f7cab15d460c9c.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="d294caf562c4c678b2ef351662a0ca6f1a4d06c0">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-48ba91eb8ba21835fe347cac77441936c40b97dd.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\kakaolink\1.1.4\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b4d3e69914bd558f3015c95b8510ee606a73683e">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-518df23552954c0e415fd6a9986d30d273c7ec7a.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\friends\1.1.4\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a80583b581d38887a4a9342a0d5ea110ff529a00">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-cab50da359ae0e07bd38b19c1136f3608208e878.jar" />
-    </item>
-    <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\libs\fingerpush_2.2.5.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c15b9e5e11f028fc514bc89e9278183bda8d8d95">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\fingerpush_2.2.5-0e38ef2b018f06d22f865beae793664a8792a90b.jar" />
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\library-1.0.6-41bba89ceb2fbc2a3043bc00483117b705491d7f.jar" />
     </item>
     <item
         jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\auth\1.1.4\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="1ad06a8c3d1b280d8bb9118fd34a35a8e223e905">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-bf277fe467d48ee9c4878ca69b2c0b836dd41dde.jar" />
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-bf277fe467d48ee9c4878ca69b2c0b836dd41dde.jar" />
     </item>
     <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\kakaotalk\1.1.4\jars\classes.jar"
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="6e46697056c4a0946b0ec7d8e473587a8568e289">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-103c2a269ec6550b0bf041ad506ca3087b15c468.jar" />
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-9f1a6a76e2b70b161065c3ca963e03429c4c6095.jar" />
     </item>
     <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\push\1.1.4\jars\classes.jar"
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\8.1.0\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="f33451c8b3a8adff2115e7bb32273aa904f664f5">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-9384de07fd8fa4d951e628e21ad583e1c2654ca8.jar" />
+        sha1="3b05c18f60969ecc2ba49c0409c4b96be2d9cb0c">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-544446e727a10d1a82caa364e632630f364c9d99.jar" />
     </item>
     <item
-        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\8.1.0\jars\classes.jar"
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.0.0\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="3c729e6d76a36c5dc27e6a4c4009296f49eaa88a">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\classes-cfd54eccfe8f2b9227e1e04fd04464ae66a4dc4c.jar" />
+        sha1="0f254ec13d6671680482d2218f01ecf14dfa93e6">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-b8bf464960aba4c5f0cf76810745c3fc3e4f4aa3.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="993834cb17d07d51b92db89d2c330243592ebf77">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-c395bdf3aefcbc7fd1986a0da82fbd22c74fd636.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-9090470fdefddbf4d9615af6863e87813564e4f1.jar" />
     </item>
     <item
         jar="C:\Users\jaewoo\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.4\129874135e6081269ace2312092031558865de12\bolts-android-1.1.4.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="129874135e6081269ace2312092031558865de12">
-        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\release\bolts-android-1.1.4-28cddd50982097ee54da885993a302476dcd297a.jar" />
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.4-28cddd50982097ee54da885993a302476dcd297a.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-fd5ba094b3f527510bb8e07abde1036cb1eddb04.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="dcb5b75baf05d92e61d5706737200ee55949f97b">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-faa1acd2c55a1abaf2f1e3a5c1a3ca52fcaed31d.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3c729e6d76a36c5dc27e6a4c4009296f49eaa88a">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-cfd54eccfe8f2b9227e1e04fd04464ae66a4dc4c.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9cf8c0ef60847621c7ad00b4f78dbfc9daba4af2">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-aba09d09658f1c53bef3ea7cca7d5ef7ef35288d.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\libs\libDaumMapAndroid.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="91c9de067eff6b3e026d21934e91ec45db8cd277">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\libDaumMapAndroid-c3948e235ca18515546863a92181b6bb2412175b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-1b3159cf06856c1b5172b8023974741f3da5d9ce.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="997773777cf3904c11d6764fe3b7668538220e49">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-c28923c501aaabe549adc497535c321a46e941d1.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d93480da1d303122ee67dc3bc23e6297bdef9951">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-c5888aa6851695c7fc170d826e774900ebac8feb.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="17449c47df35c754b257532052f1270c444f7993">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-e6c905a89de8bd603f34508eff2cc8be708480a0.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-124edc0131d13f1cc81ce45826b8f8091ab1cb5e.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b92002cb2f0e11a226ac5bac6dff1dc2a9d0b774">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-c083ee02a0d6aabcea6d2181d43f2d299f4cfd23.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="325788a04b436a0bccbc5b4c54cf0f12ebdcbd2d">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-248157600a9b1d7c14d7263a3073dd2668b8f4e3.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\push\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f33451c8b3a8adff2115e7bb32273aa904f664f5">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-9384de07fd8fa4d951e628e21ad583e1c2654ca8.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\libs\gcm.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a6d7bce795a14c7f86111756c4ceb44b79de14aa">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\gcm-7f8c38d1a766fc6d299abed569c43822e27261dd.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d294caf562c4c678b2ef351662a0ca6f1a4d06c0">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-48ba91eb8ba21835fe347cac77441936c40b97dd.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-51da8edd7c20982f4ea8124d72a713f44fbe4bce.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="82825756edeeb3b56b15e73b2edd56e93da5a444">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-24a2cdc91b194b0ed3d92afb3d051f2b9e8c746c.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\kakaostory\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c7a97a51da747eb36a4262adc20c5a387d6df991">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-8653c834a42a1ffaf38bc40be53c0f883ff5501b.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\util\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3e2e87274ea207e0d8baf956db3f914f7e7506a0">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-e4a9a620608d19487a104c90e68a17b08bd53938.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3178362320bcf51228835b60ff978efadfd1f783">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-412e75bd2ffb94b76f119fc05b1423327d712ef9.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-measurement\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="482de223655d06253cc6a4955d653f8994169500">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-22453548835369940817ff08ccd41a387a04d1b7.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="041d93cf0533591c29d1d7263b2fa114dbfb20bd">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-4b29f4856a04f265099b81927db977792feb32fd.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="2a7e47da654546f9457deb6132364f1bf33a1857">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-6bec020084decb5f315921c0f105e36ee279f302.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\libs\android-async-http-1.4.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a845a88238be0b5be9d238652c1bc0605ef91f52">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.6-d6d5401630e1804e3e7d3f22792a625a483032d0.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-b0cd1c043c629dc7408a47bad90ee32b7d2de366.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="97f3b099801a9ad9d70e835b9125273e986eb68d">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-b4677d59d8b6b0419a38171a45bb9375953f85a4.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\kakaotalk\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6e46697056c4a0946b0ec7d8e473587a8568e289">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-103c2a269ec6550b0bf041ad506ca3087b15c468.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d61920aba361832a9545a43fa8c9453eb02f18f7">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-54386adb6ec57437f73f9394426b5dcb9fde3eb6.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\friends\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a80583b581d38887a4a9342a0d5ea110ff529a00">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-cab50da359ae0e07bd38b19c1136f3608208e878.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.kakao.sdk\kakaolink\1.1.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b4d3e69914bd558f3015c95b8510ee606a73683e">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-518df23552954c0e415fd6a9986d30d273c7ec7a.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3aed37c38c56679602255dd72ef356da5d327cda">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-d56db20c23fa48ca88047a23b9f7cab15d460c9c.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="95758a2905669affbffc5ddd262921d375674fad">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-a9ec2165cbb5db801863ba3bebb9de33e6f3c07a.jar" />
+    </item>
+    <item
+        jar="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
+        <dex dex="C:\Users\jaewoo\Documents\GitHub\redskio\AndroidStudioWorkspace\app\build\intermediates\pre-dexed\debug\classes-0009ba8c6df8f4b5f09bac3a8e8204c0c6172444.jar" />
     </item>
 
 </items>

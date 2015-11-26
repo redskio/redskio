@@ -1,288 +1,557 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="337dp"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:background="@drawable/roundlayout"
-        android:layout_centerInParent="true">
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/forwoman_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="false"
+                android:layout_centerInParent="true"
                 android:text="@string/forwoman_title"
-                android:id="@+id/forwoman_title"
                 android:textColor="#000000"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_alignParentTop="false"
-                android:layout_centerInParent="true" />
+                android:textStyle="bold" />
 
             <ImageButton
+                android:id="@+id/dialog_cancel_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/dialog_cancel_btn"
                 android:layout_alignParentEnd="true"
-                android:src="@drawable/button_dialog_cancle"
-                android:background="@null"
-                android:layout_marginTop="7.25dp"
+                android:layout_marginBottom="7.25dp"
                 android:layout_marginRight="15.5dp"
-                android:layout_marginBottom="7.25dp" />
+                android:layout_marginTop="7.25dp"
+                android:background="@null"
+                android:src="@drawable/button_dialog_cancle" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="252dp">
+            android:layout_height="200dp">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="252dp"
                 android:id="@+id/push_women_default"
-                android:src="@drawable/push_women1"
-                android:layout_gravity="center"
-                android:layout_centerInParent="true" />
-
-            <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="252dp"
+                android:layout_height="200dp"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
+                android:src="@drawable/push_women1" />
+
+            <ImageView
                 android:id="@+id/forwoman_wash_img"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
                 android:src="@drawable/push_women_shine"
                 android:visibility="gone" />
 
             <ImageView
+                android:id="@+id/forwoman_sub_img"
                 android:layout_width="wrap_content"
-                android:layout_height="252dp"
+                android:layout_height="200dp"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
-                android:id="@+id/forwoman_sub_img"
                 android:src="@drawable/push_women_heel_small"
                 android:visibility="gone" />
 
             <ImageView
+                android:id="@+id/forwoman_submid_img"
                 android:layout_width="wrap_content"
-                android:layout_height="252dp"
+                android:layout_height="200dp"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
-                android:id="@+id/forwoman_submid_img"
                 android:src="@drawable/push_women_heel_mid"
                 android:visibility="gone" />
 
             <ImageView
+                android:id="@+id/forwoman_subbig_img"
                 android:layout_width="wrap_content"
                 android:layout_height="252dp"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center"
-                android:id="@+id/forwoman_subbig_img"
                 android:src="@drawable/push_women_heel_big"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/forwoman_stocking"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:src="@null"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/forwoman_band"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:src="@null"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/forwoman_midbig_img"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:src="@null"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/forwoman_half_img"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:src="@null"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/forwoman_boots_img"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:src="@null"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/after_order_img"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:src="@null"
                 android:visibility="gone" />
 
         </RelativeLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <ScrollView
+            android:id="@+id/scrollView12"
+            android:layout_width="wrap_content"
+            android:layout_height="160dp">
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#eaeaea">
+                android:orientation="vertical">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="56.5dp"
-                    android:layout_weight="1"
-                    android:id="@+id/forwoman_wash_layout"
-                    android:background="#ffffff"
-                    android:layout_marginTop="1.5dp"
-                    android:layout_marginRight="0.75dp">
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/forman_fix_wash_menu"
-                        android:id="@+id/forwoman_wash_text"
-                        android:textColor="#000000"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="15.5dp"
-                        android:textSize="12sp" />
+                    <RelativeLayout
+                        android:id="@+id/afterOrder_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/forwoman_wash_check"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10.5dp"
-                        android:button="@drawable/checkbox_dialog"
-                        android:focusable="false"
-                        android:clickable="false"/>
-                </RelativeLayout>
+                        <TextView
+                            android:id="@+id/afterOrder_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/after_order"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
 
-                <RelativeLayout
+                        <CheckBox
+                            android:id="@+id/afterOrder_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/checkbox_dialog"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/forwoman_wash_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/forwoman_wash_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/forwoman_fix_wash_menu"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/forwoman_wash_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/checkbox_dialog"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="56.5dp"
-                    android:layout_weight="1"
-                    android:id="@+id/forwoman_sub_layout"
-                    android:background="#ffffff"
-                    android:layout_marginLeft="0.75dp"
-                    android:layout_marginTop="1.5dp">
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/forwoman_fix_sub_menu"
-                        android:id="@+id/forwoman_sub_text"
-                        android:textColor="#000000"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="15.5dp"
-                        android:textSize="12sp" />
+                    <RelativeLayout
+                        android:id="@+id/forwoman_sub_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/forwoman_sub_check"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10.5dp"
-                        android:button="@drawable/checkbox_dialog"
-                        android:focusable="false"
-                        android:clickable="false"/>
-                </RelativeLayout>
+                        <TextView
+                            android:id="@+id/forwoman_sub_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/forwoman_fix_sub_menu"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
 
+                        <CheckBox
+                            android:id="@+id/forwoman_sub_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/checkbox_dialog"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/forwoman_submidbig_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/forwoman_submidbig_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/forwoman_submidbig_menu"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/forwoman_submidbig_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/checkbox_dialog"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/forwoman_submid_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginBottom="1.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/forman_submid_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/forwoman_fix_submid_menu"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/forwoman_submid_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/checkbox_dialog"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/forwoman_subbig_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="49.5dp"
+                        android:layout_marginBottom="1.5dp"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/forwoman_subbig_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/forwoman_fix_subbig_menu"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/forwoman_subbig_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/checkbox_dialog"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/forwoman_half_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="1.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginTop="1.5dp">
+
+                        <TextView
+                            android:id="@+id/forwoman_half_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/forwoman_half"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/forwoman_half_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/checkbox_dialog"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/forwoman_boots_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="1.5dp"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff"
+                        android:layout_marginTop="1.5dp">
+
+                        <TextView
+                            android:id="@+id/forwoman_boots_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/forwoman_boots"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/forwoman_boots_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/checkbox_dialog"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#eaeaea"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/forwoman_stocking_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="1.5dp"
+                        android:layout_marginRight="0.75dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/forwoman_stocking_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/forwoman_stocking"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/forwoman_stocking_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/checkbox_dialog"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/forwoman_band_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="1.5dp"
+                        android:layout_marginLeft="0.75dp"
+                        android:layout_weight="1"
+                        android:background="#ffffff">
+
+                        <TextView
+                            android:id="@+id/forwoman_band_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.5dp"
+                            android:text="@string/forwoman_band"
+                            android:textColor="#000000"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/forwoman_band_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10.5dp"
+                            android:button="@drawable/checkbox_dialog"
+                            android:clickable="false"
+                            android:focusable="false" />
+                    </RelativeLayout>
+                </LinearLayout>
             </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#eaeaea">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="56.5dp"
-                    android:layout_weight="1"
-                    android:id="@+id/forwoman_submid_layout"
-                    android:background="#ffffff"
-                    android:layout_marginRight="0.75dp"
-                    android:layout_marginTop="1.5dp"
-                    android:layout_marginBottom="1.5dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/forwoman_fix_submid_menu"
-                        android:id="@+id/forman_submid_text"
-                        android:textColor="#000000"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="15.5dp"
-                        android:textSize="12sp" />
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/forwoman_submid_check"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10.5dp"
-                        android:button="@drawable/checkbox_dialog"
-                        android:focusable="false"
-                        android:clickable="false"/>
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="56.5dp"
-                    android:layout_weight="1"
-                    android:id="@+id/forwoman_subbig_layout"
-                    android:background="#ffffff"
-                    android:layout_marginTop="1.5dp"
-                    android:layout_marginBottom="1.5dp"
-                    android:layout_marginLeft="0.75dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/forwoman_fix_subbig_menu"
-                        android:id="@+id/forwoman_subbig_text"
-                        android:textColor="#000000"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="15.5dp"
-                        android:textSize="12sp" />
-
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/forwoman_subbig_check"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="10.5dp"
-                        android:button="@drawable/checkbox_dialog"
-                        android:focusable="false"
-                        android:clickable="false"/>
-                </RelativeLayout>
-            </LinearLayout>
-        </LinearLayout>
+        </ScrollView>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="71dp"
-            android:minHeight="40dp"
-            android:background="#eaeaea">
+            android:layout_height="57dp"
+            android:background="#eaeaea"
+            android:minHeight="40dp">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/dialog_totalprice"
                 android:id="@+id/dialogTotalTitle"
-                android:layout_alignParentTop="false"
-                android:layout_alignParentStart="false"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="15.5dp"
-                android:textStyle="bold"
-                android:textColor="#000000"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="15dp" />
-
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0원"
-                android:id="@+id/dialogTotalPriceText"
-                android:layout_alignParentTop="false"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10.5dp"
-                android:textStyle="bold"
-                android:textColor="@color/color_login_default"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="15dp" />
+                android:layout_alignParentStart="false"
+                android:layout_alignParentTop="false"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15.5dp"
+                android:text="@string/dialog_totalprice"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dialogTotalPriceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="false"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="10.5dp"
+                android:text="0원"
+                android:textColor="@color/color_login_default"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <Button
+            android:id="@+id/set_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/set_btn"
-            android:background="@drawable/bottonroundlayout"
-            android:layout_gravity="center_horizontal|bottom"
-            android:textColor="#ffffff"
-            android:textStyle="bold"
             android:layout_below="@+id/listView"
             android:layout_centerHorizontal="true"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp" />
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_round_red"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="New Button"
+            android:textColor="@color/button_red_text"
+            android:textStyle="bold" />
+        />
     </LinearLayout>
 
 </RelativeLayout>

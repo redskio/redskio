@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import kr.whatshoe.Order.FixOrder;
+
 /**
  * Created by jaewoo on 2015-08-20.
  */

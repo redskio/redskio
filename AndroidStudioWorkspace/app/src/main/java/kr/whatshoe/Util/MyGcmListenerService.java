@@ -8,7 +8,6 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
 import com.google.android.gms.gcm.GcmListenerService;
 
@@ -32,9 +31,9 @@ public class MyGcmListenerService extends GcmListenerService {
         String title = data.getString("title");
         String message = data.getString("message");
 
-        Log.d(TAG, "From: " + from);
-        Log.d(TAG, "Title: " + title);
-        Log.d(TAG, "Message: " + message);
+//        Log.d(TAG, "From: " + from);
+//        Log.d(TAG, "Title: " + title);
+//        Log.d(TAG, "Message: " + message);
 
         // GCM으로 받은 메세지를 디바이스에 알려주는 sendNotification()을 호출한다.
         sendNotification(title, message);

@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Locale;
@@ -17,7 +18,7 @@ import java.util.Locale;
 public class LawActivity extends AppCompatActivity {
     SectionsPagerAdapter mSectionsPagerAdapter;
     ViewPager mViewPager;
-
+    private int type = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +26,7 @@ public class LawActivity extends AppCompatActivity {
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
+        type =  getIntent().getIntExtra("law",0);
     }
 
 
@@ -37,7 +38,7 @@ public class LawActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return PlaceholderFragment.newInstance(position + 1);
+            return PlaceholderFragment.newInstance(type);
         }
 
         @Override
@@ -81,13 +82,24 @@ public class LawActivity extends AppCompatActivity {
             View rootView = inflater.inflate(R.layout.fragment_law, container, false);
             TextView lawText = (TextView)rootView.findViewById(R.id.law_text);
             int sectionNumber = getArguments().getInt(ARG_SECTION_NUMBER);
-            if(sectionNumber== 0) {
+            if(sectionNumber== 1) {
                 Resources resources = getResources();
                 if(resources!= null){
                     String uselaw = resources.getString(R.string.use_law);
                     lawText.setText(uselaw);
+                    LinearLayout personTableLayout =(LinearLayout)rootView.findViewById(R.id.person_table_layout);
+                    personTableLayout.setVisibility(View.GONE);
                 }
 
+            } else if(sectionNumber == 2){
+                Resources resources = getResources();
+                if(resources!= null){
+                    String uselaw = resources.getString(R.string.person_law);
+
+                    lawText.setText(uselaw);
+                    LinearLayout personTableLayout =(LinearLayout)rootView.findViewById(R.id.person_table_layout);
+                    personTableLayout.setVisibility(View.VISIBLE);
+                }
             }
             return rootView;
         }

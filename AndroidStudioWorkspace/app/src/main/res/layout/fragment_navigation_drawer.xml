@@ -60,7 +60,8 @@
                     android:textColor="#ffffff"
                     android:textStyle="bold"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="20dp" />
+                    android:layout_marginRight="20dp"
+                    android:visibility="gone" />
             </RelativeLayout>
 
             <LinearLayout
@@ -138,7 +139,8 @@
                     android:paddingLeft="15dp"
                     android:textColor="@color/color_brown"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <Button
                     android:layout_width="match_parent"

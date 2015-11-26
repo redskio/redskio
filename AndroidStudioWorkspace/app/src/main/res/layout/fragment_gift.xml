@@ -2,66 +2,78 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context="kr.whatshoe.whatShoe.PointFragment"
     android:orientation="vertical"
-    android:background="#ffffff">
+    android:background="@color/color_gray">
 
 
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollView8" >
+        android:id="@+id/scrollView8"
+        android:layout_marginTop="20dp">
 
         <LinearLayout
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageButton
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/gift1"
-                android:src="@drawable/gift_btn"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@null"
-                android:layout_marginTop="10dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY" />
+                android:layout_marginRight="5dp"
+                android:background="@null">
 
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/gift2"
-                android:src="@drawable/gift_btn1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@null"
-                android:layout_marginTop="10dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY" />
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/gift1"
+                    android:src="@drawable/gift_btn"
+                    android:background="@null"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY" />
 
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/gift3"
-                android:src="@drawable/gift_btn2"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@null"
-                android:layout_marginTop="10dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY" />
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/gift2"
+                    android:src="@drawable/gift_btn1"
+                    android:background="@null"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
 
-            <ImageButton
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/gift4"
-                android:src="@drawable/gift_btn3"
-                android:layout_marginLeft="10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:layout_marginRight="10dp"
-                android:background="@null"
-                android:layout_marginTop="10dp"
-                android:adjustViewBounds="true"
-                android:scaleType="fitXY" />
+                android:layout_marginLeft="5dp"
+                android:background="@null">
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/gift3"
+                    android:src="@drawable/gift_btn2"
+                    android:background="@null"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY" />
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/gift4"
+                    android:src="@drawable/gift_btn3"
+                    android:background="@null"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 

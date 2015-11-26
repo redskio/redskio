@@ -2,7 +2,10 @@ package kr.whatshoe.whatShoe;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
+/*************************************************************
+ * Coupon Parcelable class
+ * used at Coupon Adapter, dialog, fragment
+ *************************************************************/
 /**
  * Created by jaewoo on 2015-08-20.
  */

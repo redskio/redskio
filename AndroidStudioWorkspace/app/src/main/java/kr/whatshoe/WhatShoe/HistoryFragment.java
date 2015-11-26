@@ -20,6 +20,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import kr.whatshoe.Order.FixOrder;
 import kr.whatshoe.Util.HttpClient;
 import kr.whatshoe.Util.OrderUtil;
 
@@ -53,12 +54,12 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
                 for(int i = 0 ; i <array.length();i++) {
                     try {
                         JSONObject object = (JSONObject)array.get(i);
-                        int code = Integer.parseInt(object.getString("order_code"));
+                        String code = object.getString("order_code");
                         String time = object.getString("order_time");
-                        OrderUtil util = new OrderUtil();
-                        ArrayList<String> nameList = util.getOrderName(code);
+                        OrderUtil util = new OrderUtil(getActivity().getApplicationContext());
+                        ArrayList<String> nameList = util.getTitle(code);
                         String title = "";
-                        if(nameList==null){
+                        if(nameList==null||nameList.size()==0){
                             return;
                         }
                         else if(nameList.size()>1) {
@@ -67,7 +68,7 @@ public class HistoryFragment extends Fragment implements View.OnClickListener {
                         else {
                             title = nameList.get(0);
                         }
-                        orderArray.add(new FixOrder(title , 0, util.getOrderPrice(code), time));
+                        orderArray.add(new FixOrder(title , 0, util.getPrice(code), time,i,0));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
