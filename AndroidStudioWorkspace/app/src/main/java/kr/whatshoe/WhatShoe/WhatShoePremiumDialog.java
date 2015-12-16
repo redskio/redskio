@@ -33,14 +33,14 @@ public class WhatShoePremiumDialog extends Dialog {
     private Button mButton;
     private Context context;
     private int ETC = 0;
-    private final int SOCKS = 14;
-    private final int TABACCO_MAN = 15;
-    private final int LIGHTER_MAN = 16;
+    private final int SOCKS = 10;
+    private final int TABACCO_MAN = 11;
+    private final int LIGHTER_MAN = 12;
     private final int MAN_ETC = 3; //1건의 특수주문
-    private final int STOCKING = 14;
-    private final int BAND = 15;
-    private final int TABACCO_WOMAN = 16;
-    private final int LIGHTER_WOMAN = 17;
+    private final int STOCKING = 10;
+    private final int BAND = 11;
+    private final int TABACCO_WOMAN = 12;
+    private final int LIGHTER_WOMAN = 13;
     private final int WOMAN_ETC = 4; //2건의 특수주문
 
     public WhatShoePremiumDialog(Context context) {
@@ -108,42 +108,34 @@ public class WhatShoePremiumDialog extends Dialog {
         if (sex == MALE) {
             orderLayoutList = new ArrayList<OrderLayout>();
             orderLayoutList.add(0, new OrderLayout((RelativeLayout) findViewById(R.id.after_order_layout), (CheckBox) findViewById(R.id.after_order_check), orderList.get(0)));
-            orderLayoutList.add(1, new OrderLayout((RelativeLayout) findViewById(R.id.pre_shoe_full_man), (CheckBox) findViewById(R.id.pre_shoe_full_man_check), orderList.get(1)));
-            orderLayoutList.add(2, new OrderLayout((RelativeLayout) findViewById(R.id.pre_deepshoecare_man), (CheckBox) findViewById(R.id.pre_deepshoecare_man_check), orderList.get(2)));
-            orderLayoutList.add(3, new OrderLayout((RelativeLayout) findViewById(R.id.pre_heel_mid_man), (CheckBox) findViewById(R.id.pre_heel_mid_man_check), orderList.get(3)));
-            orderLayoutList.add(4, new OrderLayout((RelativeLayout) findViewById(R.id.pre_heel_big_man), (CheckBox) findViewById(R.id.pre_heel_big_man_check), orderList.get(4)));
-            orderLayoutList.add(5, new OrderLayout((RelativeLayout) findViewById(R.id.pre_vibram_heel_man), (CheckBox) findViewById(R.id.pre_vibram_heel_man_check), orderList.get(5)));
-            orderLayoutList.add(6, new OrderLayout((RelativeLayout) findViewById(R.id.pre_soles_rubber_man), (CheckBox) findViewById(R.id.pre_soles_rubber_man_check), orderList.get(6)));
-            orderLayoutList.add(7, new OrderLayout((RelativeLayout) findViewById(R.id.pre_vibram_soles_man), (CheckBox) findViewById(R.id.pre_vibram_soles_man_check), orderList.get(7)));
-            orderLayoutList.add(8, new OrderLayout((RelativeLayout) findViewById(R.id.pre_allsoles_man), (CheckBox) findViewById(R.id.pre_allsoles_man_check), orderList.get(8)));
-            orderLayoutList.add(9, new OrderLayout((RelativeLayout) findViewById(R.id.pre_italy_allsoles_man), (CheckBox) findViewById(R.id.pre_italy_allsoles_man_check), orderList.get(9)));
-            orderLayoutList.add(10, new OrderLayout((RelativeLayout) findViewById(R.id.pre_eng_allsoles_man), (CheckBox) findViewById(R.id.pre_eng_allsoles_man_check), orderList.get(10)));
-            orderLayoutList.add(11, new OrderLayout((RelativeLayout) findViewById(R.id.pre_bond_man), (CheckBox) findViewById(R.id.pre_bond_man_check), orderList.get(11)));
-            orderLayoutList.add(12, new OrderLayout((RelativeLayout) findViewById(R.id.pre_color_man), (CheckBox) findViewById(R.id.pre_color_man_check), orderList.get(12)));
-            orderLayoutList.add(13, new OrderLayout((RelativeLayout) findViewById(R.id.pre_sewing_man), (CheckBox) findViewById(R.id.pre_sewing_man_check), orderList.get(13)));
-            orderLayoutList.add(14, new OrderLayout((RelativeLayout) findViewById(R.id.pre_socks), (CheckBox) findViewById(R.id.pre_socks_man_check), orderList.get(14)));
-            orderLayoutList.add(15, new OrderLayout((RelativeLayout) findViewById(R.id.pre_tobacco), (CheckBox) findViewById(R.id.pre_cigarette_check), orderList.get(15)));
-            orderLayoutList.add(16, new OrderLayout((RelativeLayout) findViewById(R.id.pre_lighter), (CheckBox) findViewById(R.id.pre_lighter_check), orderList.get(16)));
+            orderLayoutList.add(1, new OrderLayout((RelativeLayout) findViewById(R.id.pre_deepshoecare_man), (CheckBox) findViewById(R.id.pre_deepshoecare_man_check), orderList.get(1)));
+            orderLayoutList.add(2, new OrderLayout((RelativeLayout) findViewById(R.id.pre_vibram_heel_man), (CheckBox) findViewById(R.id.pre_vibram_heel_man_check), orderList.get(2)));
+            orderLayoutList.add(3, new OrderLayout((RelativeLayout) findViewById(R.id.pre_previbram_heel_man), (CheckBox) findViewById(R.id.pre_previbram_heel_man_check), orderList.get(3)));
+            orderLayoutList.add(4, new OrderLayout((RelativeLayout) findViewById(R.id.pre_vibram_soles_man), (CheckBox) findViewById(R.id.pre_vibram_soles_man_check), orderList.get(4)));
+            orderLayoutList.add(5, new OrderLayout((RelativeLayout) findViewById(R.id.pre_previbram_soles_man), (CheckBox) findViewById(R.id.pre_previbram_soles_man_check), orderList.get(5)));
+            orderLayoutList.add(6, new OrderLayout((RelativeLayout) findViewById(R.id.pre_under_man), (CheckBox) findViewById(R.id.pre_under_man_check), orderList.get(6)));
+            orderLayoutList.add(7, new OrderLayout((RelativeLayout) findViewById(R.id.pre_allsoles_man), (CheckBox) findViewById(R.id.pre_allsoles_man_check), orderList.get(7)));
+            orderLayoutList.add(8, new OrderLayout((RelativeLayout) findViewById(R.id.pre_vibram_allsole_man), (CheckBox) findViewById(R.id.pre_vibram_allsole_man_check), orderList.get(8)));
+            orderLayoutList.add(9, new OrderLayout((RelativeLayout) findViewById(R.id.pre_color_man), (CheckBox) findViewById(R.id.pre_color_man_check), orderList.get(9)));
+            orderLayoutList.add(10, new OrderLayout((RelativeLayout) findViewById(R.id.pre_socks), (CheckBox) findViewById(R.id.pre_socks_man_check), orderList.get(10)));
+            orderLayoutList.add(11, new OrderLayout((RelativeLayout) findViewById(R.id.pre_tobacco), (CheckBox) findViewById(R.id.pre_tobacco_check), orderList.get(11)));
+            orderLayoutList.add(12, new OrderLayout((RelativeLayout) findViewById(R.id.pre_lighter), (CheckBox) findViewById(R.id.pre_lighter_check), orderList.get(12)));
         } else if (sex == FEMALE) {
             orderLayoutList = new ArrayList<OrderLayout>();
             orderLayoutList.add(0, new OrderLayout((RelativeLayout) findViewById(R.id.after_order_layout), (CheckBox) findViewById(R.id.after_order_check), orderList.get(0)));
-            orderLayoutList.add(1, new OrderLayout((RelativeLayout) findViewById(R.id.pre_shoe_full_woman), (CheckBox) findViewById(R.id.pre_shoecare_full_woman_check), orderList.get(1)));
-            orderLayoutList.add(2, new OrderLayout((RelativeLayout) findViewById(R.id.pre_deepshoecare_woman), (CheckBox) findViewById(R.id.pre_deepshoecare_woman_check), orderList.get(2)));
-            orderLayoutList.add(3, new OrderLayout((RelativeLayout) findViewById(R.id.pre_heel_small_woman), (CheckBox) findViewById(R.id.pre_heel_small_woman_check), orderList.get(3)));
-            orderLayoutList.add(4, new OrderLayout((RelativeLayout) findViewById(R.id.pre_heel_mid_woman), (CheckBox) findViewById(R.id.pre_heel_mid_woman_check), orderList.get(4)));
-            orderLayoutList.add(5, new OrderLayout((RelativeLayout) findViewById(R.id.pre_heel_big_woman), (CheckBox) findViewById(R.id.pre_heel_big_woman_check), orderList.get(5)));
-            orderLayoutList.add(6, new OrderLayout((RelativeLayout) findViewById(R.id.pre_soles_rubber_woman), (CheckBox) findViewById(R.id.pre_soles_rubber_woman_check), orderList.get(6)));
-            orderLayoutList.add(7, new OrderLayout((RelativeLayout) findViewById(R.id.pre_vibram_soles_woman), (CheckBox) findViewById(R.id.pre_vibram_soles_woman_check), orderList.get(7)));
-            orderLayoutList.add(8, new OrderLayout((RelativeLayout) findViewById(R.id.pre_all_soles), (CheckBox) findViewById(R.id.pre_all_soles_check), orderList.get(8)));
-            orderLayoutList.add(9, new OrderLayout((RelativeLayout) findViewById(R.id.pre_heel_woman), (CheckBox) findViewById(R.id.pre_heel_woman_check), orderList.get(9)));
-            orderLayoutList.add(10, new OrderLayout((RelativeLayout) findViewById(R.id.pre_in_woman), (CheckBox) findViewById(R.id.pre_in_woman_check), orderList.get(10)));
-            orderLayoutList.add(11, new OrderLayout((RelativeLayout) findViewById(R.id.pre_bond_woman), (CheckBox) findViewById(R.id.pre_bond_woman_check), orderList.get(11)));
-            orderLayoutList.add(12, new OrderLayout((RelativeLayout) findViewById(R.id.pre_color_woman), (CheckBox) findViewById(R.id.pre_color_woman_check), orderList.get(12)));
-            orderLayoutList.add(13, new OrderLayout((RelativeLayout) findViewById(R.id.pre_sewing_woman), (CheckBox) findViewById(R.id.pre_sewing_woman_check), orderList.get(13)));
-            orderLayoutList.add(14, new OrderLayout((RelativeLayout) findViewById(R.id.pre_stocking), (CheckBox) findViewById(R.id.pre_stocking_check), orderList.get(14)));
-            orderLayoutList.add(15, new OrderLayout((RelativeLayout) findViewById(R.id.pre_band_layout), (CheckBox) findViewById(R.id.pre_band_check), orderList.get(15)));
-            orderLayoutList.add(16, new OrderLayout((RelativeLayout) findViewById(R.id.pre_tobacco), (CheckBox) findViewById(R.id.pre_cigarette_check), orderList.get(16)));
-            orderLayoutList.add(17, new OrderLayout((RelativeLayout) findViewById(R.id.pre_lighter), (CheckBox) findViewById(R.id.pre_lighter_check), orderList.get(17)));
+            orderLayoutList.add(1, new OrderLayout((RelativeLayout) findViewById(R.id.pre_deepshoecare_woman), (CheckBox) findViewById(R.id.pre_deepshoecare_woman_check), orderList.get(1)));
+            orderLayoutList.add(2, new OrderLayout((RelativeLayout) findViewById(R.id.pre_heel_small_woman), (CheckBox) findViewById(R.id.pre_heel_small_woman_check), orderList.get(2)));
+            orderLayoutList.add(3, new OrderLayout((RelativeLayout) findViewById(R.id.pre_heel_mid_woman), (CheckBox) findViewById(R.id.pre_heel_mid_woman_check), orderList.get(3)));
+            orderLayoutList.add(4, new OrderLayout((RelativeLayout) findViewById(R.id.pre_heel_big_woman), (CheckBox) findViewById(R.id.pre_heel_big_woman_check), orderList.get(4)));
+            orderLayoutList.add(5, new OrderLayout((RelativeLayout) findViewById(R.id.pre_vibram_half_woman), (CheckBox) findViewById(R.id.pre_vibram_half_woman_check), orderList.get(5)));
+            orderLayoutList.add(6, new OrderLayout((RelativeLayout) findViewById(R.id.pre_previbram_half_woman), (CheckBox) findViewById(R.id.pre_previbram_half_woman_check), orderList.get(6)));
+            orderLayoutList.add(7, new OrderLayout((RelativeLayout) findViewById(R.id.pre_press_woman), (CheckBox) findViewById(R.id.pre_press_woman_check), orderList.get(7)));
+            orderLayoutList.add(8, new OrderLayout((RelativeLayout) findViewById(R.id.pre_heel_woman), (CheckBox) findViewById(R.id.pre_heel_woman_check), orderList.get(8)));
+            orderLayoutList.add(9, new OrderLayout((RelativeLayout) findViewById(R.id.pre_color_woman), (CheckBox) findViewById(R.id.pre_color_woman_check), orderList.get(9)));
+            orderLayoutList.add(10, new OrderLayout((RelativeLayout) findViewById(R.id.pre_stocking), (CheckBox) findViewById(R.id.pre_stocking_check), orderList.get(10)));
+            orderLayoutList.add(11, new OrderLayout((RelativeLayout) findViewById(R.id.pre_band_layout), (CheckBox) findViewById(R.id.pre_band_check), orderList.get(11)));
+            orderLayoutList.add(12, new OrderLayout((RelativeLayout) findViewById(R.id.pre_tobacco), (CheckBox) findViewById(R.id.pre_tabacco_check), orderList.get(12)));
+            orderLayoutList.add(13, new OrderLayout((RelativeLayout) findViewById(R.id.pre_lighter), (CheckBox) findViewById(R.id.pre_lighter_check), orderList.get(13)));
 
         }
         for(int i=0; i < orderLayoutList.size();i++){

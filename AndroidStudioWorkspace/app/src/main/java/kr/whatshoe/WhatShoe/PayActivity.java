@@ -36,7 +36,7 @@ public class PayActivity extends AppCompatActivity {
     ArrayList<FixOrder> orderList = new ArrayList<FixOrder>();
     SharedPreferences loginPreference;
     SharedPreferences orderPreference;
-    private static final String CODEVERSION= "#01";
+    private static final String CODEVERSION= "#02";
     String time;
     String locationResult="";
     String locationResultDetail = "";
@@ -55,8 +55,8 @@ public class PayActivity extends AppCompatActivity {
         loginPreference = getSharedPreferences("login_pref", 0);
         orderPreference = getSharedPreferences("order_pref", 0);
         arrayList = bundle.getParcelableArrayList("order");
-        locationResult = bundle.getString("locationResult", "");
-        locationResultDetail = bundle.getString("locationResultDetail","");
+        locationResult = bundle.getString("locationResult");
+        locationResultDetail = bundle.getString("locationResultDetail");
         final EditText lResult = (EditText)findViewById(R.id.locationResult);
         EditText lResultDetail = (EditText)findViewById(R.id.locationResultDetail);
         lResult.setText(locationResult);

@@ -98,7 +98,8 @@ public class PhoneFragment extends Fragment implements View.OnClickListener {
             case R.id.sendBtn:
                 phone = phoneText.getText().toString();
                 if(phone.length()<8){
-                    Toast.makeText(getActivity(), "휴대폰 번호를 입력해 주세요.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "휴대폰 번호를 확인 해 주세요.", Toast.LENGTH_SHORT).show();
+                    break;
                 }
                 sendSMS(phone);
                 break;

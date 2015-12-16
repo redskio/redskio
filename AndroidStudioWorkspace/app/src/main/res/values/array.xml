@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="order_man_title">
+    <string-array name="v1_order_man_title">
         <item>상담 후 결제</item>
         <item>구두 닦이</item>
         <item>남자 반창덧댐</item>
@@ -8,7 +8,7 @@
         <item>남자 통굽갈이</item>
         <item>남자 양말 무료배달</item>
     </string-array>
-    <integer-array name="order_man_price">
+    <integer-array name="v1_order_man_price">
         <item>0</item>
         <item>5000</item>
         <item>15000</item>
@@ -16,7 +16,7 @@
         <item>18000</item>
         <item>3000</item>
     </integer-array>
-    <string-array name="order_woman_title">
+    <string-array name="v1_order_woman_title">
         <item>상담 후 결제</item>
         <item>구두 닦이</item>
         <item>여자 보조굽(소)</item>
@@ -26,7 +26,7 @@
         <item>검정팬티스타킹</item>
         <item>대일밴드 무료배달</item>
     </string-array>
-    <integer-array name="order_woman_price">
+    <integer-array name="v1_order_woman_price">
         <item>0</item>
         <item>5000</item>
         <item>5000</item>
@@ -37,46 +37,77 @@
         <item>0</item>
 
     </integer-array>
-    <string-array name="premium_man_title">
+    <string-array name="v1_premium_man_title">
         <item>상담 후 결제</item>
-        <item>프리미엄 슈 풀케어</item>         <!--index : 11 , code : 50-->
-        <item>프리미엄 슈 딥케어</item>         <!--index : 12 , code : 51-->
-        <item>프리미엄 뒷굽갈이(중)</item>      <!--index : 13 , code : 52-->
-        <item>프리미엄 뒷굽갈이(대)</item>      <!--index : 14 , code : 53-->
-        <item>Vibram 뒷굽갈이</item>            <!--index : 15 , code : 54-->
-        <item>프리미엄 반창갈이(고무)</item>    <!--index : 16 , code : 55-->
-        <item>Vibram 반창갈이(고무)</item>      <!--index : 17 , code : 56-->
-        <item>전창갈이(고무)</item>             <!--index : 18 , code : 57-->
-        <item>이태리 전창갈이(가죽)</item>      <!--index : 19 , code : 58-->xx
-        <item>영국 전창갈이(가죽)</item>        <!--index : 20 , code : 59-->
-        <item>밑창 접착 수선</item>             <!--index : 21 , code : 60-->
-        <item>염색</item>                       <!--index : 22 , code : 61-->
-        <item>바느질 수선</item>                   <!--index : 24 , code : 63-->
-        <item>남자양말</item>                      <!--index : 24 , code : 63-->
-        <item>담배</item>                     <!--index : 24 , code : 63-->
-        <item>라이터</item>                  <!--index : 25 , code : 90-->
+        <item>프리미엄 슈 풀케어</item>
+        <!--index : 11 , code : 50-->
+        <item>프리미엄 슈 딥케어</item>
+        <!--index : 12 , code : 51-->
+        <item>프리미엄 뒷굽갈이(중)</item>
+        <!--index : 13 , code : 52-->
+        <item>프리미엄 뒷굽갈이(대)</item>
+        <!--index : 14 , code : 53-->
+        <item>Vibram 뒷굽갈이</item>
+        <!--index : 15 , code : 54-->
+        <item>프리미엄 반창갈이(고무)</item>
+        <!--index : 16 , code : 55-->
+        <item>Vibram 반창갈이(고무)</item>
+        <!--index : 17 , code : 56-->
+        <item>전창갈이(고무)</item>
+        <!--index : 18 , code : 57-->
+        <item>이태리 전창갈이(가죽)</item>
+        <!--index : 19 , code : 58-->xx
+        <item>영국 전창갈이(가죽)</item>
+        <!--index : 20 , code : 59-->
+        <item>밑창 접착 수선</item>
+        <!--index : 21 , code : 60-->
+        <item>염색</item>
+        <!--index : 22 , code : 61-->
+        <item>바느질 수선</item>
+        <!--index : 24 , code : 63-->
+        <item>남자양말</item>
+        <!--index : 24 , code : 63-->
+        <item>담배</item>
+        <!--index : 24 , code : 63-->
+        <item>라이터</item>
+        <!--index : 25 , code : 90-->
     </string-array>
-    <string-array name="premium_woman_title">
+    <string-array name="v1_premium_woman_title">
         <item>상담 후 결제</item>
-        <item>프리미엄 슈 풀케어</item>         <!--index : 26 , code : 70-->
-        <item>퓨리미엄 슈 딥케어</item>         <!--index : 27 , code : 71-->
-        <item>프리미엄 뒷굽갈이 (소/핀)</item>  <!--index : 28 , code : 72-->
-        <item>프리미엄 뒷굽갈이 (중/핀)</item>  <!--index : 29 , code : 73-->
-        <item>프리미엄 뒷굽갈이 (대/핀)</item>  <!--index : 30 , code : 74-->
-        <item>프리미엄 반창갈이 (고무)</item>   <!--index : 31 , code : 75-->
-        <item>Vibram 반창갈이 (고무)</item>     <!--index : 32 , code : 76-->
-        <item>전창갈이(고무)</item>             <!--index : 33 , code : 77-->
-        <item>프리미엄 힐 수선</item>           <!--index : 34 , code : 78-->
-        <item>프리미엄 안창갈이</item>          <!--index : 35 , code : 79-->
-        <item>밑창 접착 수선</item>             <!--index : 36 , code : 80-->
-        <item> 염색</item>                      <!--index : 37 , code : 81-->
-        <item>바느질 수선</item>                <!--index : 38 , code : 82-->
-        <item>팬티스타킹</item>                 <!--index : 40 , code : 91-->
+        <item>프리미엄 슈 풀케어</item>
+        <!--index : 26 , code : 70-->
+        <item>퓨리미엄 슈 딥케어</item>
+        <!--index : 27 , code : 71-->
+        <item>프리미엄 뒷굽갈이 (소/핀)</item>
+        <!--index : 28 , code : 72-->
+        <item>프리미엄 뒷굽갈이 (중/핀)</item>
+        <!--index : 29 , code : 73-->
+        <item>프리미엄 뒷굽갈이 (대/핀)</item>
+        <!--index : 30 , code : 74-->
+        <item>프리미엄 반창갈이 (고무)</item>
+        <!--index : 31 , code : 75-->
+        <item>Vibram 반창갈이 (고무)</item>
+        <!--index : 32 , code : 76-->
+        <item>전창갈이(고무)</item>
+        <!--index : 33 , code : 77-->
+        <item>프리미엄 힐 수선</item>
+        <!--index : 34 , code : 78-->
+        <item>프리미엄 안창갈이</item>
+        <!--index : 35 , code : 79-->
+        <item>밑창 접착 수선</item>
+        <!--index : 36 , code : 80-->
+        <item> 염색</item>
+        <!--index : 37 , code : 81-->
+        <item>바느질 수선</item>
+        <!--index : 38 , code : 82-->
+        <item>팬티스타킹</item>
+        <!--index : 40 , code : 91-->
         <item>담배</item>
         <item>라이터</item>
-        <item>대일밴드</item>                   <!--index : 41 , code : 92-->
+        <item>대일밴드</item>
+        <!--index : 41 , code : 92-->
     </string-array>
-    <integer-array name="premium_man_price">
+    <integer-array name="v1_premium_man_price">
         <item>0</item>
         <item>25000</item>
         <item>30000</item>
@@ -96,7 +127,7 @@
         <item>100</item>
 
     </integer-array>
-    <integer-array name="premium_woman_price">
+    <integer-array name="v1_premium_woman_price">
         <item>0</item>
         <item>25000</item>
         <item>30000</item>
@@ -116,5 +147,112 @@
         <item>0</item>
         <item>100</item>
     </integer-array>
+    <string-array name="order_man_title">
+        <item>상담 후 결제</item>
+        <item>구두 닦이</item>
+        <item>남자 뒷굽갈이</item>
+        <item>남자 반창덧댐</item>
+        <item>남자 전창갈이</item>
+        <item>남자 양말 무료 배달</item>
+        <item>담배 배달</item>
+        <item>라이터 배달</item>
 
+    </string-array>
+    <integer-array name="order_man_price">
+        <item>0</item>
+        <item>5000</item>
+        <item>15000</item>
+        <item>15000</item>
+        <item>50000</item>
+        <item>3000</item>
+        <item>0</item>
+        <item>100</item>
+    </integer-array>
+    <string-array name="order_woman_title">
+        <item>상담 후 결제</item>
+        <item>구두 닦이</item>
+        <item>여자 보조굽(소)</item>
+        <item>여자 보조굽(중/대)</item>
+        <item>부츠케어</item>
+        <item>검정팬티스타킹</item>
+        <item>대일밴드 무료배달</item>
+        <item>담배 배달</item>
+        <item>라이터 배달</item>
+    </string-array>
+    <integer-array name="order_woman_price">
+        <item>0</item>
+        <item>5000</item>
+        <item>5000</item>
+        <item>7000</item>
+        <item>15000</item>
+        <item>4000</item>
+        <item>0</item>
+        <item>0</item>
+        <item>100</item>
+
+    </integer-array>
+    <string-array name="premium_man_title">
+        <item>상담 후 결제</item>
+        <item>프리미엄 슈 딥케어</item>
+        <item>Vibram 일반 뒷굽</item>
+        <item>Vibram 프리스티지 뒷굽</item>
+        <item>Vibram 반창갈이(일반)</item>
+        <item>Vibram 반창갈이(프리스티지)</item>
+        <item>밑창수선(press 압착기)</item>
+        <item>프리미엄 전창갈이</item>
+        <item>Vibram 전창갈이</item>
+        <item>염색</item>
+        <item>남자양말</item>
+        <item>담배</item>
+        <item>라이터</item>
+    </string-array>
+    <string-array name="premium_woman_title">
+        <item>상담 후 결제</item>
+        <item>퓨리미엄 슈 딥케어</item>
+        <item>프리미엄 뒷굽갈이 (소/핀)</item>
+        <item>프리미엄 뒷굽갈이 (중/핀)</item>
+        <item>프리미엄 뒷굽갈이 (대/핀)</item>
+        <item>Vibram 반창갈이 (일반)</item>
+        <item>Vibram 반창갈이(프리스티지)</item>
+        <item>밑창수선(press 압착기)</item>
+        <item>프리미엄 힐 가죽교체</item>
+        <item>염색</item>
+        <item>팬티스타킹</item>
+        <item>담배</item>
+        <item>라이터</item>
+        <item>대일밴드</item>
+        <!--index : 41 , code : 92-->
+    </string-array>
+    <integer-array name="premium_man_price">
+        <item>0</item>
+        <item>30000</item>
+        <item>35000</item>
+        <item>40000</item>
+        <item>30000</item>
+        <item>40000</item>
+        <item>30000</item>
+        <item>60000</item>
+        <item>158000</item>
+        <item>110000</item>
+        <item>3000</item>
+        <item>0</item>
+        <item>100</item>
+
+    </integer-array>
+    <integer-array name="premium_woman_price">
+        <item>0</item>
+        <item>30000</item>
+        <item>10000</item>
+        <item>15000</item>
+        <item>20000</item>
+        <item>30000</item>
+        <item>40000</item>
+        <item>30000</item>
+        <item>40000</item>
+        <item>110000</item>
+        <item>4000</item>
+        <item>0</item>
+        <item>100</item>
+        <item>0</item>
+    </integer-array>
 </resources>

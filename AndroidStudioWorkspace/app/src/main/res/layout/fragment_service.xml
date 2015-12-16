@@ -98,7 +98,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="여자 구두방"
+                            android:text="여자 구둣방"
                             android:id="@+id/textView4"
                             android:layout_below="@+id/womanBtn"
                             android:layout_centerHorizontal="true"
@@ -128,7 +128,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="남자 구두방"
+                            android:text="남자 구둣방"
                             android:id="@+id/textView11"
                             android:layout_below="@+id/manBtn"
                             android:layout_centerHorizontal="true"
@@ -179,7 +179,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="여자 명품 구두방"
+                        android:text="여자 명품 구둣방"
                         android:id="@+id/textView12"
                         android:layout_below="@+id/premium_woman_btn"
                         android:layout_centerHorizontal="true"
@@ -208,7 +208,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="남자 명품 구두방"
+                        android:text="남자 명품 구둣방"
                         android:id="@+id/textView13"
                         android:layout_below="@+id/premium_man_btn"
                         android:layout_centerHorizontal="true"

@@ -1,5 +1,6 @@
 package kr.whatshoe.whatShoe;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -172,28 +173,22 @@ public class JoinFragment extends Fragment implements View.OnClickListener{
         String birth = birthText.getText().toString();
         String mail = mailText.getText().toString();
         if (id.length() == 0) {
-            Toast.makeText(getActivity(), "아이디를 입력해야 합니다.",
-                    Toast.LENGTH_SHORT).show();
+            makeToast("아이디를 입력해야 합니다.",0);
             return false;
         } else if (id.length() < 4) {
-            Toast.makeText(getActivity(), "아이디는 4자 이상 입력해야 합니다.",
-                    Toast.LENGTH_SHORT).show();
+            makeToast("아이디는 4자 이상 입력해야 합니다.",0);
             return false;
         } else if (password.length() == 0) {
-            Toast.makeText(getActivity(), "비밀번호를 입력해야 합니다.",
-                    Toast.LENGTH_SHORT).show();
+            makeToast("비밀번호를 입력해야 합니다.",0);
             return false;
         } else if (password.length() < 4 || password.length() > 9) {
-            Toast.makeText(getActivity(), "비밀번호는 4자 이상 10자 미만으로 입력해야 합니다.",
-                    Toast.LENGTH_SHORT).show();
+            makeToast("비밀번호는 4자 이상 10자 미만으로 입력해야 합니다.",0);
             return false;
         } else if (!password.equals(passwordCk)) {
-            Toast.makeText(getActivity(), "동일한 비밀번호를 두번 입력해야 합니다.",
-                    Toast.LENGTH_SHORT).show();
+            makeToast("동일한 비밀번호를 두번 입력해야 합니다.",0);
             return false;
         } else if (!useLawCheckbox.isChecked()||!personalLawCheckbox.isChecked()){
-            Toast.makeText(getActivity(), "이용 약관과 개인정보 취급방침에 동의하셔야 합니다.",
-                    Toast.LENGTH_SHORT).show();
+            makeToast("이용 약관과 개인정보 취급방침에 동의하셔야 합니다.",0);
             return false;
         }else{
 
@@ -222,11 +217,24 @@ public class JoinFragment extends Fragment implements View.OnClickListener{
                 if (arg2.trim().equals("\uFEFFok")) {
 
                 } else {
-                    Toast.makeText(getActivity(), "이미 사용중인 아이디입니다.",
-                            Toast.LENGTH_SHORT).show();
+                    makeToast("이미 사용중인 아이디입니다.",0);
                     isDuplicated = true;
                 }
             }
         });
+
+    }
+    private void makeToast(String message, int tryNum){
+        Context context = getActivity();
+        if(context !=null) {
+            Toast.makeText(context, message,
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(tryNum>3){
+            return;
+        }
+        tryNum++;
+        makeToast(message,tryNum);
     }
 }

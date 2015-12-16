@@ -158,7 +158,6 @@ public class PGActivity extends AppCompatActivity {
        int start = sb.indexOf("payurl=")+7;
        int end = sb.indexOf("errno")-1;
        sb = sb.substring(start,end);
-        
 
         return sb;
     }

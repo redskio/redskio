@@ -95,7 +95,6 @@ public class MyShoeDialog extends Dialog implements View.OnClickListener {
         ImageView myshoeImage = (ImageView) findViewById(R.id.myshoe_image);
         ImageButton pickUpCancleBtn = (ImageButton) findViewById(R.id.pickup_cancle_btn);
         pickUpCancleBtn.setOnClickListener(this);
-        Log.i("!!!!!!!!!!","!!!!!!!!!");
         initStatus();
         sex = getOrderSex();
         if (sex == MALE) {
@@ -192,7 +191,6 @@ public class MyShoeDialog extends Dialog implements View.OnClickListener {
     private void initImageResources() {
         images = new ImageView[4];
         if(sex==MALE) {
-
             images[0] = (ImageView) findViewById(R.id.myshoe_men1);//구두닦이
             images[1] = (ImageView) findViewById(R.id.myshoe_men2);//반창
             images[2] = (ImageView) findViewById(R.id.myshoe_men3);//통굽
@@ -227,7 +225,6 @@ public class MyShoeDialog extends Dialog implements View.OnClickListener {
         statusGuide[1] = (TextView)findViewById(R.id.fix_guide);
         statusGuide[2] = (TextView)findViewById(R.id.delivery_guide);
         RequestParams params = new RequestParams();
-        Log.i("!!!!!!!!!!!!",loginPreferences.getString("id", "whatshoe")+" "+orderPreferences.getString("orderTime", "0")+ " "+orderPreferences.getString("orderCode", "0"));
         params.put("id", loginPreferences.getString("id", "whatshoe"));
         params.put("order_time", orderPreferences.getString("orderTime", "0"));
         params.put("order_code", orderPreferences.getString("orderCode", "0"));
@@ -236,14 +233,12 @@ public class MyShoeDialog extends Dialog implements View.OnClickListener {
             @Override
             public void onFailure(int arg0, Header[] arg1, String arg2,
                                   Throwable arg3) {
-                Log.i("!!!!!!!!!!!!!",arg2);
                 Toast.makeText(context, "인터넷 접속상태를 확인해 주세요.",
                         Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onSuccess(int arg0, Header[] arg1, String arg2) {
-                Log.i("!!!!!!!!!!!!!",arg2);
                 if (arg2.trim().equals("\uFEFFfail")) {
                     orderPreferences.edit().clear().commit();
                 } else if (arg2.trim().equals("\uFEFF0")) {

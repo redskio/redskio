@@ -2,7 +2,6 @@ package kr.whatshoe.Util;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -17,8 +16,34 @@ public class OrderUtil {
     public OrderUtil(Context context) {
         this.context = context;
     }
+    public ArrayList<String> getTitle(String code) {
+        if(code.length()<3){
+            return oldTitle(code);
+        }
+        String ordercode = code.substring(0, 3);
+        if (ordercode.equals("#01")) {
+            return getOrderName(code);
+        } else if(ordercode.equals("#02")) {
+            return getOrderV2Name(code);
+        } else {
+            return oldTitle(code);
+        }
+    }
 
-    public ArrayList<String> getOrderName(String code) {
+    public int getPrice(String code) {
+        if(code.length()<3){
+            return oldPrice(code);
+        }
+        String ordercode = code.substring(0, 3);
+        if (ordercode.equals("#01")) {
+            return OrderPrice(code);
+        } else if(ordercode.equals("#02")){
+            return orderV2Price(code);
+        } else {
+            return oldPrice(code);
+        }
+    }
+    public ArrayList<String> getOrderV2Name(String code) {
         ArrayList<String> array = new ArrayList<String>();
 
         int index = 3;
@@ -50,27 +75,40 @@ public class OrderUtil {
         }
         return array;
     }
+    public ArrayList<String> getOrderName(String code) {
+        ArrayList<String> array = new ArrayList<String>();
 
-    public ArrayList<String> getTitle(String code) {
-        String ordercode = code.substring(0, 3);
-        Log.i("!!!!!!!", ordercode);
-        if (ordercode.equals("#01")) {
-            return getOrderName(code);
-        } else {
-            return oldTitle(code);
+        int index = 3;
+        while (true) {
+            if (index == code.length() || code.length() < 3) {
+                break;
+            }
+            String ordercode = code.substring(index, index + 3);
+            int codeItem = Integer.parseInt(ordercode);
+            Resources resource = context.getResources();
+            if (resource == null) {
+                return array;
+
+            }
+            if (codeItem < 200) {
+                String[] ordernameForman = resource.getStringArray(R.array.v1_order_man_title);
+                array.add(ordernameForman[codeItem % 100]);
+            } else if (codeItem < 300) {
+                String[] ordernameForman = resource.getStringArray(R.array.v1_order_woman_title);
+                array.add(ordernameForman[codeItem % 100]);
+            } else if (codeItem < 400) {
+                String[] ordernameForman = resource.getStringArray(R.array.v1_premium_man_title);
+                array.add(ordernameForman[codeItem % 100]);
+            } else {
+                String[] ordernameForman = resource.getStringArray(R.array.v1_premium_woman_title);
+                array.add(ordernameForman[codeItem % 100]);
+            }
+            index += 3;
         }
+        return array;
     }
 
-    public int getPrice(String code) {
-        String ordercode = code.substring(0, 3);
-        if (ordercode.equals("#01")) {
-            return OrderPrice(code);
-        } else {
-            return oldPrice(code);
-        }
-    }
-
-    public int OrderPrice(String code) {
+    public int orderV2Price(String code) {
         int price = 0;
         int index = 3;
         while (true) {
@@ -94,6 +132,37 @@ public class OrderUtil {
                 price += orderpriceForman[codeItem % 100];
             } else {
                 int[] orderpriceForman = resource.getIntArray(R.array.premium_woman_price);
+                price += orderpriceForman[codeItem % 100];
+            }
+            index += 3;
+        }
+        return price;
+    }
+
+    public int OrderPrice(String code) {
+        int price = 0;
+        int index = 3;
+        while (true) {
+            if (index == code.length() || code.length() < 3) {
+                break;
+            }
+            String ordercode = code.substring(index, index + 3);
+            int codeItem = Integer.parseInt(ordercode);
+            Resources resource = context.getResources();
+            if (resource == null) {
+                return 0;
+            }
+            if (codeItem < 200) {
+                int[] orderpriceForman = resource.getIntArray(R.array.v1_order_man_price);
+                price += orderpriceForman[codeItem % 100];
+            } else if (codeItem < 300) {
+                int[] orderpriceForman = resource.getIntArray(R.array.v1_order_woman_price);
+                price += orderpriceForman[codeItem % 100];
+            } else if (codeItem < 400) {
+                int[] orderpriceForman = resource.getIntArray(R.array.v1_premium_man_price);
+                price += orderpriceForman[codeItem % 100];
+            } else {
+                int[] orderpriceForman = resource.getIntArray(R.array.v1_premium_woman_price);
                 price += orderpriceForman[codeItem % 100];
             }
             index += 3;

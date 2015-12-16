@@ -35,10 +35,14 @@ public class WhatShoeDialog extends Dialog {
     private Context context;
     private int ETC = 0;
     private final int SOCKS = 5;
-    private final int MAN_ETC = 1; //1건의 특수주문
+    private final int MAN_TABACO = 6;
+    private final int MAN_LIGHTER = 7;
+    private final int MAN_ETC = 3; //3건의 특수주문
     private final int STOCKING = 6;
+    private final int WOMAN_TABACO = 7;
+    private final int WOMAN_LIGHTER = 8;
     private final int BAND = 7;
-    private final int WOMAN_ETC = 2; //2건의 특수주문
+    private final int WOMAN_ETC = 4; //4건의 특수주문
 
 
     public WhatShoeDialog(Context context) {
@@ -127,10 +131,12 @@ public class WhatShoeDialog extends Dialog {
             orderLayoutList = new ArrayList<NormalOrderLayout>();
             orderLayoutList.add(0, new NormalOrderLayout((RelativeLayout) findViewById(R.id.afterOrder_layout), (CheckBox) findViewById(R.id.afterOrder_check), orderList.get(0), (ImageView) findViewById(R.id.after_order_img)));
             orderLayoutList.add(1, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forman_wash_layout), (CheckBox) findViewById(R.id.forman_wash_check), orderList.get(1), (ImageView) findViewById(R.id.forman_wash_img)));
-            orderLayoutList.add(2, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forman_half_layout), (CheckBox) findViewById(R.id.forman_half_check), orderList.get(2), (ImageView) findViewById(R.id.forman_half_img)));
-            orderLayoutList.add(3, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forman_sub_layout), (CheckBox) findViewById(R.id.forman_sub_check), orderList.get(3), (ImageView) findViewById(R.id.forman_sub_img)));
+            orderLayoutList.add(2, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forman_sole_layout), (CheckBox) findViewById(R.id.forman_sole_check), orderList.get(2), (ImageView) findViewById(R.id.forman_sole_img)));
+            orderLayoutList.add(3, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forman_half_layout), (CheckBox) findViewById(R.id.forman_half_check), orderList.get(3), (ImageView) findViewById(R.id.forman_half_img)));
             orderLayoutList.add(4, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forman_whole_layout), (CheckBox) findViewById(R.id.forman_whole_check), orderList.get(4), (ImageView) findViewById(R.id.forman_whole_img)));
-            orderLayoutList.add(5, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forman_socks_layout), (CheckBox) findViewById(R.id.forman_socks_check), orderList.get(5), (ImageView) findViewById(R.id.forman_socks)));
+            orderLayoutList.add(5, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forman_socks_layout), (CheckBox) findViewById(R.id.forman_socks_check), orderList.get(5), (ImageView) findViewById(R.id.forman_socks_img)));
+            orderLayoutList.add(6, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forman_tabaco_layout), (CheckBox) findViewById(R.id.forman_tabaco_check), orderList.get(6), (ImageView) findViewById(R.id.forman_tabaco_img)));
+            orderLayoutList.add(7, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forman_lighter_layout), (CheckBox) findViewById(R.id.forman_lighter_check), orderList.get(7), (ImageView) findViewById(R.id.forman_lighter_img)));
 
         } else if (sex == FEMALE) {
             orderLayoutList = new ArrayList<NormalOrderLayout>();
@@ -138,11 +144,11 @@ public class WhatShoeDialog extends Dialog {
             orderLayoutList.add(1, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forwoman_wash_layout), (CheckBox) findViewById(R.id.forwoman_wash_check), orderList.get(1), (ImageView) findViewById(R.id.forwoman_wash_img)));
             orderLayoutList.add(2, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forwoman_sub_layout), (CheckBox) findViewById(R.id.forwoman_sub_check), orderList.get(2), (ImageView) findViewById(R.id.forwoman_sub_img)));
             orderLayoutList.add(3, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forwoman_submidbig_layout), (CheckBox) findViewById(R.id.forwoman_submidbig_check), orderList.get(3), (ImageView) findViewById(R.id.forwoman_midbig_img)));
-            orderLayoutList.add(4, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forwoman_half_layout), (CheckBox) findViewById(R.id.forwoman_half_check), orderList.get(4), (ImageView) findViewById(R.id.forwoman_half_img)));
-            orderLayoutList.add(5, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forwoman_boots_layout), (CheckBox) findViewById(R.id.forwoman_boots_check), orderList.get(5), (ImageView) findViewById(R.id.forwoman_boots_img)));
-            orderLayoutList.add(6, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forwoman_stocking_layout), (CheckBox) findViewById(R.id.forwoman_stocking_check), orderList.get(6), (ImageView) findViewById(R.id.forwoman_stocking)));
-            orderLayoutList.add(7, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forwoman_band_layout), (CheckBox) findViewById(R.id.forwoman_band_check), orderList.get(7), (ImageView) findViewById(R.id.forwoman_band)));
-
+            orderLayoutList.add(4, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forwoman_boots_layout), (CheckBox) findViewById(R.id.forwoman_boots_check), orderList.get(4), (ImageView) findViewById(R.id.forwoman_boots_img)));
+            orderLayoutList.add(5, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forwoman_stocking_layout), (CheckBox) findViewById(R.id.forwoman_stocking_check), orderList.get(5), (ImageView) findViewById(R.id.forwoman_stocking)));
+            orderLayoutList.add(6, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forwoman_band_layout), (CheckBox) findViewById(R.id.forwoman_band_check), orderList.get(6), (ImageView) findViewById(R.id.forwoman_band)));
+            orderLayoutList.add(7, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forwoman_tabaco_layout), (CheckBox) findViewById(R.id.forwoman_tabaco_check), orderList.get(7), (ImageView) findViewById(R.id.forwoman_tabaco_img)));
+            orderLayoutList.add(8, new NormalOrderLayout((RelativeLayout) findViewById(R.id.forwoman_lighter_layout), (CheckBox) findViewById(R.id.forwoman_lighter_check), orderList.get(8), (ImageView) findViewById(R.id.forwoman_lighter_img)));
         }
         for(int i=0; i < orderLayoutList.size();i++){
             CheckBox cb = orderLayoutList.get(i).getCheckBox();
@@ -160,10 +166,10 @@ public class WhatShoeDialog extends Dialog {
         int count = 0;
         if (sex == MALE) {
             ETC = MAN_ETC;
-            etcOrder += orderList.get(SOCKS).getIsChecked();
+            etcOrder = orderList.get(SOCKS).getIsChecked()+ orderList.get(MAN_TABACO).getIsChecked() + orderList.get(MAN_LIGHTER).getIsChecked();
         } else {
             ETC = WOMAN_ETC;
-            etcOrder += orderList.get(STOCKING).getIsChecked() + orderList.get(BAND).getIsChecked();
+            etcOrder = orderList.get(STOCKING).getIsChecked() + orderList.get(BAND).getIsChecked() + orderList.get(WOMAN_TABACO).getIsChecked() + orderList.get(WOMAN_LIGHTER).getIsChecked();
         }
 
         for (int i = 0; i < orderList.size() - ETC; i++) {
